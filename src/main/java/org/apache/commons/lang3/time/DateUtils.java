@@ -84,9 +84,9 @@ public class DateUtils {
         }
 
         /**
-         * Returns the next calendar in the iteration
+         * Returns the next calendar in the iteration.
          *
-         * @return Object calendar for the next date
+         * @return object calendar for the next date
          */
         @Override
         public Calendar next() {
@@ -100,7 +100,7 @@ public class DateUtils {
         /**
          * Always throws UnsupportedOperationException.
          *
-         * @throws UnsupportedOperationException Always thrown.
+         * @throws UnsupportedOperationException always thrown
          * @see java.util.Iterator#remove()
          */
         @Override
@@ -129,23 +129,27 @@ public class DateUtils {
     }
     /**
      * Number of milliseconds in a standard second.
+     *
      * @since 2.1
      */
     public static final long MILLIS_PER_SECOND = 1000;
     /**
      * Number of milliseconds in a standard minute.
+     *
      * @since 2.1
      */
     public static final long MILLIS_PER_MINUTE = 60 * MILLIS_PER_SECOND;
 
     /**
      * Number of milliseconds in a standard hour.
+     *
      * @since 2.1
      */
     public static final long MILLIS_PER_HOUR = 60 * MILLIS_PER_MINUTE;
 
     /**
      * Number of milliseconds in a standard day.
+     *
      * @since 2.1
      */
     public static final long MILLIS_PER_DAY = 24 * MILLIS_PER_HOUR;
@@ -327,8 +331,8 @@ public class DateUtils {
      * @param calendar  the date to work with, not null
      * @param field  the field from {@link Calendar} or {@code SEMI_MONTH}
      * @return the different ceil date, not null
-     * @throws NullPointerException if the date is {@code null}
      * @throws ArithmeticException if the year is over 280 million
+     * @throws NullPointerException if the date is {@code null}
      * @since 2.5
      */
     public static Calendar ceiling(final Calendar calendar, final int field) {
@@ -348,8 +352,8 @@ public class DateUtils {
      * @param date  the date to work with, not null
      * @param field  the field from {@link Calendar} or {@code SEMI_MONTH}
      * @return the different ceil date, not null
-     * @throws NullPointerException if the date is {@code null}
      * @throws ArithmeticException if the year is over 280 million
+     * @throws NullPointerException if the date is {@code null}
      * @since 2.5
      */
     public static Date ceiling(final Date date, final int field) {
@@ -368,9 +372,9 @@ public class DateUtils {
      * @param date  the date to work with, either {@link Date} or {@link Calendar}, not null
      * @param field  the field from {@link Calendar} or {@code SEMI_MONTH}
      * @return the different ceil date, not null
-     * @throws NullPointerException if the date is {@code null}
-     * @throws ClassCastException if the object type is not a {@link Date} or {@link Calendar}
      * @throws ArithmeticException if the year is over 280 million
+     * @throws ClassCastException if the object type is not a {@link Date} or {@link Calendar}
+     * @throws NullPointerException if the date is {@code null}
      * @since 2.5
      */
     public static Date ceiling(final Object date, final int field) {
@@ -444,8 +448,8 @@ public class DateUtils {
      * @param fragment the Calendar field part of date to calculate
      * @param unit the time unit
      * @return number of units within the fragment of the date
-     * @throws NullPointerException if the date is {@code null}
      * @throws IllegalArgumentException if fragment is not supported
+     * @throws NullPointerException if the date is {@code null}
      * @since 2.4
      */
     private static long getFragment(final Date date, final int fragment, final TimeUnit unit) {
@@ -525,8 +529,8 @@ public class DateUtils {
      * @param date the date to work with, not null
      * @param fragment the {@link Calendar} field part of date to calculate
      * @return number of days  within the fragment of date
-     * @throws NullPointerException if the date is {@code null}
      * @throws IllegalArgumentException if the fragment is not supported
+     * @throws NullPointerException if the date is {@code null}
      * @since 2.4
      */
     public static long getFragmentInDays(final Date date, final int fragment) {
@@ -601,8 +605,8 @@ public class DateUtils {
      * @param date the date to work with, not null
      * @param fragment the {@link Calendar} field part of date to calculate
      * @return number of hours within the fragment of date
-     * @throws NullPointerException if the date is {@code null}
      * @throws IllegalArgumentException if the fragment is not supported
+     * @throws NullPointerException if the date is {@code null}
      * @since 2.4
      */
     public static long getFragmentInHours(final Date date, final int fragment) {
@@ -674,8 +678,8 @@ public class DateUtils {
      * @param date the date to work with, not null
      * @param fragment the {@link Calendar} field part of date to calculate
      * @return number of milliseconds within the fragment of date
-     * @throws NullPointerException if the date is {@code null}
      * @throws IllegalArgumentException if the fragment is not supported
+     * @throws NullPointerException if the date is {@code null}
      * @since 2.4
      */
     public static long getFragmentInMilliseconds(final Date date, final int fragment) {
@@ -750,8 +754,8 @@ public class DateUtils {
      * @param date the date to work with, not null
      * @param fragment the {@link Calendar} field part of date to calculate
      * @return number of minutes within the fragment of date
-     * @throws NullPointerException if the date is {@code null}
      * @throws IllegalArgumentException if the fragment is not supported
+     * @throws NullPointerException if the date is {@code null}
      * @since 2.4
      */
     public static long getFragmentInMinutes(final Date date, final int fragment) {
@@ -826,8 +830,8 @@ public class DateUtils {
      * @param date the date to work with, not null
      * @param fragment the {@link Calendar} field part of date to calculate
      * @return number of seconds within the fragment of date
-     * @throws NullPointerException if the date is {@code null}
      * @throws IllegalArgumentException if the fragment is not supported
+     * @throws NullPointerException if the date is {@code null}
      * @since 2.4
      */
     public static long getFragmentInSeconds(final Date date, final int fragment) {
@@ -952,8 +956,8 @@ public class DateUtils {
      * {@link DateUtils#RANGE_WEEK_RELATIVE},
      * {@link DateUtils#RANGE_WEEK_CENTER}
      * @return the date iterator, not null
-     * @throws NullPointerException if calendar is {@code null}
      * @throws IllegalArgumentException if the rangeStyle is invalid
+     * @throws NullPointerException if calendar is {@code null}
      */
     public static Iterator<Calendar> iterator(final Calendar calendar, final int rangeStyle) {
         Objects.requireNonNull(calendar, "calendar");
@@ -1048,8 +1052,8 @@ public class DateUtils {
      * {@link DateUtils#RANGE_WEEK_RELATIVE},
      * {@link DateUtils#RANGE_WEEK_CENTER}
      * @return the date iterator, not null, not null
-     * @throws NullPointerException if the date is {@code null}
      * @throws IllegalArgumentException if the rangeStyle is invalid
+     * @throws NullPointerException if the date is {@code null}
      */
     public static Iterator<Calendar> iterator(final Date focus, final int rangeStyle) {
         return iterator(toCalendar(focus), rangeStyle);
@@ -1068,8 +1072,8 @@ public class DateUtils {
      * @param rangeStyle  the style constant to use. Must be one of the range
      * styles listed for the {@link #iterator(Calendar, int)} method.
      * @return the date iterator, not null
-     * @throws NullPointerException if the date is {@code null}
      * @throws ClassCastException if the object type is not a {@link Date} or {@link Calendar}
+     * @throws NullPointerException if the date is {@code null}
      */
     public static Iterator<?> iterator(final Object calendar, final int rangeStyle) {
         Objects.requireNonNull(calendar, "calendar");
@@ -1322,7 +1326,7 @@ public class DateUtils {
      * @param locale the locale to use when interpreting the pattern, can be null in which
      * case the default system locale is used
      * @param parsePatterns  the date format patterns to use, see SimpleDateFormat, not null
-     * @param lenient Specify whether or not date/time parsing is to be lenient.
+     * @param lenient specify whether or not date/time parsing is to be lenient
      * @return the parsed date
      * @throws NullPointerException if the date string or pattern array is null
      * @throws ParseException if none of the date patterns were suitable
@@ -1378,8 +1382,8 @@ public class DateUtils {
      * @param calendar  the date to work with, not null
      * @param field  the field from {@link Calendar} or {@code SEMI_MONTH}
      * @return the different rounded date, not null
-     * @throws NullPointerException if the date is {@code null}
      * @throws ArithmeticException if the year is over 280 million
+     * @throws NullPointerException if the date is {@code null}
      */
     public static Calendar round(final Calendar calendar, final int field) {
         Objects.requireNonNull(calendar, "calendar");
@@ -1410,8 +1414,8 @@ public class DateUtils {
      * @param date  the date to work with, not null
      * @param field  the field from {@link Calendar} or {@code SEMI_MONTH}
      * @return the different rounded date, not null
-     * @throws NullPointerException if the date is null
      * @throws ArithmeticException if the year is over 280 million
+     * @throws NullPointerException if the date is null
      */
     public static Date round(final Date date, final int field) {
         return modify(toCalendar(date), field, ModifyType.ROUND).getTime();
@@ -1441,9 +1445,9 @@ public class DateUtils {
      * @param date  the date to work with, either {@link Date} or {@link Calendar}, not null
      * @param field  the field from {@link Calendar} or {@code SEMI_MONTH}
      * @return the different rounded date, not null
-     * @throws NullPointerException if the date is {@code null}
-     * @throws ClassCastException if the object type is not a {@link Date} or {@link Calendar}
      * @throws ArithmeticException if the year is over 280 million
+     * @throws ClassCastException if the object type is not a {@link Date} or {@link Calendar}
+     * @throws NullPointerException if the date is {@code null}
      */
     public static Date round(final Object date, final int field) {
         Objects.requireNonNull(date, "date");
@@ -1485,9 +1489,9 @@ public class DateUtils {
      * @param date  the date, not null
      * @param amount the amount to set
      * @return a new {@link Date} set with the specified value
-     * @throws NullPointerException if the date is null
      * @throws IllegalArgumentException if {@code amount} is not in the range
      *  {@code 1 <= amount <= 31}
+     * @throws NullPointerException if the date is null
      * @since 2.4
      */
     public static Date setDays(final Date date, final int amount) {
@@ -1502,9 +1506,9 @@ public class DateUtils {
      * @param date  the date, not null
      * @param amount the amount to set
      * @return a new {@link Date} set with the specified value
-     * @throws NullPointerException if the date is null
      * @throws IllegalArgumentException if {@code amount} is not in the range
      *  {@code 0 <= amount <= 23}
+     * @throws NullPointerException if the date is null
      * @since 2.4
      */
     public static Date setHours(final Date date, final int amount) {
@@ -1518,9 +1522,9 @@ public class DateUtils {
      * @param date  the date, not null
      * @param amount the amount to set
      * @return a new {@link Date} set with the specified value
-     * @throws NullPointerException if the date is null
      * @throws IllegalArgumentException if {@code amount} is not in the range
      *  {@code 0 <= amount <= 999}
+     * @throws NullPointerException if the date is null
      * @since 2.4
      */
     public static Date setMilliseconds(final Date date, final int amount) {
@@ -1534,9 +1538,9 @@ public class DateUtils {
      * @param date  the date, not null
      * @param amount the amount to set
      * @return a new {@link Date} set with the specified value
-     * @throws NullPointerException if the date is null
      * @throws IllegalArgumentException if {@code amount} is not in the range
      *  {@code 0 <= amount <= 59}
+     * @throws NullPointerException if the date is null
      * @since 2.4
      */
     public static Date setMinutes(final Date date, final int amount) {
@@ -1550,9 +1554,9 @@ public class DateUtils {
      * @param date  the date, not null
      * @param amount the amount to set
      * @return a new {@link Date} set with the specified value
-     * @throws NullPointerException if the date is null
      * @throws IllegalArgumentException if {@code amount} is not in the range
      *  {@code 0 <= amount <= 11}
+     * @throws NullPointerException if the date is null
      * @since 2.4
      */
     public static Date setMonths(final Date date, final int amount) {
@@ -1566,9 +1570,9 @@ public class DateUtils {
      * @param date  the date, not null
      * @param amount the amount to set
      * @return a new {@link Date} set with the specified value
-     * @throws NullPointerException if the date is null
      * @throws IllegalArgumentException if {@code amount} is not in the range
      *  {@code 0 <= amount <= 59}
+     * @throws NullPointerException if the date is null
      * @since 2.4
      */
     public static Date setSeconds(final Date date, final int amount) {
@@ -1604,6 +1608,7 @@ public class DateUtils {
 
     /**
      * Converts a {@link Date} of a given {@link TimeZone} into a {@link Calendar}
+     *
      * @param date the date to convert to a Calendar
      * @param tz the time zone of the {@code date}
      * @return the created Calendar
@@ -1627,8 +1632,8 @@ public class DateUtils {
      * @param date  the date to work with, not null
      * @param field  the field from {@link Calendar} or {@code SEMI_MONTH}
      * @return the different truncated date, not null
-     * @throws NullPointerException if the date is {@code null}
      * @throws ArithmeticException if the year is over 280 million
+     * @throws NullPointerException if the date is {@code null}
      */
     public static Calendar truncate(final Calendar date, final int field) {
         Objects.requireNonNull(date, "date");
@@ -1647,8 +1652,8 @@ public class DateUtils {
      * @param date  the date to work with, not null
      * @param field  the field from {@link Calendar} or {@code SEMI_MONTH}
      * @return the different truncated date, not null
-     * @throws NullPointerException if the date is {@code null}
      * @throws ArithmeticException if the year is over 280 million
+     * @throws NullPointerException if the date is {@code null}
      */
     public static Date truncate(final Date date, final int field) {
         return modify(toCalendar(date), field, ModifyType.TRUNCATE).getTime();
@@ -1666,9 +1671,9 @@ public class DateUtils {
      * @param date  the date to work with, either {@link Date} or {@link Calendar}, not null
      * @param field  the field from {@link Calendar} or {@code SEMI_MONTH}
      * @return the different truncated date, not null
-     * @throws NullPointerException if the date is {@code null}
-     * @throws ClassCastException if the object type is not a {@link Date} or {@link Calendar}
      * @throws ArithmeticException if the year is over 280 million
+     * @throws ClassCastException if the object type is not a {@link Date} or {@link Calendar}
+     * @throws NullPointerException if the date is {@code null}
      */
     public static Date truncate(final Object date, final int field) {
         Objects.requireNonNull(date, "date");
@@ -1689,7 +1694,7 @@ public class DateUtils {
      * @param cal2 the second calendar, not {@code null}
      * @param field the field from {@link Calendar}
      * @return a negative integer, zero, or a positive integer as the first
-     * calendar is less than, equal to, or greater than the second.
+     * calendar is less than, equal to, or greater than the second
      * @throws NullPointerException if any argument is {@code null}
      * @see #truncate(Calendar, int)
      * @see #truncatedCompareTo(Date, Date, int)
@@ -1709,7 +1714,7 @@ public class DateUtils {
      * @param date2 the second date, not {@code null}
      * @param field the field from {@link Calendar}
      * @return a negative integer, zero, or a positive integer as the first
-     * date is less than, equal to, or greater than the second.
+     * date is less than, equal to, or greater than the second
      * @throws NullPointerException if any argument is {@code null}
      * @see #truncate(Calendar, int)
      * @see #truncatedCompareTo(Date, Date, int)
@@ -1756,7 +1761,7 @@ public class DateUtils {
     }
 
     /**
-     * @param date Date to validate.
+     * @param date date to validate
      * @throws NullPointerException if {@code date == null}
      */
     private static void validateDateNotNull(final Date date) {

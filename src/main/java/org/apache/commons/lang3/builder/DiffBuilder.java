@@ -63,7 +63,7 @@ import org.apache.commons.lang3.ObjectUtils;
  * See {@link ReflectionDiffBuilder} for a reflection based version of this class.
  * </p>
  *
- * @param <T> type of the left and right object.
+ * @param <T> type of the left and right object
  * @see Diffable
  * @see Diff
  * @see DiffResult
@@ -76,7 +76,7 @@ public class DiffBuilder<T> implements Builder<DiffResult<T>> {
     /**
      * Constructs a new instance.
      *
-     * @param <T> type of the left and right object.
+     * @param <T> type of the left and right object
      * @since 3.15.0
      */
     public static final class Builder<T> {
@@ -90,7 +90,7 @@ public class DiffBuilder<T> implements Builder<DiffResult<T>> {
         /**
          * Builds a new configured {@link DiffBuilder}.
          *
-         * @return a new configured {@link DiffBuilder}.
+         * @return a new configured {@link DiffBuilder}
          */
         public DiffBuilder<T> build() {
             return new DiffBuilder<>(left, right, style, testObjectsEquals, toStringFormat);
@@ -99,8 +99,8 @@ public class DiffBuilder<T> implements Builder<DiffResult<T>> {
         /**
          * Sets the left object.
          *
-         * @param left the left object.
-         * @return this.
+         * @param left the left object
+         * @return this
          */
         public Builder<T> setLeft(final T left) {
             this.left = left;
@@ -110,8 +110,8 @@ public class DiffBuilder<T> implements Builder<DiffResult<T>> {
         /**
          * Sets the right object.
          *
-         * @param right the left object.
-         * @return this.
+         * @param right the left object
+         * @return this
          */
         public Builder<T> setRight(final T right) {
             this.right = right;
@@ -121,8 +121,8 @@ public class DiffBuilder<T> implements Builder<DiffResult<T>> {
         /**
          * Sets the style will to use when outputting the objects, {@code null} uses the default.
          *
-         * @param style the style to use when outputting the objects, {@code null} uses the default.
-         * @return this.
+         * @param style the style to use when outputting the objects, {@code null} uses the default
+         * @return this
          */
         public Builder<T> setStyle(final ToStringStyle style) {
             this.style = style != null ? style : ToStringStyle.DEFAULT_STYLE;
@@ -134,10 +134,10 @@ public class DiffBuilder<T> implements Builder<DiffResult<T>> {
          * {@link Diff} if the trivially equal test is enabled and returns true. The result of this test is never changed throughout the life of this
          * {@link DiffBuilder}.
          *
-         * @param testObjectsEquals If true, this will test if lhs and rhs are the same or equal. All of the append(fieldName, left, right) methods will abort
+         * @param testObjectsEquals if true, this will test if lhs and rhs are the same or equal. All of the append(fieldName, left, right) methods will abort
          *                          without creating a field {@link Diff} if the trivially equal test is enabled and returns true. The result of this test is
          *                          never changed throughout the life of this {@link DiffBuilder}.
-         * @return this.
+         * @return this
          */
         public Builder<T> setTestObjectsEquals(final boolean testObjectsEquals) {
             this.testObjectsEquals = testObjectsEquals;
@@ -147,8 +147,8 @@ public class DiffBuilder<T> implements Builder<DiffResult<T>> {
         /**
          * Sets the two-argument format string for {@link String#format(String, Object...)}, for example {@code "%s differs from %s"}.
          *
-         * @param toStringFormat {@code null} uses the default.
-         * @return this.
+         * @param toStringFormat {@code null} uses the default
+         * @return this
          */
         public Builder<T> setToStringFormat(final String toStringFormat) {
             this.toStringFormat = toStringFormat != null ? toStringFormat : TO_STRING_FORMAT;
@@ -185,8 +185,8 @@ public class DiffBuilder<T> implements Builder<DiffResult<T>> {
     /**
      * Constructs a new {@link Builder}.
      *
-     * @param <T> type of the left and right object.
-     * @return a new {@link Builder}.
+     * @param <T> type of the left and right object
+     * @return a new {@link Builder}
      * @since 3.15.0
      */
     public static <T> Builder<T> builder() {
@@ -234,7 +234,7 @@ public class DiffBuilder<T> implements Builder<DiffResult<T>> {
      * @param left              {@code this} object
      * @param right             the object to diff against
      * @param style             the style to use when outputting the objects, {@code null} uses the default
-     * @param testObjectsEquals If true, this will test if lhs and rhs are the same or equal. All of the append(fieldName, lhs, rhs) methods will abort without
+     * @param testObjectsEquals if true, this will test if lhs and rhs are the same or equal. All of the append(fieldName, lhs, rhs) methods will abort without
      *                          creating a field {@link Diff} if the trivially equal test is enabled and returns true. The result of this test is never changed
      *                          throughout the life of this {@link DiffBuilder}.
      * @throws NullPointerException if {@code lhs} or {@code rhs} is {@code null}
@@ -571,7 +571,7 @@ public class DiffBuilder<T> implements Builder<DiffResult<T>> {
     /**
      * Builds a {@link DiffResult} based on the differences appended to this builder.
      *
-     * @return a {@link DiffResult} containing the differences between the two objects.
+     * @return a {@link DiffResult} containing the differences between the two objects
      */
     @Override
     public DiffResult<T> build() {
@@ -581,7 +581,7 @@ public class DiffBuilder<T> implements Builder<DiffResult<T>> {
     /**
      * Gets the left object.
      *
-     * @return the left object.
+     * @return the left object
      */
     T getLeft() {
         return left;
@@ -590,7 +590,7 @@ public class DiffBuilder<T> implements Builder<DiffResult<T>> {
     /**
      * Gets the right object.
      *
-     * @return the right object.
+     * @return the right object
      */
     T getRight() {
         return right;

@@ -29,7 +29,7 @@ package org.apache.commons.lang3;
  * <p>As an example, consider a car painting machine that accepts
  * paint instructions as integers. Bit fields can be used to encode this:</p>
  *
- *<pre>
+ * <pre>
  *    // blue, green and red are 1 byte values (0-255) stored in the three least
  *    // significant bytes
  *    BitField blue = new BitField(0xFF);
@@ -41,21 +41,21 @@ package org.apache.commons.lang3;
  *
  *    // isMetallic is a single bit flag
  *    BitField isMetallic = new BitField(0x1000000);
- *</pre>
+ * </pre>
  *
  * <p>Using these {@link BitField} instances, a paint instruction can be
  * encoded into an integer:</p>
  *
- *<pre>
+ * <pre>
  *    int paintInstruction = 0;
  *    paintInstruction = red.setValue(paintInstruction, 35);
  *    paintInstruction = green.setValue(paintInstruction, 100);
  *    paintInstruction = blue.setValue(paintInstruction, 255);
- *</pre>
+ * </pre>
  *
  * <p>Flags and data can be retrieved from the integer:</p>
  *
- *<pre>
+ * <pre>
  *    // Prints true if red, green or blue is non-zero
  *    System.out.println(anyColor.isSet(paintInstruction));   // prints true
  *
@@ -66,7 +66,7 @@ package org.apache.commons.lang3;
  *
  *    // Prints true if isMetallic was set
  *    System.out.println(isMetallic.isSet(paintInstruction)); // prints false
- *</pre>
+ * </pre>
  *
  * @since 2.0
  */
@@ -104,7 +104,6 @@ public class BitField {
      *
      * @param holder the byte data containing the bits we're
      *  interested in
-     *
      * @return the value of holder with the specified bits cleared
      *  (set to {@code 0})
      */
@@ -155,10 +154,10 @@ public class BitField {
      * value is stored as a BitField (and so shifted left so many
      * bits).</p>
      *
-     * @see #setShortValue(short,short)
      * @param holder the short data containing the bits we're
      *  interested in
      * @return the selected bits, shifted right appropriately
+     * @see #setShortValue(short,short)
      */
     public short getShortValue(final short holder) {
         return (short) getValue(holder);
@@ -173,10 +172,10 @@ public class BitField {
      * value is stored as a BitField (and so shifted left so many
      * bits).</p>
      *
-     * @see #setValue(int,int)
      * @param holder the int data containing the bits we're interested
      *  in
      * @return the selected bits, shifted right appropriately
+     * @see #setValue(int,int)
      */
     public int getValue(final int holder) {
         return getRawValue(holder) >> shiftCount;
@@ -245,7 +244,6 @@ public class BitField {
      *
      * @param holder the byte data containing the bits we're
      *  interested in
-     *
      * @return the value of holder with the specified bits set
      *  to {@code 1}
      */
@@ -294,12 +292,12 @@ public class BitField {
     /**
      * Replaces the bits with new values.
      *
-     * @see #getShortValue(short)
      * @param holder the short data containing the bits we're
      *  interested in
      * @param value the new value for the specified bits
      * @return the value of holder with the bits from the value
      *  parameter replacing the old bits
+     * @see #getShortValue(short)
      */
     public short setShortValue(final short holder, final short value) {
         return (short) setValue(holder, value);
@@ -308,12 +306,12 @@ public class BitField {
     /**
      * Replaces the bits with new values.
      *
-     * @see #getValue(int)
      * @param holder the int data containing the bits we're
      *  interested in
      * @param value the new value for the specified bits
      * @return the value of holder with the bits from the value
      *  parameter replacing the old bits
+     * @see #getValue(int)
      */
     public int setValue(final int holder, final int value) {
         return holder & ~mask | value << shiftCount & mask;

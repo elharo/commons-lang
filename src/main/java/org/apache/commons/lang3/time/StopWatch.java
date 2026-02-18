@@ -144,21 +144,21 @@ public class StopWatch {
         /**
          * Tests whether the StopWatch is started. A suspended StopWatch is also started.
          *
-         * @return boolean If the StopWatch is started.
+         * @return boolean If the StopWatch is started
          */
         abstract boolean isStarted();
 
         /**
          * Tests whether the StopWatch is stopped. A StopWatch which is not yet started and explicitly stopped is considered stopped.
          *
-         * @return boolean If the StopWatch is stopped.
+         * @return boolean If the StopWatch is stopped
          */
         abstract boolean isStopped();
 
         /**
          * Tests whether the StopWatch is suspended.
          *
-         * @return boolean If the StopWatch is suspended.
+         * @return boolean If the StopWatch is suspended
          */
         abstract boolean isSuspended();
     }
@@ -168,8 +168,7 @@ public class StopWatch {
     /**
      * Creates a StopWatch.
      *
-     * @return StopWatch a StopWatch.
-     *
+     * @return StopWatch a StopWatch
      * @since 3.10
      */
     public static StopWatch create() {
@@ -179,8 +178,7 @@ public class StopWatch {
     /**
      * Creates and starts a StopWatch.
      *
-     * @return StopWatch a started StopWatch.
-     *
+     * @return StopWatch a started StopWatch
      * @since 3.5
      */
     public static StopWatch createStarted() {
@@ -242,7 +240,7 @@ public class StopWatch {
     /**
      * Constructs a new instance.
      *
-     * @param message A message for string presentation.
+     * @param message a message for string presentation
      * @since 3.10
      */
     public StopWatch(final String message) {
@@ -252,7 +250,7 @@ public class StopWatch {
     /**
      * Formats the split time with {@link DurationFormatUtils#formatDurationHMS}.
      *
-     * @return the split time formatted by {@link DurationFormatUtils#formatDurationHMS}.
+     * @return the split time formatted by {@link DurationFormatUtils#formatDurationHMS}
      * @since 3.10
      */
     public String formatSplitTime() {
@@ -262,7 +260,7 @@ public class StopWatch {
     /**
      * Formats the time formatted with {@link DurationFormatUtils#formatDurationHMS}.
      *
-     * @return the time formatted by {@link DurationFormatUtils#formatDurationHMS}.
+     * @return the time formatted by {@link DurationFormatUtils#formatDurationHMS}
      * @since 3.10
      */
     public String formatTime() {
@@ -272,7 +270,7 @@ public class StopWatch {
     /**
      * Gets the message for string presentation.
      *
-     * @return the message for string presentation.
+     * @return the message for string presentation
      * @since 3.10
      */
     public String getMessage() {
@@ -286,7 +284,7 @@ public class StopWatch {
      * This is either the time between the start and the moment this method is called, or the amount of time between start and stop.
      * </p>
      *
-     * @return the <em>elapsed</em> time in nanoseconds.
+     * @return the <em>elapsed</em> time in nanoseconds
      * @see System#nanoTime()
      * @since 3.0
      */
@@ -311,8 +309,7 @@ public class StopWatch {
      * </p>
      *
      * @return the split time in nanoseconds
-     *
-     * @throws IllegalStateException if the StopWatch has not yet been split.
+     * @throws IllegalStateException if the StopWatch has not yet been split
      * @since 3.0
      */
     public long getSplitNanoTime() {
@@ -330,8 +327,7 @@ public class StopWatch {
      * </p>
      *
      * @return the split time in milliseconds
-     *
-     * @throws IllegalStateException if the StopWatch has not yet been split.
+     * @throws IllegalStateException if the StopWatch has not yet been split
      * @since 2.1
      */
     public long getSplitTime() {
@@ -341,7 +337,7 @@ public class StopWatch {
     /**
      * Gets the time this StopWatch was started in milliseconds, between the current time and midnight, January 1, 1970 UTC.
      *
-     * @return the time this StopWatch was started in milliseconds, between the current time and midnight, January 1, 1970 UTC.
+     * @return the time this StopWatch was started in milliseconds, between the current time and midnight, January 1, 1970 UTC
      * @throws IllegalStateException if this StopWatch has not been started
      * @since 2.4
      */
@@ -356,7 +352,7 @@ public class StopWatch {
     /**
      * Gets the time this StopWatch was stopped in milliseconds, between the current time and midnight, January 1, 1970 UTC.
      *
-     * @return the time this StopWatch was started in milliseconds, between the current time and midnight, January 1, 1970 UTC.
+     * @return the time this StopWatch was started in milliseconds, between the current time and midnight, January 1, 1970 UTC
      * @throws IllegalStateException if this StopWatch has not been started
      * @since 3.12.0
      */
@@ -401,7 +397,7 @@ public class StopWatch {
     /**
      * Tests whether the StopWatch is started. A suspended StopWatch is also started watch.
      *
-     * @return boolean If the StopWatch is started.
+     * @return boolean If the StopWatch is started
      * @since 3.2
      */
     public boolean isStarted() {
@@ -411,7 +407,7 @@ public class StopWatch {
     /**
      * Tests whether StopWatch is stopped. The StopWatch which's not yet started and explicitly stopped StopWatch is considered as stopped.
      *
-     * @return boolean If the StopWatch is stopped.
+     * @return boolean If the StopWatch is stopped
      * @since 3.2
      */
     public boolean isStopped() {
@@ -421,7 +417,7 @@ public class StopWatch {
     /**
      * Tests whether the StopWatch is suspended.
      *
-     * @return boolean If the StopWatch is suspended.
+     * @return boolean If the StopWatch is suspended
      * @since 3.2
      */
     public boolean isSuspended() {
@@ -431,8 +427,8 @@ public class StopWatch {
     /**
      * Converts nanoseconds to milliseconds.
      *
-     * @param nanos nanoseconds to convert.
-     * @return milliseconds conversion result.
+     * @param nanos nanoseconds to convert
+     * @return milliseconds conversion result
      */
     private long nanosToMillis(final long nanos) {
         return nanos / NANO_2_MILLIS;
@@ -457,7 +453,7 @@ public class StopWatch {
      * This method resumes the watch after it was suspended. The watch will not include time between the suspend and resume calls in the total time.
      * </p>
      *
-     * @throws IllegalStateException if the StopWatch has not been suspended.
+     * @throws IllegalStateException if the StopWatch has not been suspended
      */
     public void resume() {
         if (this.runningState != State.SUSPENDED) {
@@ -475,7 +471,7 @@ public class StopWatch {
      * timing from the original start point.
      * </p>
      *
-     * @throws IllegalStateException if the StopWatch is not running.
+     * @throws IllegalStateException if the StopWatch is not running
      */
     public void split() {
         if (this.runningState != State.RUNNING) {
@@ -492,7 +488,7 @@ public class StopWatch {
      * This method starts a new timing session, clearing any previous values.
      * </p>
      *
-     * @throws IllegalStateException if the StopWatch is already running.
+     * @throws IllegalStateException if the StopWatch is already running
      */
     public void start() {
         if (this.runningState == State.STOPPED) {
@@ -513,7 +509,7 @@ public class StopWatch {
      * This method ends a new timing session, allowing the time to be retrieved.
      * </p>
      *
-     * @throws IllegalStateException if the StopWatch is not running.
+     * @throws IllegalStateException if the StopWatch is not running
      */
     public void stop() {
         if (this.runningState != State.RUNNING && this.runningState != State.SUSPENDED) {
@@ -533,7 +529,7 @@ public class StopWatch {
      * This method suspends the watch until it is resumed. The watch will not include time between the suspend and resume calls in the total time.
      * </p>
      *
-     * @throws IllegalStateException if the StopWatch is not currently running.
+     * @throws IllegalStateException if the StopWatch is not currently running
      */
     public void suspend() {
         if (this.runningState != State.RUNNING) {
@@ -553,7 +549,7 @@ public class StopWatch {
      *
      * @return the split time as a String
      * @since 2.1
-     * @since 3.10 Returns the prefix {@code "message "} if the message is set.
+     * @since 3.10 Returns the prefix {@code "message "} if the message is set
      */
     public String toSplitString() {
         final String msgStr = Objects.toString(message, StringUtils.EMPTY);
@@ -569,7 +565,7 @@ public class StopWatch {
      * </p>
      *
      * @return the time as a String
-     * @since 3.10 Returns the prefix {@code "message "} if the message is set.
+     * @since 3.10 Returns the prefix {@code "message "} if the message is set
      */
     @Override
     public String toString() {
@@ -585,7 +581,7 @@ public class StopWatch {
      * This method clears the stop time. The start time is unaffected, enabling timing from the original start point to continue.
      * </p>
      *
-     * @throws IllegalStateException if the StopWatch has not been split.
+     * @throws IllegalStateException if the StopWatch has not been split
      */
     public void unsplit() {
         if (this.splitState != SplitState.SPLIT) {

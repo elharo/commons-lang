@@ -28,7 +28,7 @@ import java.util.Objects;
  *
  * <p>#ThreadSafe# if the objects and comparator are thread-safe.</p>
  *
- * @param <T> The type of range values.
+ * @param <T> the type of range values
  * @since 3.0
  */
 public class Range<T> implements Serializable {
@@ -70,9 +70,9 @@ public class Range<T> implements Serializable {
      * @param fromInclusive  the first value that defines the edge of the range, inclusive
      * @param toInclusive  the second value that defines the edge of the range, inclusive
      * @return the range object, not null
-     * @throws NullPointerException when fromInclusive is null.
-     * @throws NullPointerException when toInclusive is null.
      * @throws ClassCastException if the elements are not {@link Comparable}
+     * @throws NullPointerException when fromInclusive is null
+     * @throws NullPointerException when toInclusive is null
      * @deprecated Use {@link #of(Comparable, Comparable)}.
      */
     @Deprecated
@@ -94,9 +94,9 @@ public class Range<T> implements Serializable {
      * @param toInclusive  the second value that defines the edge of the range, inclusive
      * @param comparator  the comparator to be used, null for natural ordering
      * @return the range object, not null
-     * @throws NullPointerException when fromInclusive is null.
-     * @throws NullPointerException when toInclusive is null.
      * @throws ClassCastException if using natural ordering and the elements are not {@link Comparable}
+     * @throws NullPointerException when fromInclusive is null
+     * @throws NullPointerException when toInclusive is null
      * @deprecated Use {@link #of(Object, Object, Comparator)}.
      */
     @Deprecated
@@ -114,8 +114,8 @@ public class Range<T> implements Serializable {
      * @param <T> the type of the elements in this range
      * @param element  the value to use for this range, not null
      * @return the range object, not null
-     * @throws NullPointerException if the element is null
      * @throws ClassCastException if the element is not {@link Comparable}
+     * @throws NullPointerException if the element is null
      */
     public static <T extends Comparable<? super T>> Range<T> is(final T element) {
         return of(element, element, null);
@@ -132,8 +132,8 @@ public class Range<T> implements Serializable {
      * @param element  the value to use for this range, must not be {@code null}
      * @param comparator  the comparator to be used, null for natural ordering
      * @return the range object, not null
-     * @throws NullPointerException if the element is null
      * @throws ClassCastException if using natural ordering and the elements are not {@link Comparable}
+     * @throws NullPointerException if the element is null
      */
     public static <T> Range<T> is(final T element, final Comparator<T> comparator) {
         return of(element, element, comparator);
@@ -152,8 +152,8 @@ public class Range<T> implements Serializable {
      * @param fromInclusive  the first value that defines the edge of the range, inclusive
      * @param toInclusive  the second value that defines the edge of the range, inclusive
      * @return the range object, not null
-     * @throws NullPointerException if either element is null
      * @throws ClassCastException if the elements are not {@link Comparable}
+     * @throws NullPointerException if either element is null
      * @since 3.13.0
      */
     public static <T extends Comparable<? super T>> Range<T> of(final T fromInclusive, final T toInclusive) {
@@ -174,9 +174,9 @@ public class Range<T> implements Serializable {
      * @param toInclusive  the second value that defines the edge of the range, inclusive
      * @param comparator  the comparator to be used, null for natural ordering
      * @return the range object, not null
-     * @throws NullPointerException when fromInclusive is null.
-     * @throws NullPointerException when toInclusive is null.
      * @throws ClassCastException if using natural ordering and the elements are not {@link Comparable}
+     * @throws NullPointerException when fromInclusive is null
+     * @throws NullPointerException when toInclusive is null
      * @since 3.13.0
      */
     public static <T> Range<T> of(final T fromInclusive, final T toInclusive, final Comparator<T> comparator) {
@@ -214,8 +214,8 @@ public class Range<T> implements Serializable {
      * @param element1  the first element, not null
      * @param element2  the second element, not null
      * @param comp  the comparator to be used, null for natural ordering
-     * @throws NullPointerException when element1 is null.
-     * @throws NullPointerException when element2 is null.
+     * @throws NullPointerException when element1 is null
+     * @throws NullPointerException when element2 is null
      */
     @SuppressWarnings("unchecked")
     Range(final T element1, final T element2, final Comparator<T> comp) {
@@ -328,6 +328,7 @@ public class Range<T> implements Serializable {
      * range.fit(64) --&gt;  64
      * range.fit(99) --&gt;  64
      * </pre>
+     *
      * @param element the element to check for, not null
      * @return the minimum, the element, or the maximum depending on the element's location relative to the range
      * @throws NullPointerException if {@code element} is {@code null}
@@ -395,6 +396,7 @@ public class Range<T> implements Serializable {
 
     /**
      * Calculate the intersection of {@code this} and an overlapping Range.
+     *
      * @param other overlapping Range
      * @return range representing the intersection of {@code this} and {@code other} ({@code this} if equal)
      * @throws IllegalArgumentException if {@code other} does not overlap {@code this}

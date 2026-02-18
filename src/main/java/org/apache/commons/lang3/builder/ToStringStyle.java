@@ -110,8 +110,8 @@ public abstract class ToStringStyle implements Serializable {
      * {@link StandardToStringStyle} to ensure its immutability.
      * </p>
      *
-     * @since 3.4
      * @see <a href="https://www.json.org/">json.org</a>
+     * @since 3.4
      */
     private static final class JsonToStringStyle extends ToStringStyle {
 
@@ -401,8 +401,8 @@ public abstract class ToStringStyle implements Serializable {
         /**
          * Appends the given String enclosed in double-quotes to the given StringBuffer.
          *
-         * @param buffer the StringBuffer to append the value to.
-         * @param value the value to append.
+         * @param buffer the StringBuffer to append the value to
+         * @param value the value to append
          */
         private void appendValueAsString(final StringBuffer buffer, final String value) {
             buffer.append('"').append(StringEscapeUtils.escapeJson(value)).append('"');
@@ -548,6 +548,7 @@ public abstract class ToStringStyle implements Serializable {
 
         /**
          * Ensure <code>Singleton</ode> after serialization.
+         *
          * @return the singleton
          */
         private Object readResolve() {
@@ -582,6 +583,7 @@ public abstract class ToStringStyle implements Serializable {
 
         /**
          * Ensure <code>Singleton</ode> after serialization.
+         *
          * @return the singleton
          */
         private Object readResolve() {
@@ -678,8 +680,8 @@ public abstract class ToStringStyle implements Serializable {
      * will only generate valid JSON if referenced objects also produce JSON
      * when calling {@code toString()} on them.
      *
-     * @since 3.4
      * @see <a href="https://www.json.org/">json.org</a>
+     * @since 3.4
      */
     public static final ToStringStyle JSON_STYLE = new JsonToStringStyle();
 
@@ -702,7 +704,7 @@ public abstract class ToStringStyle implements Serializable {
      * Returns the registry of objects being traversed by the {@code reflectionToString}
      * methods in the current thread.
      *
-     * @return Set the registry of objects being traversed
+     * @return set the registry of objects being traversed
      */
     public static Map<Object, Object> getRegistry() {
         return REGISTRY.get();
@@ -713,9 +715,9 @@ public abstract class ToStringStyle implements Serializable {
      * Used by the reflection methods to avoid infinite loops.
      *
      * @param value
-     *                  The object to lookup in the registry.
+     *                  The object to lookup in the registry
      * @return boolean {@code true} if the registry contains the given
-     *             object.
+     *             object
      */
     static boolean isRegistered(final Object value) {
         final Map<Object, Object> m = getRegistry();
@@ -727,7 +729,7 @@ public abstract class ToStringStyle implements Serializable {
      * infinite loops.
      *
      * @param value
-     *                  The object to register.
+ *                  The object to register
      */
     static void register(final Object value) {
         if (value != null) {
@@ -747,7 +749,7 @@ public abstract class ToStringStyle implements Serializable {
      * </p>
      *
      * @param value
-     *                  The object to unregister.
+ *                  The object to unregister
      */
     static void unregister(final Object value) {
         if (value != null) {
@@ -1258,7 +1260,7 @@ public abstract class ToStringStyle implements Serializable {
     /**
      * Appends to the {@code toString} the content end.
      *
-     * @param buffer  the {@link StringBuffer} to populate
+     * @param buffer the {@link StringBuffer} to populate
      */
     protected void appendContentEnd(final StringBuffer buffer) {
         buffer.append(contentEnd);
@@ -1267,7 +1269,7 @@ public abstract class ToStringStyle implements Serializable {
     /**
      * Appends to the {@code toString} the content start.
      *
-     * @param buffer  the {@link StringBuffer} to populate
+     * @param buffer the {@link StringBuffer} to populate
      */
     protected void appendContentStart(final StringBuffer buffer) {
         buffer.append(contentStart);
@@ -1282,7 +1284,6 @@ public abstract class ToStringStyle implements Serializable {
      * @param fieldName  the field name, typically not used as already appended
      * @param value  the value to add to the {@code toString},
      *  not {@code null}
-     *
      * @since 2.2
      */
     protected void appendCyclicObject(final StringBuffer buffer, final String fieldName, final Object value) {
@@ -1625,7 +1626,7 @@ public abstract class ToStringStyle implements Serializable {
      *
      * @param buffer  the {@link StringBuffer} to populate
      * @param object  the {@link Object} to build a
-     *  {@code toString} for.
+     *  {@code toString} for
      */
     public void appendEnd(final StringBuffer buffer, final Object object) {
         if (!this.fieldSeparatorAtEnd) {
@@ -1648,7 +1649,7 @@ public abstract class ToStringStyle implements Serializable {
     /**
      * Appends to the {@code toString} the field separator.
      *
-     * @param buffer  the {@link StringBuffer} to populate
+     * @param buffer the {@link StringBuffer} to populate
      */
     protected void appendFieldSeparator(final StringBuffer buffer) {
         buffer.append(fieldSeparator);
@@ -2285,7 +2286,7 @@ public abstract class ToStringStyle implements Serializable {
     /**
      * Sets whether to output array content detail.
      *
-     * @param arrayContentDetail  the new arrayContentDetail flag
+     * @param arrayContentDetail the new arrayContentDetail flag
      */
     protected void setArrayContentDetail(final boolean arrayContentDetail) {
         this.arrayContentDetail = arrayContentDetail;
@@ -2297,7 +2298,7 @@ public abstract class ToStringStyle implements Serializable {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param arrayEnd  the new array end text
+     * @param arrayEnd the new array end text
      */
     protected void setArrayEnd(String arrayEnd) {
         if (arrayEnd == null) {
@@ -2312,7 +2313,7 @@ public abstract class ToStringStyle implements Serializable {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param arraySeparator  the new array separator text
+     * @param arraySeparator the new array separator text
      */
     protected void setArraySeparator(String arraySeparator) {
         if (arraySeparator == null) {
@@ -2327,7 +2328,7 @@ public abstract class ToStringStyle implements Serializable {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param arrayStart  the new array start text
+     * @param arrayStart the new array start text
      */
     protected void setArrayStart(String arrayStart) {
         if (arrayStart == null) {
@@ -2342,7 +2343,7 @@ public abstract class ToStringStyle implements Serializable {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param contentEnd  the new content end text
+     * @param contentEnd the new content end text
      */
     protected void setContentEnd(String contentEnd) {
         if (contentEnd == null) {
@@ -2357,7 +2358,7 @@ public abstract class ToStringStyle implements Serializable {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param contentStart  the new content start text
+     * @param contentStart the new content start text
      */
     protected void setContentStart(String contentStart) {
         if (contentStart == null) {
@@ -2370,7 +2371,7 @@ public abstract class ToStringStyle implements Serializable {
      * Sets whether to use full detail when the caller doesn't
      * specify.
      *
-     * @param defaultFullDetail  the new defaultFullDetail flag
+     * @param defaultFullDetail the new defaultFullDetail flag
      */
     protected void setDefaultFullDetail(final boolean defaultFullDetail) {
         this.defaultFullDetail = defaultFullDetail;
@@ -2382,7 +2383,7 @@ public abstract class ToStringStyle implements Serializable {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param fieldNameValueSeparator  the new field name value separator text
+     * @param fieldNameValueSeparator the new field name value separator text
      */
     protected void setFieldNameValueSeparator(String fieldNameValueSeparator) {
         if (fieldNameValueSeparator == null) {
@@ -2397,7 +2398,7 @@ public abstract class ToStringStyle implements Serializable {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param fieldSeparator  the new field separator text
+     * @param fieldSeparator the new field separator text
      */
     protected void setFieldSeparator(String fieldSeparator) {
         if (fieldSeparator == null) {
@@ -2434,7 +2435,7 @@ public abstract class ToStringStyle implements Serializable {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param nullText  the new text to output when null found
+     * @param nullText the new text to output when null found
      */
     protected void setNullText(String nullText) {
         if (nullText == null) {
@@ -2452,7 +2453,7 @@ public abstract class ToStringStyle implements Serializable {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param sizeEndText  the new end of size text
+     * @param sizeEndText the new end of size text
      */
     protected void setSizeEndText(String sizeEndText) {
         if (sizeEndText == null) {
@@ -2470,7 +2471,7 @@ public abstract class ToStringStyle implements Serializable {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param sizeStartText  the new start of size text
+     * @param sizeStartText the new start of size text
      */
     protected void setSizeStartText(String sizeStartText) {
         if (sizeStartText == null) {
@@ -2488,7 +2489,7 @@ public abstract class ToStringStyle implements Serializable {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param summaryObjectEndText  the new end of summary text
+     * @param summaryObjectEndText the new end of summary text
      */
     protected void setSummaryObjectEndText(String summaryObjectEndText) {
         if (summaryObjectEndText == null) {
@@ -2506,7 +2507,7 @@ public abstract class ToStringStyle implements Serializable {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param summaryObjectStartText  the new start of summary text
+     * @param summaryObjectStartText the new start of summary text
      */
     protected void setSummaryObjectStartText(String summaryObjectStartText) {
         if (summaryObjectStartText == null) {
@@ -2518,7 +2519,7 @@ public abstract class ToStringStyle implements Serializable {
     /**
      * Sets whether to use the class name.
      *
-     * @param useClassName  the new useClassName flag
+     * @param useClassName the new useClassName flag
      */
     protected void setUseClassName(final boolean useClassName) {
         this.useClassName = useClassName;
@@ -2527,7 +2528,7 @@ public abstract class ToStringStyle implements Serializable {
     /**
      * Sets whether to use the field names passed in.
      *
-     * @param useFieldNames  the new useFieldNames flag
+     * @param useFieldNames the new useFieldNames flag
      */
     protected void setUseFieldNames(final boolean useFieldNames) {
         this.useFieldNames = useFieldNames;
@@ -2536,7 +2537,7 @@ public abstract class ToStringStyle implements Serializable {
     /**
      * Sets whether to use the identity hash code.
      *
-     * @param useIdentityHashCode  the new useIdentityHashCode flag
+     * @param useIdentityHashCode the new useIdentityHashCode flag
      */
     protected void setUseIdentityHashCode(final boolean useIdentityHashCode) {
         this.useIdentityHashCode = useIdentityHashCode;

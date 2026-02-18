@@ -293,10 +293,10 @@ public class Failable {
     /**
      * Invokes a supplier, and returns the result.
      *
-     * @param supplier The supplier to invoke.
-     * @param <T> The suppliers output type.
-     * @param <E> The type of checked exception, which the supplier can throw.
-     * @return The object, which has been created by the supplier
+     * @param supplier the supplier to invoke
+     * @param <T> the suppliers output type
+     * @param <E> the type of checked exception, which the supplier can throw
+     * @return the object, which has been created by the supplier
      */
     public static <T, E extends Throwable> T get(final FailableSupplier<T, E> supplier) {
         try {
@@ -309,9 +309,9 @@ public class Failable {
     /**
      * Invokes a boolean supplier, and returns the result.
      *
-     * @param supplier The boolean supplier to invoke.
-     * @param <E> The type of checked exception, which the supplier can throw.
-     * @return The boolean, which has been created by the supplier
+     * @param supplier the boolean supplier to invoke
+     * @param <E> the type of checked exception, which the supplier can throw
+     * @return the boolean, which has been created by the supplier
      */
     public static <E extends Throwable> boolean getAsBoolean(final FailableBooleanSupplier<E> supplier) {
         try {
@@ -324,9 +324,9 @@ public class Failable {
     /**
      * Invokes a double supplier, and returns the result.
      *
-     * @param supplier The double supplier to invoke.
-     * @param <E> The type of checked exception, which the supplier can throw.
-     * @return The double, which has been created by the supplier
+     * @param supplier the double supplier to invoke
+     * @param <E> the type of checked exception, which the supplier can throw
+     * @return the double, which has been created by the supplier
      */
     public static <E extends Throwable> double getAsDouble(final FailableDoubleSupplier<E> supplier) {
         try {
@@ -339,9 +339,9 @@ public class Failable {
     /**
      * Invokes an int supplier, and returns the result.
      *
-     * @param supplier The int supplier to invoke.
-     * @param <E> The type of checked exception, which the supplier can throw.
-     * @return The int, which has been created by the supplier
+     * @param supplier the int supplier to invoke
+     * @param <E> the type of checked exception, which the supplier can throw
+     * @return the int, which has been created by the supplier
      */
     public static <E extends Throwable> int getAsInt(final FailableIntSupplier<E> supplier) {
         try {
@@ -354,9 +354,9 @@ public class Failable {
     /**
      * Invokes a long supplier, and returns the result.
      *
-     * @param supplier The long supplier to invoke.
-     * @param <E> The type of checked exception, which the supplier can throw.
-     * @return The long, which has been created by the supplier
+     * @param supplier the long supplier to invoke
+     * @param <E> the type of checked exception, which the supplier can throw
+     * @return the long, which has been created by the supplier
      */
     public static <E extends Throwable> long getAsLong(final FailableLongSupplier<E> supplier) {
         try {
@@ -369,9 +369,9 @@ public class Failable {
     /**
      * Invokes a short supplier, and returns the result.
      *
-     * @param supplier The short supplier to invoke.
-     * @param <E> The type of checked exception, which the supplier can throw.
-     * @return The short, which has been created by the supplier
+     * @param supplier the short supplier to invoke
+     * @param <E> the type of checked exception, which the supplier can throw
+     * @return the short, which has been created by the supplier
      */
     public static <E extends Throwable> short getAsShort(final FailableShortSupplier<E> supplier) {
         try {
@@ -403,8 +403,8 @@ public class Failable {
      * follow the method call, like a {@code return} statement from a value returning method.
      * </p>
      *
-     * @param throwable The throwable to rethrow possibly wrapped into an unchecked exception
-     * @return Never returns anything, this method never terminates normally.
+     * @param throwable the throwable to rethrow possibly wrapped into an unchecked exception
+     * @return never returns anything, this method never terminates normally
      */
     public static RuntimeException rethrow(final Throwable throwable) {
         Objects.requireNonNull(throwable, "throwable");
@@ -418,7 +418,7 @@ public class Failable {
     /**
      * Runs a runnable and rethrows any exception as a {@link RuntimeException}.
      *
-     * @param runnable The runnable to run
+     * @param runnable the runnable to run
      * @param <E> the type of checked exception the runnable may throw
      */
     public static <E extends Throwable> void run(final FailableRunnable<E> runnable) {
@@ -437,9 +437,9 @@ public class Failable {
      * Functions.stream(collection.stream());
      * </pre>
      *
-     * @param collection The collection, which is being converted into a {@link FailableStream}.
-     * @param <E> The collections element type. (In turn, the result streams element type.)
-     * @return The created {@link FailableStream}.
+     * @param collection the collection, which is being converted into a {@link FailableStream}
+     * @param <E> the collections element type. (In turn, the result streams element type.)
+     * @return the created {@link FailableStream}
      */
     public static <E> FailableStream<E> stream(final Collection<E> collection) {
         return new FailableStream<>(collection.stream());
@@ -451,9 +451,9 @@ public class Failable {
      * {@link FailableFunction}, and {@link FailableConsumer} may be applied, rather than {@link Predicate},
      * {@link Function}, {@link Consumer}, etc.
      *
-     * @param stream The stream, which is being converted into a {@link FailableStream}.
-     * @param <T> The streams element type.
-     * @return The created {@link FailableStream}.
+     * @param stream the stream, which is being converted into a {@link FailableStream}
+     * @param <T> the streams element type
+     * @return the created {@link FailableStream}
      */
     public static <T> FailableStream<T> stream(final Stream<T> stream) {
         return new FailableStream<>(stream);
@@ -500,10 +500,10 @@ public class Failable {
      * Functions.tryWithResources(useInputStream(fis), null, () -&gt; fis.close());
      * </pre>
      *
-     * @param action The action to execute. This object <em>will</em> always be invoked.
-     * @param errorHandler An optional error handler, which will be invoked finally, if any error occurred. The error
+     * @param action the action to execute. This object <em>will</em> always be invoked.
+     * @param errorHandler an optional error handler, which will be invoked finally, if any error occurred. The error
      *        handler will receive the first error, AKA {@link Throwable}.
-     * @param resources The resource actions to execute. <em>All</em> resource actions will be invoked, in the given
+     * @param resources the resource actions to execute. <em>All</em> resource actions will be invoked, in the given
      *        order. A resource action is an instance of {@link FailableRunnable}, which will be executed.
      * @see #tryWithResources(FailableRunnable, FailableRunnable...)
      */
@@ -556,8 +556,8 @@ public class Failable {
      * Functions.tryWithResources(useInputStream(fis), () -&gt; fis.close());
      * </pre>
      *
-     * @param action The action to execute. This object <em>will</em> always be invoked.
-     * @param resources The resource actions to execute. <em>All</em> resource actions will be invoked, in the given
+     * @param action the action to execute. This object <em>will</em> always be invoked.
+     * @param resources the resource actions to execute. <em>All</em> resource actions will be invoked, in the given
      *        order. A resource action is an instance of {@link FailableRunnable}, which will be executed.
      * @see #tryWithResources(FailableRunnable, FailableConsumer, FailableRunnable...)
      */

@@ -245,6 +245,7 @@ public class StandardToStringStyle extends ToStringStyle {
 
     /**
      * Gets whether to use the identity hash code.
+     *
      * @return the current useIdentityHashCode flag
      */
     @Override
@@ -266,7 +267,7 @@ public class StandardToStringStyle extends ToStringStyle {
     /**
      * Sets whether to output array content detail.
      *
-     * @param arrayContentDetail  the new arrayContentDetail flag
+     * @param arrayContentDetail the new arrayContentDetail flag
      */
     @Override
     public void setArrayContentDetail(final boolean arrayContentDetail) {
@@ -279,7 +280,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * <p>{@code null} is accepted, but will be converted
      * to an empty String.</p>
      *
-     * @param arrayEnd  the new array end text
+     * @param arrayEnd the new array end text
      */
     @Override
     public void setArrayEnd(final String arrayEnd) {
@@ -292,7 +293,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * <p>{@code null} is accepted, but will be converted
      * to an empty String.</p>
      *
-     * @param arraySeparator  the new array separator text
+     * @param arraySeparator the new array separator text
      */
     @Override
     public void setArraySeparator(final String arraySeparator) {
@@ -305,7 +306,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * <p>{@code null} is accepted, but will be converted
      * to an empty String.</p>
      *
-     * @param arrayStart  the new array start text
+     * @param arrayStart the new array start text
      */
     @Override
     public void setArrayStart(final String arrayStart) {
@@ -318,7 +319,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * <p>{@code null} is accepted, but will be converted
      * to an empty String.</p>
      *
-     * @param contentEnd  the new content end text
+     * @param contentEnd the new content end text
      */
     @Override
     public void setContentEnd(final String contentEnd) {
@@ -331,7 +332,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * <p>{@code null} is accepted, but will be converted
      * to an empty String.</p>
      *
-     * @param contentStart  the new content start text
+     * @param contentStart the new content start text
      */
     @Override
     public void setContentStart(final String contentStart) {
@@ -342,7 +343,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * Sets whether to use full detail when the caller doesn't
      * specify.
      *
-     * @param defaultFullDetail  the new defaultFullDetail flag
+     * @param defaultFullDetail the new defaultFullDetail flag
      */
     @Override
     public void setDefaultFullDetail(final boolean defaultFullDetail) {
@@ -355,7 +356,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * <p>{@code null} is accepted, but will be converted
      * to an empty String.</p>
      *
-     * @param fieldNameValueSeparator  the new field name value separator text
+     * @param fieldNameValueSeparator the new field name value separator text
      */
     @Override
     public void setFieldNameValueSeparator(final String fieldNameValueSeparator) {
@@ -368,7 +369,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * <p>{@code null} is accepted, but will be converted
      * to an empty String.</p>
      *
-     * @param fieldSeparator  the new field separator text
+     * @param fieldSeparator the new field separator text
      */
     @Override
     public void setFieldSeparator(final String fieldSeparator) {
@@ -405,7 +406,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * <p>{@code null} is accepted, but will be converted
      * to an empty String.</p>
      *
-     * @param nullText  the new text to output when {@code null} found
+     * @param nullText the new text to output when {@code null} found
      */
     @Override
     public void setNullText(final String nullText) {
@@ -421,7 +422,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * <p>{@code null} is accepted, but will be converted
      * to an empty String.</p>
      *
-     * @param sizeEndText  the new end of size text
+     * @param sizeEndText the new end of size text
      */
     @Override
     public void setSizeEndText(final String sizeEndText) {
@@ -437,7 +438,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param sizeStartText  the new start of size text
+     * @param sizeStartText the new start of size text
      */
     @Override
     public void setSizeStartText(final String sizeStartText) {
@@ -453,7 +454,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param summaryObjectEndText  the new end of summary text
+     * @param summaryObjectEndText the new end of summary text
      */
     @Override
     public void setSummaryObjectEndText(final String summaryObjectEndText) {
@@ -469,7 +470,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * <p>{@code null} is accepted, but will be converted to
      * an empty String.</p>
      *
-     * @param summaryObjectStartText  the new start of summary text
+     * @param summaryObjectStartText the new start of summary text
      */
     @Override
     public void setSummaryObjectStartText(final String summaryObjectStartText) {
@@ -479,7 +480,7 @@ public class StandardToStringStyle extends ToStringStyle {
     /**
      * Sets whether to use the class name.
      *
-     * @param useClassName  the new useClassName flag
+     * @param useClassName the new useClassName flag
      */
     @Override
     public void setUseClassName(final boolean useClassName) {
@@ -489,7 +490,7 @@ public class StandardToStringStyle extends ToStringStyle {
     /**
      * Sets whether to use the field names passed in.
      *
-     * @param useFieldNames  the new useFieldNames flag
+     * @param useFieldNames the new useFieldNames flag
      */
     @Override
     public void setUseFieldNames(final boolean useFieldNames) {
@@ -499,7 +500,7 @@ public class StandardToStringStyle extends ToStringStyle {
     /**
      * Sets whether to use the identity hash code.
      *
-     * @param useIdentityHashCode  the new useIdentityHashCode flag
+     * @param useIdentityHashCode the new useIdentityHashCode flag
      */
     @Override
     public void setUseIdentityHashCode(final boolean useIdentityHashCode) {

@@ -132,14 +132,14 @@ public class ExceptionUtils {
      * </p>
      *
      * @param throwable
-     *            The throwable to rethrow.
-     * @param <T> The type of the returned value.
-     * @return Never actually returned, this generic type matches any type
+     *            The throwable to rethrow
+     * @param <T> the type of the returned value
+     * @return never actually returned, this generic type matches any type
      *         which the calling site requires. "Returning" the results of this
      *         method, as done in the propagateExample above, will satisfy the
      *         Java compiler requirement that all code paths return a value.
-     * @since 3.14.0
      * @see #wrapAndThrow(Throwable)
+     * @since 3.14.0
      */
     public static <T extends RuntimeException> T asRuntimeException(final Throwable throwable) {
         // claim that the typeErasure invocation throws a RuntimeException
@@ -169,8 +169,9 @@ public class ExceptionUtils {
      * This method handles recursive cause structures that might otherwise cause infinite loops. The cause chain is
      * processed until the end is reached, or until the next item in the chain is already in the result set.
      * </p>
-     * @param throwable The Throwable to traverse.
-     * @param consumer a non-interfering action to perform on the elements.
+     *
+     * @param throwable the Throwable to traverse
+     * @param consumer a non-interfering action to perform on the elements
      * @since 3.13.0
      */
     public static void forEach(final Throwable throwable, final Consumer<Throwable> consumer) {
@@ -310,7 +311,6 @@ public class ExceptionUtils {
      * otherwise cause infinite loops. The cause chain is processed until
      * the end, or until the next item in the chain is already
      * processed. If we detect a loop, then return the element before the loop.</p>
-
      *
      * @param throwable  the throwable to get the root cause for, may be null
      * @return the root cause of the {@link Throwable},
@@ -400,7 +400,7 @@ public class ExceptionUtils {
      * {@code &quot;&nbsp;&nbsp;&nbsp;at&quot;.}</p>
      *
      * @param throwable is any throwable
-     * @return List of stack frames
+     * @return list of stack frames
      */
     static List<String> getStackFrameList(final Throwable throwable) {
         final String stackTrace = getStackTrace(throwable);
@@ -544,9 +544,9 @@ public class ExceptionUtils {
      * processed until the end, or until the next item in the
      * chain is already in the result array.</p>
      *
-     * @see #getThrowableList(Throwable)
      * @param throwable  the throwable to inspect, may be null
      * @return the array of throwables, never null
+     * @see #getThrowableList(Throwable)
      */
     public static Throwable[] getThrowables(final Throwable throwable) {
         return getThrowableList(throwable).toArray(ArrayUtils.EMPTY_THROWABLE_ARRAY);
@@ -557,13 +557,13 @@ public class ExceptionUtils {
      * of the given type?
      *
      * @param chain
-     *            The root of a Throwable causal chain.
+     *            The root of a Throwable causal chain
      * @param type
-     *            The exception type to test.
+     *            The exception type to test
      * @return true, if chain is an instance of type or is an
-     *         UndeclaredThrowableException wrapping a cause.
-     * @since 3.5
+     *         UndeclaredThrowableException wrapping a cause
      * @see #wrapAndThrow(Throwable)
+     * @since 3.5
      */
     public static boolean hasCause(Throwable chain,
             final Class<? extends Throwable> type) {
@@ -696,11 +696,11 @@ public class ExceptionUtils {
     }
 
     /**
-     * Checks if a throwable represents a checked exception
+     * Checks if a throwable represents a checked exception.
      *
      * @param throwable
-     *            The throwable to check.
-     * @return True if the given Throwable is a checked exception.
+     *            The throwable to check
+     * @return true if the given Throwable is a checked exception
      * @since 3.13.0
      */
     public static boolean isChecked(final Throwable throwable) {
@@ -708,11 +708,11 @@ public class ExceptionUtils {
     }
 
     /**
-     * Checks if a throwable represents an unchecked exception
+     * Checks if a throwable represents an unchecked exception.
      *
      * @param throwable
-     *            The throwable to check.
-     * @return True if the given Throwable is an unchecked exception.
+     *            The throwable to check
+     * @return true if the given Throwable is an unchecked exception
      * @since 3.13.0
      */
     public static boolean isUnchecked(final Throwable throwable) {
@@ -880,14 +880,14 @@ public class ExceptionUtils {
      * </p>
      *
      * @param throwable
-     *            The throwable to rethrow.
-     * @param <T> The type of the return value.
-     * @return Never actually returns, this generic type matches any type
+     *            The throwable to rethrow
+     * @param <T> the type of the return value
+     * @return never actually returns, this generic type matches any type
      *         which the calling site requires. "Returning" the results of this
      *         method, as done in the propagateExample above, will satisfy the
      *         Java compiler requirement that all code paths return a value.
-     * @since 3.5
      * @see #wrapAndThrow(Throwable)
+     * @since 3.5
      */
     public static <T> T rethrow(final Throwable throwable) {
         // claim that the typeErasure invocation throws a RuntimeException
@@ -907,8 +907,8 @@ public class ExceptionUtils {
      * processed until the end, or until the next item in the chain is already in the result.
      * </p>
      *
-     * @param throwable The Throwable to traverse
-     * @return A new Stream of Throwable causes.
+     * @param throwable the Throwable to traverse
+     * @return a new Stream of Throwable causes
      * @since 3.13.0
      */
     public static Stream<Throwable> stream(final Throwable throwable) {
@@ -919,7 +919,7 @@ public class ExceptionUtils {
     /**
      * Worker method for the {@code throwableOfType} methods.
      *
-     * @param <T> the type of Throwable you are searching.
+     * @param <T> the type of Throwable you are searching
      * @param throwable  the throwable to inspect, may be null
      * @param type  the type to search, subclasses match, null returns null
      * @param fromIndex  the (zero-based) index of the starting position,
@@ -965,7 +965,7 @@ public class ExceptionUtils {
      * A {@code null} type returns {@code null}.
      * No match in the chain returns {@code null}.</p>
      *
-     * @param <T> the type of Throwable you are searching.
+     * @param <T> the type of Throwable you are searching
      * @param throwable  the throwable to inspect, may be null
      * @param clazz  the class to search for, subclasses do not match, null returns null
      * @return the first matching throwable from the throwable chain, null if no match or null input
@@ -988,7 +988,7 @@ public class ExceptionUtils {
      * A negative start index is treated as zero.
      * A start index greater than the number of throwables returns {@code null}.</p>
      *
-     * @param <T> the type of Throwable you are searching.
+     * @param <T> the type of Throwable you are searching
      * @param throwable  the throwable to inspect, may be null
      * @param clazz  the class to search for, subclasses do not match, null returns null
      * @param fromIndex  the (zero-based) index of the starting position,
@@ -1010,7 +1010,7 @@ public class ExceptionUtils {
      * A {@code null} type returns {@code null}.
      * No match in the chain returns {@code null}.</p>
      *
-     * @param <T> the type of Throwable you are searching.
+     * @param <T> the type of Throwable you are searching
      * @param throwable  the throwable to inspect, may be null
      * @param type  the type to search for, subclasses match, null returns null
      * @return the first matching throwable from the throwable chain, null if no match or null input
@@ -1033,7 +1033,7 @@ public class ExceptionUtils {
      * A negative start index is treated as zero.
      * A start index greater than the number of throwables returns {@code null}.</p>
      *
-     * @param <T> the type of Throwable you are searching.
+     * @param <T> the type of Throwable you are searching
      * @param throwable  the throwable to inspect, may be null
      * @param type  the type to search for, subclasses match, null returns null
      * @param fromIndex  the (zero-based) index of the starting position,
@@ -1048,9 +1048,9 @@ public class ExceptionUtils {
     /**
      * Tests whether the specified {@link Throwable} is unchecked and throws it if so.
      *
-     * @param <T> The Throwable type.
-     * @param throwable the throwable to test and throw or return.
-     * @return the given throwable.
+     * @param <T> the Throwable type
+     * @param throwable the throwable to test and throw or return
+     * @return the given throwable
      * @since 3.13.0
      * @deprecated Use {@link #throwUnchecked(Throwable)}.
      */
@@ -1068,9 +1068,9 @@ public class ExceptionUtils {
     /**
      * Tests whether the specified {@link Throwable} is unchecked and throws it if so.
      *
-     * @param <T> The Throwable type.
-     * @param throwable the throwable to test and throw or return.
-     * @return the given throwable.
+     * @param <T> the Throwable type
+     * @param throwable the throwable to test and throw or return
+     * @return the given throwable
      * @since 3.14.0
      */
     public static <T extends Throwable> T throwUnchecked(final T throwable) {
@@ -1092,15 +1092,15 @@ public class ExceptionUtils {
      * </p>
      *
      * @param throwable
-     *            The throwable to rethrow.
-     * @param <R> The type of the returned value.
-     * @return Never actually returned, this generic type matches any type
+     *            The throwable to rethrow
+     * @param <R> the type of the returned value
+     * @return never actually returned, this generic type matches any type
      *         which the calling site requires. "Returning" the results of this
      *         method will satisfy the Java compiler requirement that all code
      *         paths return a value.
-     * @since 3.5
      * @see #asRuntimeException(Throwable)
      * @see #hasCause(Throwable, Class)
+     * @since 3.5
      */
     public static <R> R wrapAndThrow(final Throwable throwable) {
         throw new UndeclaredThrowableException(throwUnchecked(throwable));

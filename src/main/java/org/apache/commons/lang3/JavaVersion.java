@@ -266,7 +266,7 @@ public enum JavaVersion {
     /**
      * Gets the Java Version from the system or 99.0 if the {@code java.specification.version} system property is not set.
      *
-     * @return the value of {@code java.specification.version} system property or 99.0 if it is not set.
+     * @return the value of {@code java.specification.version} system property or 99.0 if it is not set
      */
     private static float maxVersion() {
         final float v = toFloatVersion(System.getProperty("java.specification.version", "99.0"));
@@ -276,8 +276,8 @@ public enum JavaVersion {
     /**
      * Parses a float value from a String.
      *
-     * @param value the String to parse.
-     * @return the float value represented by the string or -1 if the given String can not be parsed.
+     * @param value the String to parse
+     * @return the float value represented by the string or -1 if the given String can not be parsed
      */
     private static float toFloatVersion(final String value) {
         final int defaultReturnValue = -1;

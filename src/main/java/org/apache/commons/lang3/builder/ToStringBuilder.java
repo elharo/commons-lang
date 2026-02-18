@@ -213,7 +213,7 @@ public class ToStringBuilder implements Builder<String> {
      *
      * <p>This default style is obtained from {@link #getDefaultStyle()}.</p>
      *
-     * @param object  the Object to build a {@code toString} for, not recommended to be null
+     * @param object the Object to build a {@code toString} for, not recommended to be null
      */
     public ToStringBuilder(final Object object) {
         this(object, null, null);
@@ -973,9 +973,7 @@ public class ToStringBuilder implements Builder<String> {
      * default implementation utilizes the {@link #toString()} implementation.
      *
      * @return the String {@code toString}
-     *
      * @see #toString()
-     *
      * @since 3.0
      */
     @Override
@@ -986,7 +984,7 @@ public class ToStringBuilder implements Builder<String> {
     /**
      * Returns the {@link Object} being output.
      *
-     * @return The object being output.
+     * @return the object being output
      * @since 2.0
      */
     public Object getObject() {

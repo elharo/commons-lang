@@ -29,9 +29,9 @@ public final class Functions {
     /**
      * Starts a fluent chain like {@code function(foo::bar).andThen(...).andThen(...).apply(...);}
      *
-     * @param <T>      Input type.
-     * @param <R>      Return type.
-     * @param function the argument to return.
+     * @param <T>      input type
+     * @param <R>      return type
+     * @param function the argument to return
      * @return the argument
      */
     public static <T, R> Function<T, R> function(final Function<T, R> function) {

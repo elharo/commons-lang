@@ -37,7 +37,7 @@ import org.apache.commons.lang3.SystemProperties;
  * key as a primary key, and looked up the value on demand from the database.
  * </p>
  *
- * @param <V> Unused.
+ * @param <V> unused
  * @since 2.2
  * @deprecated As of 3.6, use Apache Commons Text
  * <a href="https://commons.apache.org/proper/commons-text/javadocs/api-release/org/apache/commons/text/lookup/StringLookupFactory.html">
@@ -49,7 +49,7 @@ public abstract class StrLookup<V> {
     /**
      * Lookup implementation that uses a Map.
      *
-     * @param <V> the type of mapped values.
+     * @param <V> the type of mapped values
      */
     static class MapStrLookup<V> extends StrLookup<V> {
 
@@ -59,7 +59,7 @@ public abstract class StrLookup<V> {
         /**
          * Creates a new instance backed by a Map.
          *
-         * @param map  the map of keys to values, may be null
+         * @param map the map of keys to values, may be null
          */
         MapStrLookup(final Map<String, V> map) {
             this.map = map;
@@ -177,6 +177,7 @@ public abstract class StrLookup<V> {
      * map.put("number", Integer.valueOf(2));
      * assertEquals("2", StrLookup.mapLookup(map).lookup("number"));
      * </pre>
+     *
      * @param key  the key to be looked up, may be null
      * @return the matching value, null if no match
      */

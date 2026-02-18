@@ -45,10 +45,10 @@ public interface Mutable<T> {
      *
      * @param value
      *            the value to store
-     * @throws NullPointerException
-     *             if the object is null and null is invalid
      * @throws ClassCastException
      *             if the type is invalid
+     * @throws NullPointerException
+     *             if the object is null and null is invalid
      */
     void setValue(T value);
 

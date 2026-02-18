@@ -29,8 +29,8 @@ import java.io.File;
  * #ThreadSafe#
  * </p>
  *
- * @since 1.0
  * @see SystemProperties
+ * @since 1.0
  */
 public class SystemUtils {
 
@@ -85,9 +85,9 @@ public class SystemUtils {
      * </p>
      *
      * @see SystemProperties#getFileSeparator()
+     * @since Java 1.1
      * @deprecated Use {@link File#separator}, since it is guaranteed to be a
      *             string containing a single character and it does not require a privilege check.
-     * @since Java 1.1
      */
     @Deprecated
     public static final String FILE_SEPARATOR = SystemProperties.getFileSeparator();
@@ -620,8 +620,8 @@ public class SystemUtils {
      * </p>
      *
      * @see SystemProperties#getLineSeparator()
-     * @deprecated Use {@link System#lineSeparator()} instead, since it does not require a privilege check.
      * @since Java 1.1
+     * @deprecated Use {@link System#lineSeparator()} instead, since it does not require a privilege check.
      */
     @Deprecated
     public static final String LINE_SEPARATOR = SystemProperties.getLineSeparator();
@@ -694,9 +694,9 @@ public class SystemUtils {
      * </p>
      *
      * @see SystemProperties#getPathSeparator()
+     * @since Java 1.1
      * @deprecated Use {@link File#pathSeparator}, since it is guaranteed to be a
      *             string containing a single character and it does not require a privilege check.
-     * @since Java 1.1
      */
     @Deprecated
     public static final String PATH_SEPARATOR = SystemProperties.getPathSeparator();
@@ -928,7 +928,6 @@ public class SystemUtils {
      * </p>
      *
      * @since 3.4
-     *
      * @deprecated As of release 3.5, replaced by {@link #IS_JAVA_9}
      */
     @Deprecated
@@ -1462,6 +1461,7 @@ public class SystemUtils {
      * <p>
      * This value is initialized when the class is loaded.
      * </p>
+     *
      * @since 3.13.0
      */
     public static final boolean IS_OS_MAC_OSX_MONTEREY = getOsMatches("Mac OS X", "12");
@@ -1475,6 +1475,7 @@ public class SystemUtils {
      * <p>
      * This value is initialized when the class is loaded.
      * </p>
+     *
      * @since 3.13.0
      */
     public static final boolean IS_OS_MAC_OSX_VENTURA = getOsMatches("Mac OS X", "13");
@@ -1870,8 +1871,8 @@ public class SystemUtils {
      * sync with that System property.
      * </p>
      *
-     * @since 2.1
      * @see SystemProperties#getAwtToolkit()
+     * @since 2.1
      */
     public static final String AWT_TOOLKIT = SystemProperties.getAwtToolkit();
 
@@ -1921,7 +1922,7 @@ public class SystemUtils {
      *
      * @return a directory
      * @throws SecurityException if a security manager exists and its {@code checkPropertyAccess} method doesn't allow
-     * access to the specified system property.
+     * access to the specified system property
      * @see SystemProperties#getJavaHome()
      * @since 2.1
      */
@@ -1934,7 +1935,7 @@ public class SystemUtils {
      *
      * @return a directory
      * @throws SecurityException if a security manager exists and its {@code checkPropertyAccess} method doesn't allow
-     * access to the specified system property.
+     * access to the specified system property
      * @see SystemProperties#getJavaIoTmpdir()
      * @since 2.1
      */
@@ -1978,7 +1979,7 @@ public class SystemUtils {
      *
      * @return a directory
      * @throws SecurityException if a security manager exists and its {@code checkPropertyAccess} method doesn't allow
-     * access to the specified system property.
+     * access to the specified system property
      * @see SystemProperties#getUserDir()
      * @since 2.1
      */
@@ -1991,7 +1992,7 @@ public class SystemUtils {
      *
      * @return a directory
      * @throws SecurityException if a security manager exists and its {@code checkPropertyAccess} method doesn't allow
-     * access to the specified system property.
+     * access to the specified system property
      * @see SystemProperties#getUserHome()
      * @since 2.1
      */
@@ -2004,7 +2005,7 @@ public class SystemUtils {
      *
      * @return a name
      * @throws SecurityException if a security manager exists and its {@code checkPropertyAccess} method doesn't allow
-     * access to the specified system property.
+     * access to the specified system property
      * @see SystemProperties#getUserName()
      * @since 3.10
      * @deprecated Use {@link SystemProperties#getUserName()}.
@@ -2017,10 +2018,10 @@ public class SystemUtils {
     /**
      * Gets the user name.
      *
-     * @param defaultValue A default value.
+     * @param defaultValue a default value
      * @return a name
      * @throws SecurityException if a security manager exists and its {@code checkPropertyAccess} method doesn't allow
-     * access to the specified system property.
+     * access to the specified system property
      * @see SystemProperties#getUserName()
      * @since 3.10
      */
@@ -2031,7 +2032,7 @@ public class SystemUtils {
     /**
      * Returns whether the {@link #JAVA_AWT_HEADLESS} value is {@code true}.
      *
-     * @return {@code true} if {@code JAVA_AWT_HEADLESS} is {@code "true"}, {@code false} otherwise.
+     * @return {@code true} if {@code JAVA_AWT_HEADLESS} is {@code "true"}, {@code false} otherwise
      * @see #JAVA_AWT_HEADLESS
      * @since 2.1
      * @since Java 1.4

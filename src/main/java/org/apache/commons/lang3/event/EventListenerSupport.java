@@ -65,8 +65,7 @@ import org.apache.commons.lang3.function.FailableConsumer;
  * non-{@link Serializable} listeners being silently dropped.
  * </p>
  *
- * @param <L> the type of event listener that is supported by this proxy.
- *
+ * @param <L> the type of event listener that is supported by this proxy
  * @since 3.0
  */
 public class EventListenerSupport<L> implements Serializable {
@@ -88,7 +87,7 @@ public class EventListenerSupport<L> implements Serializable {
         /**
          * Constructs a new instance.
          *
-         * @param handler Handles Throwables.
+         * @param handler handles Throwables
          * @since 3.15.0
          */
         public ProxyInvocationHandler(FailableConsumer<Throwable, IllegalAccessException> handler) {
@@ -99,12 +98,12 @@ public class EventListenerSupport<L> implements Serializable {
          * Propagates the method call to all registered listeners in place of the proxy listener object.
          *
          * @param unusedProxy the proxy object representing a listener on which the invocation was called; not used
-         * @param method the listener method that will be called on all of the listeners.
-         * @param args event arguments to propagate to the listeners.
+         * @param method the listener method that will be called on all of the listeners
+         * @param args event arguments to propagate to the listeners
          * @return the result of the method call
-         * @throws InvocationTargetException if an error occurs
-         * @throws IllegalArgumentException if an error occurs
          * @throws IllegalAccessException if an error occurs
+         * @throws IllegalArgumentException if an error occurs
+         * @throws InvocationTargetException if an error occurs
          */
         @Override
         public Object invoke(final Object unusedProxy, final Method method, final Object[] args)
@@ -122,10 +121,10 @@ public class EventListenerSupport<L> implements Serializable {
         /**
          * Handles an exception thrown by a listener. By default rethrows the given Throwable.
          *
-         * @param t The Throwable
-         * @throws IllegalAccessException thrown by the listener.
-         * @throws IllegalArgumentException thrown by the listener.
-         * @throws InvocationTargetException thrown by the listener.
+         * @param t the Throwable
+         * @throws IllegalAccessException thrown by the listener
+         * @throws IllegalArgumentException thrown by the listener
+         * @throws InvocationTargetException thrown by the listener
          * @since 3.15.0
          */
         protected void handle(final Throwable t) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
@@ -133,7 +132,7 @@ public class EventListenerSupport<L> implements Serializable {
         }
     }
 
-    /** Serialization version */
+    /** Serialization version. */
     private static final long serialVersionUID = 3593265990380473632L;
 
     /**
@@ -142,15 +141,13 @@ public class EventListenerSupport<L> implements Serializable {
      *
      * @param <T> the type of the listener interface
      * @param listenerInterface the type of listener interface that will receive
-     *        events posted using this class.
-     *
+     *        events posted using this class
      * @return an EventListenerSupport object which supports the specified
-     *         listener type.
-     *
-     * @throws NullPointerException if {@code listenerInterface} is
-     *         {@code null}.
+     *         listener type
      * @throws IllegalArgumentException if {@code listenerInterface} is
-     *         not an interface.
+     *         not an interface
+     * @throws NullPointerException if {@code listenerInterface} is
+     *         {@code null}
      */
     public static <T> EventListenerSupport<T> create(final Class<T> listenerInterface) {
         return new EventListenerSupport<>(listenerInterface);
@@ -186,12 +183,11 @@ public class EventListenerSupport<L> implements Serializable {
      * listener interface.
      *
      * @param listenerInterface the type of listener interface that will receive
-     *        events posted using this class.
-     *
-     * @throws NullPointerException if {@code listenerInterface} is
-     *         {@code null}.
+     *        events posted using this class
      * @throws IllegalArgumentException if {@code listenerInterface} is
-     *         not an interface.
+     *         not an interface
+     * @throws NullPointerException if {@code listenerInterface} is
+     *         {@code null}
      */
     public EventListenerSupport(final Class<L> listenerInterface) {
         this(listenerInterface, Thread.currentThread().getContextClassLoader());
@@ -202,13 +198,12 @@ public class EventListenerSupport<L> implements Serializable {
      * listener interface using the specified class loader to create the JDK
      * dynamic proxy.
      *
-     * @param listenerInterface the listener interface.
-     * @param classLoader       the class loader.
-     *
-     * @throws NullPointerException if {@code listenerInterface} or
-     *         {@code classLoader} is {@code null}.
+     * @param listenerInterface the listener interface
+     * @param classLoader       the class loader
      * @throws IllegalArgumentException if {@code listenerInterface} is
-     *         not an interface.
+     *         not an interface
+     * @throws NullPointerException if {@code listenerInterface} or
+     *         {@code classLoader} is {@code null}
      */
     public EventListenerSupport(final Class<L> listenerInterface, final ClassLoader classLoader) {
         this();
@@ -226,10 +221,9 @@ public class EventListenerSupport<L> implements Serializable {
     /**
      * Registers an event listener.
      *
-     * @param listener the event listener (may not be {@code null}).
-     *
+     * @param listener the event listener (may not be {@code null})
      * @throws NullPointerException if {@code listener} is
-     *         {@code null}.
+     *         {@code null}
      */
     public void addListener(final L listener) {
         addListener(listener, true);
@@ -239,11 +233,10 @@ public class EventListenerSupport<L> implements Serializable {
      * Registers an event listener.  Will not add a pre-existing listener
      * object to the list if {@code allowDuplicate} is false.
      *
-     * @param listener the event listener (may not be {@code null}).
+     * @param listener the event listener (may not be {@code null})
      * @param allowDuplicate the flag for determining if duplicate listener
-     * objects are allowed to be registered.
-     *
-     * @throws NullPointerException if {@code listener} is {@code null}.
+     * objects are allowed to be registered
+     * @throws NullPointerException if {@code listener} is {@code null}
      * @since 3.5
      */
     public void addListener(final L listener, final boolean allowDuplicate) {
@@ -256,6 +249,7 @@ public class EventListenerSupport<L> implements Serializable {
     /**
      * Create the {@link InvocationHandler} responsible for broadcasting calls
      * to the managed listeners.  Subclasses can override to provide custom behavior.
+     *
      * @return ProxyInvocationHandler
      */
     protected InvocationHandler createInvocationHandler() {
@@ -264,6 +258,7 @@ public class EventListenerSupport<L> implements Serializable {
 
     /**
      * Create the proxy object.
+     *
      * @param listenerInterface the class of the listener interface
      * @param classLoader the class loader to be used
      */
@@ -287,7 +282,7 @@ public class EventListenerSupport<L> implements Serializable {
     /**
      * Returns the number of registered listeners.
      *
-     * @return the number of registered listeners.
+     * @return the number of registered listeners
      */
     int getListenerCount() {
         return listeners.size();
@@ -297,6 +292,7 @@ public class EventListenerSupport<L> implements Serializable {
      * Gets an array containing the currently registered listeners.
      * Modification to this array's elements will have no effect on the
      * {@link EventListenerSupport} instance.
+     *
      * @return L[]
      */
     public L[] getListeners() {
@@ -305,6 +301,7 @@ public class EventListenerSupport<L> implements Serializable {
 
     /**
      * Initialize transient fields.
+     *
      * @param listenerInterface the class of the listener interface
      * @param classLoader the class loader to be used
      */
@@ -316,9 +313,10 @@ public class EventListenerSupport<L> implements Serializable {
 
     /**
      * Deserialize.
+     *
      * @param objectInputStream the input stream
-     * @throws IOException if an IO error occurs
      * @throws ClassNotFoundException if the class cannot be resolved
+     * @throws IOException if an IO error occurs
      */
     private void readObject(final ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
         @SuppressWarnings("unchecked") // Will throw CCE here if not correct
@@ -334,10 +332,9 @@ public class EventListenerSupport<L> implements Serializable {
     /**
      * Unregisters an event listener.
      *
-     * @param listener the event listener (may not be {@code null}).
-     *
+     * @param listener the event listener (may not be {@code null})
      * @throws NullPointerException if {@code listener} is
-     *         {@code null}.
+     *         {@code null}
      */
     public void removeListener(final L listener) {
         Objects.requireNonNull(listener, "listener");
@@ -346,6 +343,7 @@ public class EventListenerSupport<L> implements Serializable {
 
     /**
      * Serialize.
+     *
      * @param objectOutputStream the output stream
      * @throws IOException if an IO error occurs
      */

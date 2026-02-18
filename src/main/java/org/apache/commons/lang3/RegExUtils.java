@@ -21,6 +21,7 @@ import java.util.regex.Pattern;
 
 /**
  * Helpers to process Strings using regular expressions.
+ *
  * @see java.util.regex.Pattern
  * @since 3.8
  */
@@ -29,8 +30,8 @@ public class RegExUtils {
     /**
      * Compiles the given regular expression into a pattern with the {@link Pattern#DOTALL} flag.
      *
-     * @param regex The expression to be compiled
-     * @return the given regular expression compiled into a pattern with the {@link Pattern#DOTALL} flag.
+     * @param regex the expression to be compiled
+     * @return the given regular expression compiled into a pattern with the {@link Pattern#DOTALL} flag
      * @since 3.13.0
      */
     public static Pattern dotAll(final String regex) {
@@ -41,9 +42,9 @@ public class RegExUtils {
      * Compiles the given regular expression into a pattern with the {@link Pattern#DOTALL} flag, then creates a matcher that will match the given text against
      * this pattern.
      *
-     * @param regex The expression to be compiled.
-     * @param text  The character sequence to be matched.
-     * @return A new matcher for this pattern.
+     * @param regex the expression to be compiled
+     * @param text  the character sequence to be matched
+     * @return a new matcher for this pattern
      * @since 3.13.0
      */
     public static Matcher dotAllMatcher(final String regex, final String text) {
@@ -75,9 +76,8 @@ public class RegExUtils {
      *
      * @param text  text to remove from, may be null
      * @param regex  the regular expression to which this string is to be matched
-     * @return  the text with any removes processed,
+     * @return the text with any removes processed,
      *              {@code null} if null String input
-     *
      * @see #replaceAll(String, Pattern, String)
      * @see java.util.regex.Matcher#replaceAll(String)
      * @see java.util.regex.Pattern
@@ -116,12 +116,10 @@ public class RegExUtils {
      *
      * @param text  text to remove from, may be null
      * @param regex  the regular expression to which this string is to be matched
-     * @return  the text with any removes processed,
+     * @return the text with any removes processed,
      *              {@code null} if null String input
-     *
-     * @throws  java.util.regex.PatternSyntaxException
+     * @throws java.util.regex.PatternSyntaxException
      *              if the regular expression's syntax is invalid
-     *
      * @see #replaceAll(String, String, String)
      * @see #removePattern(String, String)
      * @see String#replaceAll(String, String)
@@ -157,9 +155,8 @@ public class RegExUtils {
      *
      * @param text  text to remove from, may be null
      * @param regex  the regular expression pattern to which this string is to be matched
-     * @return  the text with the first replacement processed,
+     * @return the text with the first replacement processed,
      *              {@code null} if null String input
-     *
      * @see #replaceFirst(String, Pattern, String)
      * @see java.util.regex.Matcher#replaceFirst(String)
      * @see java.util.regex.Pattern
@@ -198,12 +195,10 @@ public class RegExUtils {
      *
      * @param text  text to remove from, may be null
      * @param regex  the regular expression to which this string is to be matched
-     * @return  the text with the first replacement processed,
+     * @return the text with the first replacement processed,
      *              {@code null} if null String input
-     *
-     * @throws  java.util.regex.PatternSyntaxException
+     * @throws java.util.regex.PatternSyntaxException
      *              if the regular expression's syntax is invalid
-     *
      * @see #replaceFirst(String, String, String)
      * @see String#replaceFirst(String, String)
      * @see java.util.regex.Pattern
@@ -235,7 +230,7 @@ public class RegExUtils {
      *            the source string
      * @param regex
      *            the regular expression to which this string is to be matched
-     * @return The resulting {@link String}
+     * @return the resulting {@link String}
      * @see #replacePattern(String, String, String)
      * @see String#replaceAll(String, String)
      * @see Pattern#DOTALL
@@ -274,9 +269,8 @@ public class RegExUtils {
      * @param text  text to search and replace in, may be null
      * @param regex  the regular expression pattern to which this string is to be matched
      * @param replacement  the string to be substituted for each match
-     * @return  the text with any replacements processed,
+     * @return the text with any replacements processed,
      *              {@code null} if null String input
-     *
      * @see java.util.regex.Matcher#replaceAll(String)
      * @see java.util.regex.Pattern
      */
@@ -323,12 +317,10 @@ public class RegExUtils {
      * @param text  text to search and replace in, may be null
      * @param regex  the regular expression to which this string is to be matched
      * @param replacement  the string to be substituted for each match
-     * @return  the text with any replacements processed,
+     * @return the text with any replacements processed,
      *              {@code null} if null String input
-     *
-     * @throws  java.util.regex.PatternSyntaxException
+     * @throws java.util.regex.PatternSyntaxException
      *              if the regular expression's syntax is invalid
-     *
      * @see #replacePattern(String, String, String)
      * @see String#replaceAll(String, String)
      * @see java.util.regex.Pattern
@@ -371,9 +363,8 @@ public class RegExUtils {
      * @param text  text to search and replace in, may be null
      * @param regex  the regular expression pattern to which this string is to be matched
      * @param replacement  the string to be substituted for the first match
-     * @return  the text with the first replacement processed,
+     * @return the text with the first replacement processed,
      *              {@code null} if null String input
-     *
      * @see java.util.regex.Matcher#replaceFirst(String)
      * @see java.util.regex.Pattern
      */
@@ -419,12 +410,10 @@ public class RegExUtils {
      * @param text  text to search and replace in, may be null
      * @param regex  the regular expression to which this string is to be matched
      * @param replacement  the string to be substituted for the first match
-     * @return  the text with the first replacement processed,
+     * @return the text with the first replacement processed,
      *              {@code null} if null String input
-     *
-     * @throws  java.util.regex.PatternSyntaxException
+     * @throws java.util.regex.PatternSyntaxException
      *              if the regular expression's syntax is invalid
-     *
      * @see String#replaceFirst(String, String)
      * @see java.util.regex.Pattern
      * @see java.util.regex.Pattern#DOTALL
@@ -468,7 +457,7 @@ public class RegExUtils {
      *            the regular expression to which this string is to be matched
      * @param replacement
      *            the string to be substituted for each match
-     * @return The resulting {@link String}
+     * @return the resulting {@link String}
      * @see #replaceAll(String, String, String)
      * @see String#replaceAll(String, String)
      * @see Pattern#DOTALL

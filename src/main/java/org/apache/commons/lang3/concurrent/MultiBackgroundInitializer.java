@@ -262,9 +262,9 @@ public class MultiBackgroundInitializer
      * @param name the name of the initializer (must not be <b>null</b>)
      * @param backgroundInitializer the {@link BackgroundInitializer} to add (must not be
      * <b>null</b>)
+     * @throws IllegalStateException if {@code start()} has already been called
      * @throws NullPointerException if either {@code name} or {@code backgroundInitializer}
      *         is {@code null}
-     * @throws IllegalStateException if {@code start()} has already been called
      */
     public void addInitializer(final String name, final BackgroundInitializer<?> backgroundInitializer) {
         Objects.requireNonNull(name, "name");
@@ -279,7 +279,7 @@ public class MultiBackgroundInitializer
     }
 
     /**
-     * Calls the closer of all child {@code BackgroundInitializer} objects
+     * Calls the closer of all child {@code BackgroundInitializer} objects.
      *
      * @throws ConcurrentException throws an ConcurrentException that will have all other exceptions as suppressed exceptions. ConcurrentException thrown by children will be unwrapped.
      * @since 3.14.0

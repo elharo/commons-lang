@@ -109,8 +109,8 @@ public class Conversion {
      * @param srcPos the position of the lsb to start the conversion
      * @return a hexadecimal digit representing the selected bits
      * @throws IllegalArgumentException if {@code src} is empty
+     * @throws IndexOutOfBoundsException if {@code srcPos} is outside the array
      * @throws NullPointerException if {@code src} is {@code null}
-     * @throws IndexOutOfBoundsException if {@code srcPos} is outside the array.
      */
     public static char binaryBeMsb0ToHexDigit(final boolean[] src, final int srcPos) {
         // JDK 9: Objects.checkIndex(int index, int length)
@@ -158,9 +158,9 @@ public class Conversion {
      * @param dstPos the position of the lsb, in bits, in the result byte
      * @param nBools the number of booleans to convert
      * @return a byte containing the selected bits
-     * @throws NullPointerException if {@code src} is {@code null}
-     * @throws IllegalArgumentException if {@code nBools-1+dstPos >= 8}
      * @throws ArrayIndexOutOfBoundsException if {@code srcPos + nBools > src.length}
+     * @throws IllegalArgumentException if {@code nBools-1+dstPos >= 8}
+     * @throws NullPointerException if {@code src} is {@code null}
      */
     public static byte binaryToByte(final boolean[] src, final int srcPos, final byte dstInit, final int dstPos,
             final int nBools) {
@@ -315,9 +315,9 @@ public class Conversion {
      * @param dstPos the position of the lsb, in bits, in the result int
      * @param nBools the number of booleans to convert
      * @return an int containing the selected bits
-     * @throws NullPointerException if {@code src} is {@code null}
-     * @throws IllegalArgumentException if {@code nBools-1+dstPos >= 32}
      * @throws ArrayIndexOutOfBoundsException if {@code srcPos + nBools > src.length}
+     * @throws IllegalArgumentException if {@code nBools-1+dstPos >= 32}
+     * @throws NullPointerException if {@code src} is {@code null}
      */
     public static int binaryToInt(final boolean[] src, final int srcPos, final int dstInit, final int dstPos,
             final int nBools) {
@@ -348,9 +348,9 @@ public class Conversion {
      * @param dstPos the position of the lsb, in bits, in the result long
      * @param nBools the number of booleans to convert
      * @return a long containing the selected bits
-     * @throws NullPointerException if {@code src} is {@code null}
-     * @throws IllegalArgumentException if {@code nBools-1+dstPos >= 64}
      * @throws ArrayIndexOutOfBoundsException if {@code srcPos + nBools > src.length}
+     * @throws IllegalArgumentException if {@code nBools-1+dstPos >= 64}
+     * @throws NullPointerException if {@code src} is {@code null}
      */
     public static long binaryToLong(final boolean[] src, final int srcPos, final long dstInit, final int dstPos,
             final int nBools) {
@@ -381,9 +381,9 @@ public class Conversion {
      * @param dstPos the position of the lsb, in bits, in the result short
      * @param nBools the number of booleans to convert
      * @return a short containing the selected bits
-     * @throws NullPointerException if {@code src} is {@code null}
-     * @throws IllegalArgumentException if {@code nBools-1+dstPos >= 16}
      * @throws ArrayIndexOutOfBoundsException if {@code srcPos + nBools > src.length}
+     * @throws IllegalArgumentException if {@code nBools-1+dstPos >= 16}
+     * @throws NullPointerException if {@code src} is {@code null}
      */
     public static short binaryToShort(final boolean[] src, final int srcPos, final short dstInit, final int dstPos,
             final int nBools) {
@@ -414,9 +414,9 @@ public class Conversion {
      * @param dstPos the position of the lsb, in bits, in the result int
      * @param nBytes the number of bytes to convert
      * @return an int containing the selected bits
-     * @throws NullPointerException if {@code src} is {@code null}
-     * @throws IllegalArgumentException if {@code (nBytes-1)*8+dstPos >= 32}
      * @throws ArrayIndexOutOfBoundsException if {@code srcPos + nBytes > src.length}
+     * @throws IllegalArgumentException if {@code (nBytes-1)*8+dstPos >= 32}
+     * @throws NullPointerException if {@code src} is {@code null}
      */
     public static int byteArrayToInt(final byte[] src, final int srcPos, final int dstInit, final int dstPos,
             final int nBytes) {
@@ -447,9 +447,9 @@ public class Conversion {
      * @param dstPos the position of the lsb, in bits, in the result long
      * @param nBytes the number of bytes to convert
      * @return a long containing the selected bits
-     * @throws NullPointerException if {@code src} is {@code null}
-     * @throws IllegalArgumentException if {@code (nBytes-1)*8+dstPos >= 64}
      * @throws ArrayIndexOutOfBoundsException if {@code srcPos + nBytes > src.length}
+     * @throws IllegalArgumentException if {@code (nBytes-1)*8+dstPos >= 64}
+     * @throws NullPointerException if {@code src} is {@code null}
      */
     public static long byteArrayToLong(final byte[] src, final int srcPos, final long dstInit, final int dstPos,
             final int nBytes) {
@@ -480,9 +480,9 @@ public class Conversion {
      * @param dstPos the position of the lsb, in bits, in the result short
      * @param nBytes the number of bytes to convert
      * @return a short containing the selected bits
-     * @throws NullPointerException if {@code src} is {@code null}
-     * @throws IllegalArgumentException if {@code (nBytes-1)*8+dstPos >= 16}
      * @throws ArrayIndexOutOfBoundsException if {@code srcPos + nBytes > src.length}
+     * @throws IllegalArgumentException if {@code (nBytes-1)*8+dstPos >= 16}
+     * @throws NullPointerException if {@code src} is {@code null}
      */
     public static short byteArrayToShort(final byte[] src, final int srcPos, final short dstInit, final int dstPos,
             final int nBytes) {
@@ -509,9 +509,9 @@ public class Conversion {
      * @param src the byte array to convert
      * @param srcPos the position in {@code src} where to copy the result from
      * @return a UUID
-     * @throws NullPointerException if {@code src} is {@code null}
      * @throws IllegalArgumentException if array does not contain at least 16 bytes beginning
      *             with {@code srcPos}
+     * @throws NullPointerException if {@code src} is {@code null}
      */
     public static UUID byteArrayToUuid(final byte[] src, final int srcPos) {
         if (src.length - srcPos < 16) {
@@ -531,9 +531,9 @@ public class Conversion {
      * @param nBools the number of booleans to copy to {@code dst}, must be smaller or equal to
      *            the width of the input (from srcPos to msb)
      * @return {@code dst}
-     * @throws NullPointerException if {@code dst} is {@code null}
-     * @throws IllegalArgumentException if {@code nBools-1+srcPos >= 8}
      * @throws ArrayIndexOutOfBoundsException if {@code dstPos + nBools > dst.length}
+     * @throws IllegalArgumentException if {@code nBools-1+srcPos >= 8}
+     * @throws NullPointerException if {@code dst} is {@code null}
      */
     public static boolean[] byteToBinary(final byte src, final int srcPos, final boolean[] dst, final int dstPos,
             final int nBools) {
@@ -910,9 +910,9 @@ public class Conversion {
      * @param dstPos the position of the lsb, in bits, in the result long
      * @param nInts the number of ints to convert
      * @return a long containing the selected bits
+     * @throws ArrayIndexOutOfBoundsException if {@code srcPos + nInts > src.length}
      * @throws IllegalArgumentException if {@code (nInts-1)*32+dstPos >= 64}
      * @throws NullPointerException if {@code src} is {@code null}
-     * @throws ArrayIndexOutOfBoundsException if {@code srcPos + nInts > src.length}
      */
     public static long intArrayToLong(final int[] src, final int srcPos, final long dstInit, final int dstPos,
             final int nInts) {
@@ -943,9 +943,9 @@ public class Conversion {
      * @param nBools the number of booleans to copy to {@code dst}, must be smaller or equal to
      *            the width of the input (from srcPos to msb)
      * @return {@code dst}
-     * @throws NullPointerException if {@code dst} is {@code null}
-     * @throws IllegalArgumentException if {@code nBools-1+srcPos >= 32}
      * @throws ArrayIndexOutOfBoundsException if {@code dstPos + nBools > dst.length}
+     * @throws IllegalArgumentException if {@code nBools-1+srcPos >= 32}
+     * @throws NullPointerException if {@code dst} is {@code null}
      */
     public static boolean[] intToBinary(final int src, final int srcPos, final boolean[] dst, final int dstPos,
             final int nBools) {
@@ -973,9 +973,9 @@ public class Conversion {
      * @param nBytes the number of bytes to copy to {@code dst}, must be smaller or equal to the
      *            width of the input (from srcPos to msb)
      * @return {@code dst}
-     * @throws NullPointerException if {@code dst} is {@code null}
-     * @throws IllegalArgumentException if {@code (nBytes-1)*8+srcPos >= 32}
      * @throws ArrayIndexOutOfBoundsException if {@code dstPos + nBytes > dst.length}
+     * @throws IllegalArgumentException if {@code (nBytes-1)*8+srcPos >= 32}
+     * @throws NullPointerException if {@code dst} is {@code null}
      */
     public static byte[] intToByteArray(final int src, final int srcPos, final byte[] dst, final int dstPos,
             final int nBytes) {
@@ -1121,9 +1121,9 @@ public class Conversion {
      * @param nShorts the number of shorts to copy to {@code dst}, must be smaller or equal to
      *            the width of the input (from srcPos to msb)
      * @return {@code dst}
-     * @throws NullPointerException if {@code dst} is {@code null}
-     * @throws IllegalArgumentException if {@code (nShorts-1)*16+srcPos >= 32}
      * @throws ArrayIndexOutOfBoundsException if {@code dstPos + nShorts > dst.length}
+     * @throws IllegalArgumentException if {@code (nShorts-1)*16+srcPos >= 32}
+     * @throws NullPointerException if {@code dst} is {@code null}
      */
     public static short[] intToShortArray(final int src, final int srcPos, final short[] dst, final int dstPos,
             final int nShorts) {
@@ -1151,9 +1151,9 @@ public class Conversion {
      * @param nBools the number of booleans to copy to {@code dst}, must be smaller or equal to
      *            the width of the input (from srcPos to msb)
      * @return {@code dst}
-     * @throws NullPointerException if {@code dst} is {@code null}
-     * @throws IllegalArgumentException if {@code nBools-1+srcPos >= 64}
      * @throws ArrayIndexOutOfBoundsException if {@code dstPos + nBools > dst.length}
+     * @throws IllegalArgumentException if {@code nBools-1+srcPos >= 64}
+     * @throws NullPointerException if {@code dst} is {@code null}
      */
     public static boolean[] longToBinary(final long src, final int srcPos, final boolean[] dst, final int dstPos,
             final int nBools) {
@@ -1181,9 +1181,9 @@ public class Conversion {
      * @param nBytes the number of bytes to copy to {@code dst}, must be smaller or equal to the
      *            width of the input (from srcPos to msb)
      * @return {@code dst}
-     * @throws NullPointerException if {@code dst} is {@code null}
-     * @throws IllegalArgumentException if {@code (nBytes-1)*8+srcPos >= 64}
      * @throws ArrayIndexOutOfBoundsException if {@code dstPos + nBytes > dst.length}
+     * @throws IllegalArgumentException if {@code (nBytes-1)*8+srcPos >= 64}
+     * @throws NullPointerException if {@code dst} is {@code null}
      */
     public static byte[] longToByteArray(final long src, final int srcPos, final byte[] dst, final int dstPos,
             final int nBytes) {
@@ -1248,9 +1248,9 @@ public class Conversion {
      * @param nInts the number of ints to copy to {@code dst}, must be smaller or equal to the
      *            width of the input (from srcPos to msb)
      * @return {@code dst}
-     * @throws NullPointerException if {@code dst} is {@code null} and {@code nInts > 0}
-     * @throws IllegalArgumentException if {@code (nInts-1)*32+srcPos >= 64}
      * @throws ArrayIndexOutOfBoundsException if {@code dstPos + nInts > dst.length}
+     * @throws IllegalArgumentException if {@code (nInts-1)*32+srcPos >= 64}
+     * @throws NullPointerException if {@code dst} is {@code null} and {@code nInts > 0}
      */
     public static int[] longToIntArray(final long src, final int srcPos, final int[] dst, final int dstPos,
             final int nInts) {
@@ -1278,9 +1278,9 @@ public class Conversion {
      * @param nShorts the number of shorts to copy to {@code dst}, must be smaller or equal to
      *            the width of the input (from srcPos to msb)
      * @return {@code dst}
-     * @throws NullPointerException if {@code dst} is {@code null}
-     * @throws IllegalArgumentException if {@code (nShorts-1)*16+srcPos >= 64}
      * @throws ArrayIndexOutOfBoundsException if {@code dstPos + nShorts > dst.length}
+     * @throws IllegalArgumentException if {@code (nShorts-1)*16+srcPos >= 64}
+     * @throws NullPointerException if {@code dst} is {@code null}
      */
     public static short[] longToShortArray(final long src, final int srcPos, final short[] dst, final int dstPos,
             final int nShorts) {
@@ -1308,9 +1308,9 @@ public class Conversion {
      * @param dstPos the position of the lsb, in bits, in the result int
      * @param nShorts the number of shorts to convert
      * @return an int containing the selected bits
-     * @throws NullPointerException if {@code src} is {@code null}
-     * @throws IllegalArgumentException if {@code (nShorts-1)*16+dstPos >= 32}
      * @throws ArrayIndexOutOfBoundsException if {@code srcPos + nShorts > src.length}
+     * @throws IllegalArgumentException if {@code (nShorts-1)*16+dstPos >= 32}
+     * @throws NullPointerException if {@code src} is {@code null}
      */
     public static int shortArrayToInt(final short[] src, final int srcPos, final int dstInit, final int dstPos,
             final int nShorts) {
@@ -1341,9 +1341,9 @@ public class Conversion {
      * @param dstPos the position of the lsb, in bits, in the result long
      * @param nShorts the number of shorts to convert
      * @return a long containing the selected bits
-     * @throws NullPointerException if {@code src} is {@code null}
-     * @throws IllegalArgumentException if {@code (nShorts-1)*16+dstPos >= 64}
      * @throws ArrayIndexOutOfBoundsException if {@code srcPos + nShorts > src.length}
+     * @throws IllegalArgumentException if {@code (nShorts-1)*16+dstPos >= 64}
+     * @throws NullPointerException if {@code src} is {@code null}
      */
     public static long shortArrayToLong(final short[] src, final int srcPos, final long dstInit, final int dstPos,
             final int nShorts) {
@@ -1374,9 +1374,9 @@ public class Conversion {
      * @param nBools the number of booleans to copy to {@code dst}, must be smaller or equal to
      *            the width of the input (from srcPos to msb)
      * @return {@code dst}
-     * @throws NullPointerException if {@code dst} is {@code null}
-     * @throws IllegalArgumentException if {@code nBools-1+srcPos >= 16}
      * @throws ArrayIndexOutOfBoundsException if {@code dstPos + nBools > dst.length}
+     * @throws IllegalArgumentException if {@code nBools-1+srcPos >= 16}
+     * @throws NullPointerException if {@code dst} is {@code null}
      */
     public static boolean[] shortToBinary(final short src, final int srcPos, final boolean[] dst, final int dstPos,
             final int nBools) {
@@ -1405,9 +1405,9 @@ public class Conversion {
      * @param nBytes the number of bytes to copy to {@code dst}, must be smaller or equal to the
      *            width of the input (from srcPos to msb)
      * @return {@code dst}
-     * @throws NullPointerException if {@code dst} is {@code null}
-     * @throws IllegalArgumentException if {@code (nBytes-1)*8+srcPos >= 16}
      * @throws ArrayIndexOutOfBoundsException if {@code dstPos + nBytes > dst.length}
+     * @throws IllegalArgumentException if {@code (nBytes-1)*8+srcPos >= 16}
+     * @throws NullPointerException if {@code dst} is {@code null}
      */
     public static byte[] shortToByteArray(final short src, final int srcPos, final byte[] dst, final int dstPos,
             final int nBytes) {
@@ -1471,9 +1471,9 @@ public class Conversion {
      * @param nBytes the number of bytes to copy to {@code dst}, must be smaller or equal to the
      *            width of the input (from srcPos to msb)
      * @return {@code dst}
-     * @throws NullPointerException if {@code dst} is {@code null}
-     * @throws IllegalArgumentException if {@code nBytes > 16}
      * @throws ArrayIndexOutOfBoundsException if {@code dstPos + nBytes > dst.length}
+     * @throws IllegalArgumentException if {@code nBytes > 16}
+     * @throws NullPointerException if {@code dst} is {@code null}
      */
     public static byte[] uuidToByteArray(final UUID src, final byte[] dst, final int dstPos, final int nBytes) {
         if (0 == nBytes) {

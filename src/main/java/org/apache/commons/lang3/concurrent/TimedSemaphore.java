@@ -238,8 +238,8 @@ public class TimedSemaphore {
      * task which monitors the time period set for this {@link TimedSemaphore}.
      * From now on the semaphore is active.
      *
-     * @throws InterruptedException if the thread gets interrupted
      * @throws IllegalStateException if this semaphore is already shut down
+     * @throws InterruptedException if the thread gets interrupted
      */
     public synchronized void acquire() throws InterruptedException {
         prepareAcquire();

@@ -126,7 +126,7 @@ public class LocaleUtils {
      * Checks whether the given String is a ISO 3166 alpha-2 country code.
      *
      * @param str the String to check
-     * @return true, is the given String is a ISO 3166 compliant country code.
+     * @return true, is the given String is a ISO 3166 compliant country code
      */
     private static boolean isISO3166CountryCode(final String str) {
         return StringUtils.isAllUpperCase(str) && str.length() == 2;
@@ -135,8 +135,8 @@ public class LocaleUtils {
     /**
      * Checks whether the given String is a ISO 639 compliant language code.
      *
-     * @param str the String to check.
-     * @return true, if the given String is a ISO 639 compliant language code.
+     * @param str the String to check
+     * @return true, if the given String is a ISO 639 compliant language code
      */
     private static boolean isISO639LanguageCode(final String str) {
         return StringUtils.isAllLowerCase(str) && (str.length() == 2 || str.length() == 3);
@@ -149,8 +149,8 @@ public class LocaleUtils {
      * equal to {@code "und"}.
      * </p>
      *
-     * @param locale the locale to test.
-     * @return whether a Locale's language is undetermined.
+     * @param locale the locale to test
+     * @return whether a Locale's language is undetermined
      * @see Locale#toLanguageTag()
      * @since 3.14.0
      */
@@ -162,7 +162,7 @@ public class LocaleUtils {
      * Checks whether the given String is a UN M.49 numeric area code.
      *
      * @param str the String to check
-     * @return true, is the given String is a UN M.49 numeric area code.
+     * @return true, is the given String is a UN M.49 numeric area code
      */
     private static boolean isNumericAreaCode(final String str) {
         return StringUtils.isNumeric(str) && str.length() == 3;
@@ -238,9 +238,9 @@ public class LocaleUtils {
     /**
      * Tries to parse a locale from the given String.
      *
-     * @param str the String to parse a locale from.
-     * @return a Locale instance parsed from the given String.
-     * @throws IllegalArgumentException if the given String can not be parsed.
+     * @param str the String to parse a locale from
+     * @return a Locale instance parsed from the given String
+     * @throws IllegalArgumentException if the given String can not be parsed
      */
     private static Locale parseLocale(final String str) {
         if (isISO639LanguageCode(str)) {
@@ -272,8 +272,8 @@ public class LocaleUtils {
     /**
      * Returns the given locale if non-{@code null}, otherwise {@link Locale#getDefault()}.
      *
-     * @param locale a locale or {@code null}.
-     * @return the given locale if non-{@code null}, otherwise {@link Locale#getDefault()}.
+     * @param locale a locale or {@code null}
+     * @return the given locale if non-{@code null}, otherwise {@link Locale#getDefault()}
      * @since 3.12.0
      */
     public static Locale toLocale(final Locale locale) {

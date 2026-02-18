@@ -118,6 +118,7 @@ import org.apache.commons.lang3.stream.Streams;
  * The symbol {@code *} is used to indicate any input including {@code null}.</p>
  *
  * <p>#ThreadSafe#</p>
+ *
  * @see String
  * @since 1.0
  */
@@ -149,6 +150,7 @@ public class StringUtils {
 
     /**
      * The empty String {@code ""}.
+     *
      * @since 2.0
      */
     public static final String EMPTY = "";
@@ -173,6 +175,7 @@ public class StringUtils {
 
     /**
      * Represents a failed index search.
+     *
      * @since 2.1
      */
     public static final int INDEX_NOT_FOUND = -1;
@@ -398,8 +401,8 @@ public class StringUtils {
      *
      * @param str  the String to abbreviate, may be null
      * @param middle the String to replace the middle characters with, may be null
-     * @param length the length to abbreviate {@code str} to.
-     * @return the abbreviated String if the above criteria is met, or the original String supplied for abbreviation.
+     * @param length the length to abbreviate {@code str} to
+     * @return the abbreviated String if the above criteria is met, or the original String supplied for abbreviation
      * @since 2.5
      */
     public static String abbreviateMiddle(final String str, final String middle, final int length) {
@@ -420,12 +423,11 @@ public class StringUtils {
      * Appends the suffix to the end of the string if the string does not
      * already end with the suffix.
      *
-     * @param str The string.
-     * @param suffix The suffix to append to the end of the string.
-     * @param ignoreCase Indicates whether the compare should ignore case.
-     * @param suffixes Additional suffixes that are valid terminators (optional).
-     *
-     * @return A new String if suffix was appended, the same string otherwise.
+     * @param str the string
+     * @param suffix the suffix to append to the end of the string
+     * @param ignoreCase indicates whether the compare should ignore case
+     * @param suffixes additional suffixes that are valid terminators (optional)
+     * @return a new String if suffix was appended, the same string otherwise
      */
     private static String appendIfMissing(final String str, final CharSequence suffix, final boolean ignoreCase, final CharSequence... suffixes) {
         if (str == null || isEmpty(suffix) || endsWith(str, suffix, ignoreCase)) {
@@ -467,12 +469,10 @@ public class StringUtils {
      * StringUtils.appendIfMissing("abcMNO", "xyz", "mno") = "abcMNOxyz"
      * </pre>
      *
-     * @param str The string.
-     * @param suffix The suffix to append to the end of the string.
-     * @param suffixes Additional suffixes that are valid terminators.
-     *
-     * @return A new String if suffix was appended, the same string otherwise.
-     *
+     * @param str the string
+     * @param suffix the suffix to append to the end of the string
+     * @param suffixes additional suffixes that are valid terminators
+     * @return a new String if suffix was appended, the same string otherwise
      * @since 3.2
      */
     public static String appendIfMissing(final String str, final CharSequence suffix, final CharSequence... suffixes) {
@@ -505,12 +505,10 @@ public class StringUtils {
      * StringUtils.appendIfMissingIgnoreCase("abcMNO", "xyz", "mno") = "abcMNO"
      * </pre>
      *
-     * @param str The string.
-     * @param suffix The suffix to append to the end of the string.
-     * @param suffixes Additional suffixes that are valid terminators.
-     *
-     * @return A new String if suffix was appended, the same string otherwise.
-     *
+     * @param str the string
+     * @param suffix the suffix to append to the end of the string
+     * @param suffixes additional suffixes that are valid terminators
+     * @return a new String if suffix was appended, the same string otherwise
      * @since 3.2
      */
     public static String appendIfMissingIgnoreCase(final String str, final CharSequence suffix, final CharSequence... suffixes) {
@@ -693,7 +691,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the String to chomp a newline from, may be null
-     * @return String without newline, {@code null} if null String input
+     * @return string without newline, {@code null} if null String input
      */
     public static String chomp(final String str) {
         if (isEmpty(str)) {
@@ -745,7 +743,7 @@ public class StringUtils {
      *
      * @param str  the String to chomp from, may be null
      * @param separator  separator String, may be null
-     * @return String without trailing separator, {@code null} if null String input
+     * @return string without trailing separator, {@code null} if null String input
      * @deprecated This feature will be removed in Lang 4, use {@link StringUtils#removeEnd(String, String)} instead
      */
     @Deprecated
@@ -774,7 +772,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the String to chop last character from, may be null
-     * @return String without last character, {@code null} if null String input
+     * @return string without last character, {@code null} if null String input
      */
     public static String chop(final String str) {
         if (str == null) {
@@ -818,11 +816,11 @@ public class StringUtils {
      * StringUtils.compare("ab", "abc")  &lt; 0
      * </pre>
      *
-     * @see #compare(String, String, boolean)
-     * @see String#compareTo(String)
      * @param str1  the String to compare from
      * @param str2  the String to compare to
      * @return &lt; 0, 0, &gt; 0, if {@code str1} is respectively less, equal or greater than {@code str2}
+     * @see #compare(String, String, boolean)
+     * @see String#compareTo(String)
      * @since 3.5
      */
     public static int compare(final String str1, final String str2) {
@@ -856,11 +854,11 @@ public class StringUtils {
      * StringUtils.compare("ab", "abc", *)    &lt; 0
      * </pre>
      *
-     * @see String#compareTo(String)
      * @param str1  the String to compare from
      * @param str2  the String to compare to
      * @param nullIsLess  whether consider {@code null} value less than non-{@code null} value
      * @return &lt; 0, 0, &gt; 0, if {@code str1} is respectively less, equal ou greater than {@code str2}
+     * @see String#compareTo(String)
      * @since 3.5
      */
     public static int compare(final String str1, final String str2, final boolean nullIsLess) {
@@ -905,12 +903,12 @@ public class StringUtils {
      * StringUtils.compareIgnoreCase("ab", "ABC")  &lt; 0
      * </pre>
      *
-     * @see #compareIgnoreCase(String, String, boolean)
-     * @see String#compareToIgnoreCase(String)
      * @param str1  the String to compare from
      * @param str2  the String to compare to
      * @return &lt; 0, 0, &gt; 0, if {@code str1} is respectively less, equal ou greater than {@code str2},
-     *          ignoring case differences.
+     *          ignoring case differences
+     * @see #compareIgnoreCase(String, String, boolean)
+     * @see String#compareToIgnoreCase(String)
      * @since 3.5
      */
     public static int compareIgnoreCase(final String str1, final String str2) {
@@ -948,12 +946,12 @@ public class StringUtils {
      * StringUtils.compareIgnoreCase("ab", "abc", *)    &lt; 0
      * </pre>
      *
-     * @see String#compareToIgnoreCase(String)
      * @param str1  the String to compare from
      * @param str2  the String to compare to
      * @param nullIsLess  whether consider {@code null} value less than non-{@code null} value
      * @return &lt; 0, 0, &gt; 0, if {@code str1} is respectively less, equal ou greater than {@code str2},
-     *          ignoring case differences.
+     *          ignoring case differences
+     * @see String#compareToIgnoreCase(String)
      * @since 3.5
      */
     public static int compareIgnoreCase(final String str1, final String str2, final boolean nullIsLess) {
@@ -1133,8 +1131,8 @@ public class StringUtils {
      * StringUtils.containsAny("abc", "d", "abc")  = true
      * </pre>
      *
-     * @param cs The CharSequence to check, may be null
-     * @param searchCharSequences The array of CharSequences to search for, may be null. Individual CharSequences may be
+     * @param cs the CharSequence to check, may be null
+     * @param searchCharSequences the array of CharSequences to search for, may be null. Individual CharSequences may be
      *        null as well.
      * @return {@code true} if any of the search CharSequences are found, {@code false} otherwise
      * @since 3.4
@@ -1151,8 +1149,8 @@ public class StringUtils {
      * return {@code false}.
      * </p>
      *
-     * @param cs The CharSequence to check, may be null
-     * @param searchCharSequences The array of CharSequences to search for, may be null. Individual CharSequences may be
+     * @param cs the CharSequence to check, may be null
+     * @param searchCharSequences the array of CharSequences to search for, may be null. Individual CharSequences may be
      *        null as well.
      * @return {@code true} if any of the search CharSequences are found, {@code false} otherwise
      * @since 3.12.0
@@ -1190,8 +1188,8 @@ public class StringUtils {
      * StringUtils.containsAny("ABC", "d", "abc")  = true
      * </pre>
      *
-     * @param cs The CharSequence to check, may be null
-     * @param searchCharSequences The array of CharSequences to search for, may be null. Individual CharSequences may be
+     * @param cs the CharSequence to check, may be null
+     * @param searchCharSequences the array of CharSequences to search for, may be null. Individual CharSequences may be
      *        null as well.
      * @return {@code true} if any of the search CharSequences are found, {@code false} otherwise
      * @since 3.12.0
@@ -1501,6 +1499,7 @@ public class StringUtils {
      * StringUtils.defaultIfBlank("bat", "NULL") = "bat"
      * StringUtils.defaultIfBlank("", null)      = null
      * </pre>
+     *
      * @param <T> the specific kind of CharSequence
      * @param str the CharSequence to check, may be null
      * @param defaultStr  the default CharSequence to return
@@ -1523,6 +1522,7 @@ public class StringUtils {
      * StringUtils.defaultIfEmpty("bat", "NULL") = "bat"
      * StringUtils.defaultIfEmpty("", null)      = null
      * </pre>
+     *
      * @param <T> the specific kind of CharSequence
      * @param str  the CharSequence to check, may be null
      * @param defaultStr  the default CharSequence to return
@@ -1544,11 +1544,11 @@ public class StringUtils {
      * StringUtils.defaultString("bat") = "bat"
      * </pre>
      *
-     * @see Objects#toString(Object, String)
-     * @see String#valueOf(Object)
      * @param str  the String to check, may be null
      * @return the passed in String, or the empty String if it
      *  was {@code null}
+     * @see Objects#toString(Object, String)
+     * @see String#valueOf(Object)
      */
     public static String defaultString(final String str) {
         return Objects.toString(str, EMPTY);
@@ -1572,12 +1572,12 @@ public class StringUtils {
      * Objects.toString("bat", "NULL") = "bat"
      * </pre>
      *
-     * @see Objects#toString(Object, String)
-     * @see String#valueOf(Object)
      * @param str  the String to check, may be null
      * @param nullDefault  the default String to return
      *  if the input is {@code null}, may be null
      * @return the passed in String, or the default if it was {@code null}
+     * @see Objects#toString(Object, String)
+     * @see String#valueOf(Object)
      * @deprecated Use {@link Objects#toString(Object, String)}
      */
     @Deprecated
@@ -1678,11 +1678,11 @@ public class StringUtils {
      * StringUtils.endsWith("ABCDEF", "")    = true
      * </pre>
      *
-     * @see String#endsWith(String)
      * @param str  the CharSequence to check, may be null
      * @param suffix the suffix to find, may be null
      * @return {@code true} if the CharSequence ends with the suffix, case-sensitive, or
      *  both {@code null}
+     * @see String#endsWith(String)
      * @since 2.4
      * @since 3.0 Changed signature from endsWith(String, String) to endsWith(CharSequence, CharSequence)
      */
@@ -1693,13 +1693,13 @@ public class StringUtils {
     /**
      * Check if a CharSequence ends with a specified suffix (optionally case insensitive).
      *
-     * @see String#endsWith(String)
      * @param str  the CharSequence to check, may be null
      * @param suffix the suffix to find, may be null
      * @param ignoreCase indicates whether the compare should ignore case
-     *  (case-insensitive) or not.
+     *  (case-insensitive) or not
      * @return {@code true} if the CharSequence starts with the prefix or
      *  both {@code null}
+     * @see String#endsWith(String)
      */
     private static boolean endsWith(final CharSequence str, final CharSequence suffix, final boolean ignoreCase) {
         if (str == null || suffix == null) {
@@ -1728,9 +1728,9 @@ public class StringUtils {
      *
      * @param sequence  the CharSequence to check, may be null
      * @param searchStrings the case-sensitive CharSequences to find, may be empty or contain {@code null}
-     * @see StringUtils#endsWith(CharSequence, CharSequence)
      * @return {@code true} if the input {@code sequence} is {@code null} AND no {@code searchStrings} are provided, or
-     *   the input {@code sequence} ends in any of the provided case-sensitive {@code searchStrings}.
+     *   the input {@code sequence} ends in any of the provided case-sensitive {@code searchStrings}
+     * @see StringUtils#endsWith(CharSequence, CharSequence)
      * @since 3.0
      */
     public static boolean endsWithAny(final CharSequence sequence, final CharSequence... searchStrings) {
@@ -1760,11 +1760,11 @@ public class StringUtils {
      * StringUtils.endsWithIgnoreCase("ABCDEF", "cde") = false
      * </pre>
      *
-     * @see String#endsWith(String)
      * @param str  the CharSequence to check, may be null
      * @param suffix the suffix to find, may be null
      * @return {@code true} if the CharSequence ends with the suffix, case-insensitive, or
      *  both {@code null}
+     * @see String#endsWith(String)
      * @since 2.4
      * @since 3.0 Changed signature from endsWithIgnoreCase(String, String) to endsWithIgnoreCase(CharSequence, CharSequence)
      */
@@ -1790,9 +1790,9 @@ public class StringUtils {
      * @param cs1  the first CharSequence, may be {@code null}
      * @param cs2  the second CharSequence, may be {@code null}
      * @return {@code true} if the CharSequences are equal (case-sensitive), or both {@code null}
-     * @since 3.0 Changed signature from equals(String, String) to equals(CharSequence, CharSequence)
      * @see Object#equals(Object)
      * @see #equalsIgnoreCase(CharSequence, CharSequence)
+     * @since 3.0 Changed signature from equals(String, String) to equals(CharSequence, CharSequence)
      */
     public static boolean equals(final CharSequence cs1, final CharSequence cs2) {
         if (cs1 == cs2) {
@@ -1830,10 +1830,10 @@ public class StringUtils {
      * StringUtils.equalsAny("abc", "ABC", "DEF") = false
      * </pre>
      *
-     * @param string to compare, may be {@code null}.
-     * @param searchStrings a vararg of strings, may be {@code null}.
+     * @param string to compare, may be {@code null}
+     * @param searchStrings a vararg of strings, may be {@code null}
      * @return {@code true} if the string is equal (case-sensitive) to any other element of {@code searchStrings};
-     * {@code false} if {@code searchStrings} is null or contains no matches.
+     * {@code false} if {@code searchStrings} is null or contains no matches
      * @since 3.5
      */
     public static boolean equalsAny(final CharSequence string, final CharSequence... searchStrings) {
@@ -1860,10 +1860,10 @@ public class StringUtils {
      * StringUtils.equalsAnyIgnoreCase("abc", "ABC", "DEF") = true
      * </pre>
      *
-     * @param string to compare, may be {@code null}.
-     * @param searchStrings a vararg of strings, may be {@code null}.
+     * @param string to compare, may be {@code null}
+     * @param searchStrings a vararg of strings, may be {@code null}
      * @return {@code true} if the string is equal (case-insensitive) to any other element of {@code searchStrings};
-     * {@code false} if {@code searchStrings} is null or contains no matches.
+     * {@code false} if {@code searchStrings} is null or contains no matches
      * @since 3.5
      */
     public static boolean equalsAnyIgnoreCase(final CharSequence string, final CharSequence... searchStrings) {
@@ -1895,8 +1895,8 @@ public class StringUtils {
      * @param cs1  the first CharSequence, may be {@code null}
      * @param cs2  the second CharSequence, may be {@code null}
      * @return {@code true} if the CharSequences are equal (case-insensitive), or both {@code null}
-     * @since 3.0 Changed signature from equalsIgnoreCase(String, String) to equalsIgnoreCase(CharSequence, CharSequence)
      * @see #equals(CharSequence, CharSequence)
+     * @since 3.0 Changed signature from equalsIgnoreCase(String, String) to equalsIgnoreCase(CharSequence, CharSequence)
      */
     public static boolean equalsIgnoreCase(final CharSequence cs1, final CharSequence cs2) {
         if (cs1 == cs2) {
@@ -1987,8 +1987,8 @@ public class StringUtils {
      * Calls {@link String#getBytes(Charset)} in a null-safe manner.
      *
      * @param string input string
-     * @param charset The {@link Charset} to encode the {@link String}. If null, then use the default Charset.
-     * @return The empty byte[] if {@code string} is null, the result of {@link String#getBytes(Charset)} otherwise.
+     * @param charset the {@link Charset} to encode the {@link String}. If null, then use the default Charset.
+     * @return the empty byte[] if {@code string} is null, the result of {@link String#getBytes(Charset)} otherwise
      * @see String#getBytes(Charset)
      * @since 3.10
      */
@@ -2000,9 +2000,9 @@ public class StringUtils {
      * Calls {@link String#getBytes(String)} in a null-safe manner.
      *
      * @param string input string
-     * @param charset The {@link Charset} name to encode the {@link String}. If null, then use the default Charset.
-     * @return The empty byte[] if {@code string} is null, the result of {@link String#getBytes(String)} otherwise.
-     * @throws UnsupportedEncodingException Thrown when the named charset is not supported.
+     * @param charset the {@link Charset} name to encode the {@link String}. If null, then use the default Charset.
+     * @return the empty byte[] if {@code string} is null, the result of {@link String#getBytes(String)} otherwise
+     * @throws UnsupportedEncodingException thrown when the named charset is not supported
      * @see String#getBytes(String)
      * @since 3.10
      */
@@ -2040,7 +2040,7 @@ public class StringUtils {
      * @param strs  array of String objects, entries may be null
      * @return the initial sequence of characters that are common to all Strings
      * in the array; empty String if the array is null, the elements are all null
-     * or if there is no common prefix.
+     * or if there is no common prefix
      * @since 2.4
      */
     public static String getCommonPrefix(final String... strs) {
@@ -2080,7 +2080,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str the String to extract digits from, may be null
-     * @return String with only digits,
+     * @return string with only digits,
      *           or an empty ("") String if no digits found,
      *           or {@code null} String if {@code str} is null
      * @since 3.6
@@ -2120,7 +2120,7 @@ public class StringUtils {
      *
      * @param term a full term that should be matched against, must not be null
      * @param query the query that will be matched against a term, must not be null
-     * @param locale This string matching logic is case-insensitive. A locale is necessary to normalize
+     * @param locale this string matching logic is case-insensitive. A locale is necessary to normalize
      *  both Strings to lower case.
      * @return result score
      * @throws IllegalArgumentException if either String input {@code null} or Locale input {@code null}
@@ -2201,6 +2201,7 @@ public class StringUtils {
      * StringUtils.getIfBlank("", () -> null)       = null
      * StringUtils.getIfBlank("", null)             = null
      * }</pre>
+     *
      * @param <T> the specific kind of CharSequence
      * @param str the CharSequence to check, may be null
      * @param defaultSupplier the supplier of default CharSequence to return
@@ -2229,6 +2230,7 @@ public class StringUtils {
      * StringUtils.getIfEmpty("", null)              = null
      * }
      * </pre>
+     *
      * @param <T> the specific kind of CharSequence
      * @param str  the CharSequence to check, may be null
      * @param defaultSupplier  the supplier of default CharSequence to return
@@ -2875,7 +2877,7 @@ public class StringUtils {
      * StringUtils.indexOfAnyBut("zzabyycdxx", new char[] {'z', 'a'} ) = 3
      * StringUtils.indexOfAnyBut("aba", new char[] {'z'} )             = 0
      * StringUtils.indexOfAnyBut("aba", new char[] {'a', 'b'} )        = -1
-
+     *
      * </pre>
      *
      * @param cs  the CharSequence to check, may be null
@@ -4655,8 +4657,8 @@ public class StringUtils {
      *
      * @param array  the array of values to join together, may be null
      * @param delimiter  the separator character to use, null treated as ""
-     * @param startIndex the first index to start joining from.
-     * @param endIndex the index to stop joining from (exclusive).
+     * @param startIndex the first index to start joining from
+     * @param endIndex the index to stop joining from (exclusive)
      * @return the joined String, {@code null} if null array input; or the empty string
      * if {@code endIndex - startIndex <= 0}. The number of joined entries is given by
      * {@code endIndex - startIndex}
@@ -4789,7 +4791,7 @@ public class StringUtils {
      *
      * @param delimiter the separator character to use, null treated as ""
      * @param array the varargs providing the values to join together. {@code null} elements are treated as ""
-     * @return the joined String.
+     * @return the joined String
      * @throws IllegalArgumentException if a null varargs is provided
      * @since 3.5
      */
@@ -5281,7 +5283,7 @@ public class StringUtils {
      * @param cs
      *            a CharSequence or {@code null}
      * @return CharSequence length or {@code 0} if the CharSequence is
-     *         {@code null}.
+     *         {@code null}
      * @since 2.4
      * @since 3.0 Changed signature from length(String) to length(CharSequence)
      */
@@ -5466,13 +5468,11 @@ public class StringUtils {
      * ends of this String.
      * </p>
      *
-     * @see Pattern
-     * @see #trim(String)
-     * @see <a
-     *      href="https://www.w3.org/TR/xpath/#function-normalize-space">https://www.w3.org/TR/xpath/#function-normalize-space</a>
      * @param str the source String to normalize whitespaces from, may be null
      * @return the modified string with whitespace normalized, {@code null} if null String input
-     *
+     * @see Pattern
+     * @see #trim(String)
+     * @see <a *      href="https://www.w3.org/TR/xpath/#function-normalize-space">https://www.w3.org/TR/xpath/#function-normalize-space</a>
      * @since 3.0
      */
     public static String normalizeSpace(final String str) {
@@ -5569,7 +5569,7 @@ public class StringUtils {
      *
      * @param str  the CharSequence to check, may be null
      * @param searchStr  the CharSequence to find, may be null
-     * @param ordinal  the n-th {@code searchStr} to find, overlapping matches are allowed.
+     * @param ordinal  the n-th {@code searchStr} to find, overlapping matches are allowed
      * @param lastIndex true if lastOrdinalIndexOf() otherwise false if ordinalIndexOf()
      * @return the n-th index of the search CharSequence,
      *  {@code -1} ({@code INDEX_NOT_FOUND}) if no match or {@code null} string input
@@ -5663,12 +5663,11 @@ public class StringUtils {
      * Prepends the prefix to the start of the string if the string does not
      * already start with any of the prefixes.
      *
-     * @param str The string.
-     * @param prefix The prefix to prepend to the start of the string.
-     * @param ignoreCase Indicates whether the compare should ignore case.
-     * @param prefixes Additional prefixes that are valid (optional).
-     *
-     * @return A new String if prefix was prepended, the same string otherwise.
+     * @param str the string
+     * @param prefix the prefix to prepend to the start of the string
+     * @param ignoreCase indicates whether the compare should ignore case
+     * @param prefixes additional prefixes that are valid (optional)
+     * @return a new String if prefix was prepended, the same string otherwise
      */
     private static String prependIfMissing(final String str, final CharSequence prefix, final boolean ignoreCase, final CharSequence... prefixes) {
         if (str == null || isEmpty(prefix) || startsWith(str, prefix, ignoreCase)) {
@@ -5710,12 +5709,10 @@ public class StringUtils {
      * StringUtils.prependIfMissing("MNOabc", "xyz", "mno") = "xyzMNOabc"
      * </pre>
      *
-     * @param str The string.
-     * @param prefix The prefix to prepend to the start of the string.
-     * @param prefixes Additional prefixes that are valid.
-     *
-     * @return A new String if prefix was prepended, the same string otherwise.
-     *
+     * @param str the string
+     * @param prefix the prefix to prepend to the start of the string
+     * @param prefixes additional prefixes that are valid
+     * @return a new String if prefix was prepended, the same string otherwise
      * @since 3.2
      */
     public static String prependIfMissing(final String str, final CharSequence prefix, final CharSequence... prefixes) {
@@ -5748,12 +5745,10 @@ public class StringUtils {
      * StringUtils.prependIfMissingIgnoreCase("MNOabc", "xyz", "mno") = "MNOabc"
      * </pre>
      *
-     * @param str The string.
-     * @param prefix The prefix to prepend to the start of the string.
-     * @param prefixes Additional prefixes that are valid (optional).
-     *
-     * @return A new String if prefix was prepended, the same string otherwise.
-     *
+     * @param str the string
+     * @param prefix the prefix to prepend to the start of the string
+     * @param prefixes additional prefixes that are valid (optional)
+     * @return a new String if prefix was prepended, the same string otherwise
      * @since 3.2
      */
     public static String prependIfMissingIgnoreCase(final String str, final CharSequence prefix, final CharSequence... prefixes) {
@@ -5853,19 +5848,16 @@ public class StringUtils {
      *
      * @param text  text to remove from, may be null
      * @param regex  the regular expression to which this string is to be matched
-     * @return  the text with any removes processed,
+     * @return the text with any removes processed,
      *              {@code null} if null String input
-     *
-     * @throws  java.util.regex.PatternSyntaxException
+     * @throws java.util.regex.PatternSyntaxException
      *              if the regular expression's syntax is invalid
-     *
      * @see #replaceAll(String, String, String)
      * @see #removePattern(String, String)
      * @see String#replaceAll(String, String)
      * @see java.util.regex.Pattern
      * @see java.util.regex.Pattern#DOTALL
      * @since 3.5
-     *
      * @deprecated Moved to RegExUtils.
      */
     @Deprecated
@@ -5973,18 +5965,15 @@ public class StringUtils {
      *
      * @param text  text to remove from, may be null
      * @param regex  the regular expression to which this string is to be matched
-     * @return  the text with the first replacement processed,
+     * @return the text with the first replacement processed,
      *              {@code null} if null String input
-     *
-     * @throws  java.util.regex.PatternSyntaxException
+     * @throws java.util.regex.PatternSyntaxException
      *              if the regular expression's syntax is invalid
-     *
      * @see #replaceFirst(String, String, String)
      * @see String#replaceFirst(String, String)
      * @see java.util.regex.Pattern
      * @see java.util.regex.Pattern#DOTALL
      * @since 3.5
-     *
      * @deprecated Moved to RegExUtils.
      */
     @Deprecated
@@ -6049,13 +6038,12 @@ public class StringUtils {
      *            the source string
      * @param regex
      *            the regular expression to which this string is to be matched
-     * @return The resulting {@link String}
+     * @return the resulting {@link String}
      * @see #replacePattern(String, String, String)
      * @see String#replaceAll(String, String)
      * @see Pattern#DOTALL
      * @since 3.2
-     * @since 3.5 Changed {@code null} reference passed to this method is a no-op.
-     *
+     * @since 3.5 Changed {@code null} reference passed to this method is a no-op
      * @deprecated Moved to RegExUtils.
      */
     @Deprecated
@@ -6080,10 +6068,10 @@ public class StringUtils {
      * StringUtils.removeStart("path", 0)    = "path"
      * </pre>
      *
-     * @param str  the source String to search, may be null.
-     * @param remove  the char to search for and remove.
+     * @param str  the source String to search, may be null
+     * @param remove  the char to search for and remove
      * @return the substring with the char removed if found,
-     *  {@code null} if null String input.
+     *  {@code null} if null String input
      * @since 3.13.0
      */
     public static String removeStart(final String str, final char remove) {
@@ -6178,7 +6166,7 @@ public class StringUtils {
      *
      * @param ch  character to repeat
      * @param repeat  number of times to repeat char, negative treated as zero
-     * @return String with repeated character
+     * @return string with repeated character
      * @see #repeat(String, int)
      */
     public static String repeat(final char ch, final int repeat) {
@@ -6291,12 +6279,12 @@ public class StringUtils {
      * StringUtils.replace("aba", "a", "z")   = "zbz"
      * </pre>
      *
-     * @see #replace(String text, String searchString, String replacement, int max)
      * @param text  text to search and replace in, may be null
      * @param searchString  the String to search for, may be null
      * @param replacement  the String to replace it with, may be null
      * @return the text with any replacements processed,
      *  {@code null} if null String input
+     * @see #replace(String text, String searchString, String replacement, int max)
      */
     public static String replace(final String text, final String searchString, final String replacement) {
         return replace(text, searchString, replacement, -1);
@@ -6429,18 +6417,15 @@ public class StringUtils {
      * @param text  text to search and replace in, may be null
      * @param regex  the regular expression to which this string is to be matched
      * @param replacement  the string to be substituted for each match
-     * @return  the text with any replacements processed,
+     * @return the text with any replacements processed,
      *              {@code null} if null String input
-     *
-     * @throws  java.util.regex.PatternSyntaxException
+     * @throws java.util.regex.PatternSyntaxException
      *              if the regular expression's syntax is invalid
-     *
      * @see #replacePattern(String, String, String)
      * @see String#replaceAll(String, String)
      * @see java.util.regex.Pattern
      * @see java.util.regex.Pattern#DOTALL
      * @since 3.5
-     *
      * @deprecated Moved to RegExUtils.
      */
     @Deprecated
@@ -6462,7 +6447,7 @@ public class StringUtils {
      * StringUtils.replaceChars("abcba", 'z', 'y') = "abcba"
      * </pre>
      *
-     * @param str  String to replace characters in, may be null
+     * @param str  string to replace characters in, may be null
      * @param searchChar  the character to search for, may be null
      * @param replaceChar  the character to replace, may be null
      * @return modified String, {@code null} if null string input
@@ -6505,7 +6490,7 @@ public class StringUtils {
      * StringUtils.replaceChars("abcba", "bc", "yzx") = "ayzya"
      * </pre>
      *
-     * @param str  String to replace characters in, may be null
+     * @param str  string to replace characters in, may be null
      * @param searchChars  a set of characters to search for, may be null
      * @param replaceChars  a set of characters to replace, may be null
      * @return modified String, {@code null} if null string input
@@ -6621,12 +6606,12 @@ public class StringUtils {
      *            loop
      * @return the text with any replacements processed, {@code null} if
      *         null String input
-     * @throws IllegalStateException
-     *             if the search is repeating and there is an endless loop due
-     *             to outputs of one being inputs to another
      * @throws IllegalArgumentException
      *             if the lengths of the arrays are not the same (null is ok,
      *             and/or size 0)
+     * @throws IllegalStateException
+     *             if the search is repeating and there is an endless loop due
+     *             to outputs of one being inputs to another
      * @since 2.4
      */
     private static String replaceEach(
@@ -6786,12 +6771,12 @@ public class StringUtils {
      *            the Strings to replace them with, no-op if null
      * @return the text with any replacements processed, {@code null} if
      *         null String input
-     * @throws IllegalStateException
-     *             if the search is repeating and there is an endless loop due
-     *             to outputs of one being inputs to another
      * @throws IllegalArgumentException
      *             if the lengths of the arrays are not the same (null is ok,
      *             and/or size 0)
+     * @throws IllegalStateException
+     *             if the search is repeating and there is an endless loop due
+     *             to outputs of one being inputs to another
      * @since 2.4
      */
     public static String replaceEachRepeatedly(final String text, final String[] searchList, final String[] replacementList) {
@@ -6833,17 +6818,14 @@ public class StringUtils {
      * @param text  text to search and replace in, may be null
      * @param regex  the regular expression to which this string is to be matched
      * @param replacement  the string to be substituted for the first match
-     * @return  the text with the first replacement processed,
+     * @return the text with the first replacement processed,
      *              {@code null} if null String input
-     *
-     * @throws  java.util.regex.PatternSyntaxException
+     * @throws java.util.regex.PatternSyntaxException
      *              if the regular expression's syntax is invalid
-     *
      * @see String#replaceFirst(String, String)
      * @see java.util.regex.Pattern
      * @see java.util.regex.Pattern#DOTALL
      * @since 3.5
-     *
      * @deprecated Moved to RegExUtils.
      */
     @Deprecated
@@ -6867,12 +6849,12 @@ public class StringUtils {
      * StringUtils.replaceIgnoreCase("aba", "A", "z")   = "zbz"
      * </pre>
      *
-     * @see #replaceIgnoreCase(String text, String searchString, String replacement, int max)
      * @param text  text to search and replace in, may be null
      * @param searchString  the String to search for (case-insensitive), may be null
      * @param replacement  the String to replace it with, may be null
      * @return the text with any replacements processed,
      *  {@code null} if null String input
+     * @see #replaceIgnoreCase(String text, String searchString, String replacement, int max)
      * @since 3.5
      */
      public static String replaceIgnoreCase(final String text, final String searchString, final String replacement) {
@@ -6928,12 +6910,12 @@ public class StringUtils {
      * StringUtils.replaceOnce("aba", "a", "z")   = "zba"
      * </pre>
      *
-     * @see #replace(String text, String searchString, String replacement, int max)
      * @param text  text to search and replace in, may be null
      * @param searchString  the String to search for, may be null
      * @param replacement  the String to replace with, may be null
      * @return the text with any replacements processed,
      *  {@code null} if null String input
+     * @see #replace(String text, String searchString, String replacement, int max)
      */
     public static String replaceOnce(final String text, final String searchString, final String replacement) {
         return replace(text, searchString, replacement, 1);
@@ -6956,12 +6938,12 @@ public class StringUtils {
      * StringUtils.replaceOnceIgnoreCase("FoOFoofoo", "foo", "") = "Foofoo"
      * </pre>
      *
-     * @see #replaceIgnoreCase(String text, String searchString, String replacement, int max)
      * @param text  text to search and replace in, may be null
      * @param searchString  the String to search for (case-insensitive), may be null
      * @param replacement  the String to replace with, may be null
      * @return the text with any replacements processed,
      *  {@code null} if null String input
+     * @see #replaceIgnoreCase(String text, String searchString, String replacement, int max)
      * @since 3.5
      */
     public static String replaceOnceIgnoreCase(final String text, final String searchString, final String replacement) {
@@ -7000,13 +6982,12 @@ public class StringUtils {
      *            the regular expression to which this string is to be matched
      * @param replacement
      *            the string to be substituted for each match
-     * @return The resulting {@link String}
+     * @return the resulting {@link String}
      * @see #replaceAll(String, String, String)
      * @see String#replaceAll(String, String)
      * @see Pattern#DOTALL
      * @since 3.2
-     * @since 3.5 Changed {@code null} reference passed to this method is a no-op.
-     *
+     * @since 3.5 Changed {@code null} reference passed to this method is a no-op
      * @deprecated Moved to RegExUtils.
      */
     @Deprecated
@@ -7385,6 +7366,7 @@ public class StringUtils {
      * StringUtils.splitByCharacterType("foo200Bar")  = ["foo", "200", "B", "ar"]
      * StringUtils.splitByCharacterType("ASFRules")   = ["ASFR", "ules"]
      * </pre>
+     *
      * @param str the String to split, may be {@code null}
      * @return an array of parsed Strings, {@code null} if null String input
      * @since 2.4
@@ -7402,6 +7384,7 @@ public class StringUtils {
      * immediately preceding a token of type {@code Character.LOWERCASE_LETTER}
      * will belong to the following token rather than to the preceding, if any,
      * {@code Character.UPPERCASE_LETTER} token.
+     *
      * @param str the String to split, may be {@code null}
      * @param camelCase whether to use so-called "camel-case" for letter types
      * @return an array of parsed Strings, {@code null} if null String input
@@ -7459,6 +7442,7 @@ public class StringUtils {
      * StringUtils.splitByCharacterTypeCamelCase("foo200Bar")  = ["foo", "200", "Bar"]
      * StringUtils.splitByCharacterTypeCamelCase("ASFRules")   = ["ASF", "Rules"]
      * </pre>
+     *
      * @param str the String to split, may be {@code null}
      * @return an array of parsed Strings, {@code null} if null String input
      * @since 2.4
@@ -7486,7 +7470,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the String to parse, may be null
-     * @param separator  String containing the String to be used as a delimiter,
+     * @param separator  string containing the String to be used as a delimiter,
      *  {@code null} splits on whitespace
      * @return an array of parsed Strings, {@code null} if null String was input
      */
@@ -7515,7 +7499,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the String to parse, may be null
-     * @param separator  String containing the String to be used as a delimiter,
+     * @param separator  string containing the String to be used as a delimiter,
      *  {@code null} splits on whitespace
      * @param max  the maximum number of elements to include in the returned
      *  array. A zero or negative value implies no limit.
@@ -7545,7 +7529,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the String to parse, may be null
-     * @param separator  String containing the String to be used as a delimiter,
+     * @param separator  string containing the String to be used as a delimiter,
      *  {@code null} splits on whitespace
      * @return an array of parsed Strings, {@code null} if null String was input
      * @since 2.4
@@ -7576,7 +7560,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the String to parse, may be null
-     * @param separator  String containing the String to be used as a delimiter,
+     * @param separator  string containing the String to be used as a delimiter,
      *  {@code null} splits on whitespace
      * @param max  the maximum number of elements to include in the returned
      *  array. A zero or negative value implies no limit.
@@ -7591,13 +7575,13 @@ public class StringUtils {
      * Performs the logic for the {@code splitByWholeSeparatorPreserveAllTokens} methods.
      *
      * @param str  the String to parse, may be {@code null}
-     * @param separator  String containing the String to be used as a delimiter,
+     * @param separator  string containing the String to be used as a delimiter,
      *  {@code null} splits on whitespace
      * @param max  the maximum number of elements to include in the returned
      *  array. A zero or negative value implies no limit.
      * @param preserveAllTokens if {@code true}, adjacent separators are
      * treated as empty token separators; if {@code false}, adjacent
-     * separators are treated as one separator.
+     * separators are treated as one separator
      * @return an array of parsed Strings, {@code null} if null String input
      * @since 2.4
      */
@@ -7817,7 +7801,7 @@ public class StringUtils {
      * @param separatorChar the separate character
      * @param preserveAllTokens if {@code true}, adjacent separators are
      * treated as empty token separators; if {@code false}, adjacent
-     * separators are treated as one separator.
+     * separators are treated as one separator
      * @return an array of parsed Strings, {@code null} if null String input
      */
     private static String[] splitWorker(final String str, final char separatorChar, final boolean preserveAllTokens) {
@@ -7866,7 +7850,7 @@ public class StringUtils {
      *  array. A zero or negative value implies no limit.
      * @param preserveAllTokens if {@code true}, adjacent separators are
      * treated as empty token separators; if {@code false}, adjacent
-     * separators are treated as one separator.
+     * separators are treated as one separator
      * @return an array of parsed Strings, {@code null} if null String input
      */
     private static String[] splitWorker(final String str, final String separatorChars, final int max, final boolean preserveAllTokens) {
@@ -7969,11 +7953,11 @@ public class StringUtils {
      * StringUtils.startsWith("ABCDEF", "abc") = false
      * </pre>
      *
-     * @see String#startsWith(String)
      * @param str  the CharSequence to check, may be null
      * @param prefix the prefix to find, may be null
      * @return {@code true} if the CharSequence starts with the prefix, case-sensitive, or
      *  both {@code null}
+     * @see String#startsWith(String)
      * @since 2.4
      * @since 3.0 Changed signature from startsWith(String, String) to startsWith(CharSequence, CharSequence)
      */
@@ -7984,13 +7968,13 @@ public class StringUtils {
     /**
      * Check if a CharSequence starts with a specified prefix (optionally case insensitive).
      *
-     * @see String#startsWith(String)
      * @param str  the CharSequence to check, may be null
      * @param prefix the prefix to find, may be null
      * @param ignoreCase indicates whether the compare should ignore case
-     *  (case-insensitive) or not.
+     *  (case-insensitive) or not
      * @return {@code true} if the CharSequence starts with the prefix or
      *  both {@code null}
+     * @see String#startsWith(String)
      */
     private static boolean startsWith(final CharSequence str, final CharSequence prefix, final boolean ignoreCase) {
         if (str == null || prefix == null) {
@@ -8020,9 +8004,9 @@ public class StringUtils {
      *
      * @param sequence the CharSequence to check, may be null
      * @param searchStrings the case-sensitive CharSequence prefixes, may be empty or contain {@code null}
-     * @see StringUtils#startsWith(CharSequence, CharSequence)
      * @return {@code true} if the input {@code sequence} is {@code null} AND no {@code searchStrings} are provided, or
-     *   the input {@code sequence} begins with any of the provided case-sensitive {@code searchStrings}.
+     *   the input {@code sequence} begins with any of the provided case-sensitive {@code searchStrings}
+     * @see StringUtils#startsWith(CharSequence, CharSequence)
      * @since 2.5
      * @since 3.0 Changed signature from startsWithAny(String, String[]) to startsWithAny(CharSequence, CharSequence...)
      */
@@ -8052,11 +8036,11 @@ public class StringUtils {
      * StringUtils.startsWithIgnoreCase("ABCDEF", "abc") = true
      * </pre>
      *
-     * @see String#startsWith(String)
      * @param str  the CharSequence to check, may be null
      * @param prefix the prefix to find, may be null
      * @return {@code true} if the CharSequence starts with the prefix, case-insensitive, or
      *  both {@code null}
+     * @see String#startsWith(String)
      * @since 2.4
      * @since 3.0 Changed signature from startsWithIgnoreCase(String, String) to startsWithIgnoreCase(CharSequence, CharSequence)
      */
@@ -8133,9 +8117,8 @@ public class StringUtils {
      * StringUtils.stripAccents("&eacute;clair")     = "eclair"
      * </pre>
      *
-     * @param input String to be stripped
+     * @param input string to be stripped
      * @return input text with diacritics removed
-     *
      * @since 3.0
      */
     // See also Lucene's ASCIIFoldingFilter (Lucene 2.9) that replaces accented characters by their unaccented equivalent (and uncommitted bug fix: https://issues.apache.org/jira/browse/LUCENE-1343?focusedCommentId=12858907&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#action_12858907).
@@ -8485,7 +8468,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the String to get a substring from, may be null
-     * @param separator  the character (Unicode code point) to search.
+     * @param separator  the character (Unicode code point) to search
      * @return the substring after the first occurrence of the separator,
      *  {@code null} if null String input
      * @since 3.11
@@ -8564,7 +8547,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the String to get a substring from, may be null
-     * @param separator  the character (Unicode code point) to search.
+     * @param separator  the character (Unicode code point) to search
      * @return the substring after the last occurrence of the separator,
      *  {@code null} if null String input
      * @since 3.11
@@ -8644,7 +8627,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str the String to get a substring from, may be null
-     * @param separator the character (Unicode code point) to search.
+     * @param separator the character (Unicode code point) to search
      * @return the substring before the first occurrence of the separator, {@code null} if null String input
      * @since 3.12.0
      */
@@ -8953,7 +8936,7 @@ public class StringUtils {
      * @throws NullPointerException
      *             if {@code bytes} is null
      * @since 3.2
-     * @since 3.3 No longer throws {@link UnsupportedEncodingException}.
+     * @since 3.3 No longer throws {@link UnsupportedEncodingException}
      */
     public static String toEncodedString(final byte[] bytes, final Charset charset) {
         return new String(bytes, Charsets.toCharset(charset));
@@ -8962,8 +8945,8 @@ public class StringUtils {
     /**
      * Converts the given source String as a lower-case using the {@link Locale#ROOT} locale in a null-safe manner.
      *
-     * @param source A source String or null.
-     * @return the given source String as a lower-case using the {@link Locale#ROOT} locale or null.
+     * @param source a source String or null
+     * @return the given source String as a lower-case using the {@link Locale#ROOT} locale or null
      * @since 3.10
      */
     public static String toRootLowerCase(final String source) {
@@ -8973,8 +8956,8 @@ public class StringUtils {
     /**
      * Converts the given source String as a upper-case using the {@link Locale#ROOT} locale in a null-safe manner.
      *
-     * @param source A source String or null.
-     * @return the given source String as a upper-case using the {@link Locale#ROOT} locale or null.
+     * @param source a source String or null
+     * @return the given source String as a upper-case using the {@link Locale#ROOT} locale or null
      * @since 3.10
      */
     public static String toRootUpperCase(final String source) {
@@ -8989,12 +8972,12 @@ public class StringUtils {
      * @param charsetName
      *            the encoding to use, if null then use the platform default
      * @return a new String
-     * @throws UnsupportedEncodingException
-     *             Never thrown
      * @throws NullPointerException
      *             if the input is null
-     * @deprecated use {@link StringUtils#toEncodedString(byte[], Charset)} instead of String constants in your code
+     * @throws UnsupportedEncodingException
+     *             Never thrown
      * @since 3.1
+     * @deprecated use {@link StringUtils#toEncodedString(byte[], Charset)} instead of String constants in your code
      */
     @Deprecated
     public static String toString(final byte[] bytes, final String charsetName) throws UnsupportedEncodingException {
@@ -9113,7 +9096,7 @@ public class StringUtils {
      * @param str  the String to truncate, may be null
      * @param maxWidth  maximum length of result String, must be positive
      * @return truncated String, {@code null} if null String input
-     * @throws IllegalArgumentException If {@code maxWidth} is less than {@code 0}
+     * @throws IllegalArgumentException if {@code maxWidth} is less than {@code 0}
      * @since 3.5
      */
     public static String truncate(final String str, final int maxWidth) {
@@ -9177,7 +9160,7 @@ public class StringUtils {
      * @param offset  left edge of source String
      * @param maxWidth  maximum length of result String, must be positive
      * @return truncated String, {@code null} if null String input
-     * @throws IllegalArgumentException If {@code offset} or {@code maxWidth} is less than {@code 0}
+     * @throws IllegalArgumentException if {@code offset} or {@code maxWidth} is less than {@code 0}
      * @since 3.5
      */
     public static String truncate(final String str, final int offset, final int maxWidth) {
@@ -9373,7 +9356,7 @@ public class StringUtils {
     /**
      * Returns the string representation of the {@code char} array or null.
      *
-     * @param value the character array.
+     * @param value the character array
      * @return a String or null
      * @see String#valueOf(char[])
      * @since 3.9

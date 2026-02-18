@@ -186,8 +186,8 @@ public class WordUtils {
      * WordUtils.containsAllWords("abc def", "def", "abc") = true
      * </pre>
      *
-     * @param word The CharSequence to check, may be null
-     * @param words The array of String words to search for, may be null
+     * @param word the CharSequence to check, may be null
+     * @param words the array of String words to search for, may be null
      * @return {@code true} if all search words are found, {@code false} otherwise
      * @since 3.5
      */
@@ -224,7 +224,7 @@ public class WordUtils {
      * </pre>
      *
      * @param str  the String to get initials from, may be null
-     * @return String of initial letters, {@code null} if null String input
+     * @return string of initial letters, {@code null} if null String input
      * @see #initials(String,char[])
      * @since 2.2
      */
@@ -254,7 +254,7 @@ public class WordUtils {
      *
      * @param str  the String to get initials from, may be null
      * @param delimiters  set of characters to determine words, null means whitespace
-     * @return String of initial characters, {@code null} if null String input
+     * @return string of initial characters, {@code null} if null String input
      * @see #initials(String)
      * @since 2.2
      */
@@ -619,6 +619,7 @@ public class WordUtils {
      *   <td>"flammable\ninflammable"</td>
      *  </tr>
      * </table>
+     *
      * @param str  the String to be word wrapped, may be null
      * @param wrapLength  the column to wrap the words at, less than 1 is treated as 1
      * @param newLineStr  the string to insert for a new line,

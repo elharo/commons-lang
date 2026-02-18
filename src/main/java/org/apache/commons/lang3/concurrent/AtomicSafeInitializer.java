@@ -51,16 +51,16 @@ import org.apache.commons.lang3.function.FailableSupplier;
  * case.
  * </p>
  *
- * @since 3.0
  * @param <T> the type of the object managed by this initializer class
+ * @since 3.0
  */
 public class AtomicSafeInitializer<T> extends AbstractConcurrentInitializer<T, ConcurrentException> {
 
     /**
      * Builds a new instance.
      *
-     * @param <T> the type of the object managed by the initializer.
-     * @param <I> the type of the initializer managed by this builder.
+     * @param <T> the type of the object managed by the initializer
+     * @param <I> the type of the initializer managed by this builder
      * @since 3.14.0
      */
     public static class Builder<I extends AtomicSafeInitializer<T>, T> extends AbstractBuilder<I, T, Builder<I, T>, ConcurrentException> {
@@ -78,8 +78,8 @@ public class AtomicSafeInitializer<T> extends AbstractConcurrentInitializer<T, C
     /**
      * Creates a new builder.
      *
-     * @param <T> the type of object to build.
-     * @return a new builder.
+     * @param <T> the type of object to build
+     * @return a new builder
      * @since 3.14.0
      */
     public static <T> Builder<AtomicSafeInitializer<T>, T> builder() {
@@ -102,15 +102,15 @@ public class AtomicSafeInitializer<T> extends AbstractConcurrentInitializer<T, C
     /**
      * Constructs a new instance.
      *
-     * @param initializer the initializer supplier called by {@link #initialize()}.
-     * @param closer the closer consumer called by {@link #close()}.
+     * @param initializer the initializer supplier called by {@link #initialize()}
+     * @param closer the closer consumer called by {@link #close()}
      */
     private AtomicSafeInitializer(final FailableSupplier<T, ConcurrentException> initializer, final FailableConsumer<T, ConcurrentException> closer) {
         super(initializer, closer);
     }
 
     /**
-     * Gets (and initialize, if not initialized yet) the required object
+     * Gets (and initialize, if not initialized yet) the required object.
      *
      * @return lazily initialized object
      * @throws ConcurrentException if the initialization of the object causes an

@@ -140,7 +140,7 @@ public class CharSequenceUtils {
     }
 
     /**
-     * Used by the lastIndexOf(CharSequence methods) as a green implementation of lastIndexOf
+     * Used by the lastIndexOf(CharSequence methods) as a green implementation of lastIndexOf.
      *
      * @param cs the {@link CharSequence} to be processed
      * @param searchChar the {@link CharSequence} to find
@@ -358,8 +358,8 @@ public class CharSequenceUtils {
     /**
      * Converts the given CharSequence to a char[].
      *
-     * @param source the {@link CharSequence} to be processed.
-     * @return the resulting char array, never null.
+     * @param source the {@link CharSequence} to be processed
+     * @return the resulting char array, never null
      * @since 3.11
      */
     public static char[] toCharArray(final CharSequence source) {

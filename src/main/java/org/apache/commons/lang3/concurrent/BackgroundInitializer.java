@@ -82,16 +82,16 @@ import org.apache.commons.lang3.function.FailableSupplier;
  * operation is complete or to cancel the operation.
  * </p>
  *
- * @since 3.0
  * @param <T> the type of the object managed by this initializer class
+ * @since 3.0
  */
 public class BackgroundInitializer<T> extends AbstractConcurrentInitializer<T, Exception> {
 
     /**
      * Builds a new instance.
      *
-     * @param <T> the type of the object managed by the initializer.
-     * @param <I> the type of the initializer managed by this builder.
+     * @param <T> the type of the object managed by the initializer
+     * @param <I> the type of the initializer managed by this builder
      * @since 3.14.0
      */
     public static class Builder<I extends BackgroundInitializer<T>, T> extends AbstractBuilder<I, T, Builder<I, T>, Exception> {
@@ -110,10 +110,9 @@ public class BackgroundInitializer<T> extends AbstractConcurrentInitializer<T, E
         /**
          * Sets the external executor service for executing tasks. null is a permitted value.
          *
-         * @see org.apache.commons.lang3.concurrent.BackgroundInitializer#setExternalExecutor(ExecutorService)
-         *
-         * @param externalExecutor the {@link ExecutorService} to be used.
+         * @param externalExecutor the {@link ExecutorService} to be used
          * @return this
+         * @see org.apache.commons.lang3.concurrent.BackgroundInitializer#setExternalExecutor(ExecutorService)
          */
         public Builder<I, T> setExternalExecutor(final ExecutorService externalExecutor) {
             this.externalExecutor = externalExecutor;
@@ -157,8 +156,8 @@ public class BackgroundInitializer<T> extends AbstractConcurrentInitializer<T, E
     /**
      * Creates a new builder.
      *
-     * @param <T> the type of object to build.
-     * @return a new builder.
+     * @param <T> the type of object to build
+     * @return a new builder
      * @since 3.14.0
      */
     public static <T> Builder<BackgroundInitializer<T>, T> builder() {
@@ -199,8 +198,8 @@ public class BackgroundInitializer<T> extends AbstractConcurrentInitializer<T, E
     /**
      * Constructs a new instance.
      *
-     * @param initializer the initializer supplier called by {@link #initialize()}.
-     * @param closer the closer consumer called by {@link #close()}.
+     * @param initializer the initializer supplier called by {@link #initialize()}
+     * @param closer the closer consumer called by {@link #close()}
      * @param exec the {@link ExecutorService} to be used @see #setExternalExecutor(ExecutorService)
      */
     private BackgroundInitializer(final FailableSupplier<T, ConcurrentException> initializer, final FailableConsumer<T, ConcurrentException> closer, final ExecutorService exec) {

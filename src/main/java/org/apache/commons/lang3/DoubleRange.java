@@ -41,9 +41,9 @@ public final class DoubleRange extends NumberRange<Double> {
      * The arguments may be passed in the order (min,max) or (max,min). The getMinimum and getMaximum methods will return the correct values.
      * </p>
      *
-     * @param fromInclusive the first value that defines the edge of the range, inclusive.
-     * @param toInclusive the second value that defines the edge of the range, inclusive.
-     * @return the range object, not null.
+     * @param fromInclusive the first value that defines the edge of the range, inclusive
+     * @param toInclusive the second value that defines the edge of the range, inclusive
+     * @return the range object, not null
      */
     public static DoubleRange of(final double fromInclusive, final double toInclusive) {
         return of(Double.valueOf(fromInclusive), Double.valueOf(toInclusive));
@@ -60,10 +60,10 @@ public final class DoubleRange extends NumberRange<Double> {
      * The arguments may be passed in the order (min,max) or (max,min). The getMinimum and getMaximum methods will return the correct values.
      * </p>
      *
-     * @param fromInclusive the first value that defines the edge of the range, inclusive.
-     * @param toInclusive the second value that defines the edge of the range, inclusive.
-     * @return the range object, not null.
-     * @throws IllegalArgumentException if either element is null.
+     * @param fromInclusive the first value that defines the edge of the range, inclusive
+     * @param toInclusive the second value that defines the edge of the range, inclusive
+     * @return the range object, not null
+     * @throws IllegalArgumentException if either element is null
      */
     public static DoubleRange of(final Double fromInclusive, final Double toInclusive) {
         return new DoubleRange(fromInclusive, toInclusive);
@@ -74,8 +74,8 @@ public final class DoubleRange extends NumberRange<Double> {
      *
      * @param number1 the first element, not null
      * @param number2 the second element, not null
-     * @throws NullPointerException when element1 is null.
-     * @throws NullPointerException when element2 is null.
+     * @throws NullPointerException when element1 is null
+     * @throws NullPointerException when element2 is null
      */
     private DoubleRange(final Double number1, final Double number2) {
         super(number1, number2, null);

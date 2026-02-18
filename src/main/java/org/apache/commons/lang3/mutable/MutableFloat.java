@@ -46,7 +46,7 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
     /**
      * Constructs a new MutableFloat with the specified value.
      *
-     * @param value  the initial value to store
+     * @param value the initial value to store
      */
     public MutableFloat(final float value) {
         this.value = value;
@@ -112,8 +112,8 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
      * immediately after the addition operation. This method is not thread safe.
      *
      * @param operand the quantity to add, not null
-     * @throws NullPointerException if {@code operand} is null
      * @return the value associated with this instance after adding the operand
+     * @throws NullPointerException if {@code operand} is null
      * @since 3.5
      */
     public float addAndGet(final Number operand) {
@@ -156,7 +156,7 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
     /**
      * Returns the value of this MutableFloat as a double.
      *
-     * @return the numeric value represented by this object after conversion to type double.
+     * @return the numeric value represented by this object after conversion to type double
      */
     @Override
     public double doubleValue() {
@@ -191,7 +191,7 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
      * This definition allows hashtables to operate properly.
      *
      * @param obj  the object to compare with, null returns false
-     * @return {@code true} if the objects are the same; {@code false} otherwise.
+     * @return {@code true} if the objects are the same; {@code false} otherwise
      * @see Float#floatToIntBits(float)
      */
     @Override
@@ -203,7 +203,7 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
     /**
      * Returns the value of this MutableFloat as a float.
      *
-     * @return the numeric value represented by this object after conversion to type float.
+     * @return the numeric value represented by this object after conversion to type float
      */
     @Override
     public float floatValue() {
@@ -229,8 +229,8 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
      * immediately prior to the addition operation. This method is not thread safe.
      *
      * @param operand the quantity to add, not null
-     * @throws NullPointerException if {@code operand} is null
      * @return the value associated with this instance immediately before the operand was added
+     * @throws NullPointerException if {@code operand} is null
      * @since 3.5
      */
     public float getAndAdd(final Number operand) {
@@ -310,7 +310,7 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
     /**
      * Returns the value of this MutableFloat as an int.
      *
-     * @return the numeric value represented by this object after conversion to type int.
+     * @return the numeric value represented by this object after conversion to type int
      */
     @Override
     public int intValue() {
@@ -338,7 +338,7 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
     /**
      * Returns the value of this MutableFloat as a long.
      *
-     * @return the numeric value represented by this object after conversion to type long.
+     * @return the numeric value represented by this object after conversion to type long
      */
     @Override
     public long longValue() {
@@ -348,7 +348,7 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
     /**
      * Sets the value.
      *
-     * @param value  the value to set
+     * @param value the value to set
      */
     public void setValue(final float value) {
         this.value = value;

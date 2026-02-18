@@ -77,8 +77,8 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
  * 'YYY' will be formatted as '2003', while it was '03' in former Java
  * versions. FastDatePrinter implements the behavior of Java 7.</p>
  *
- * @since 3.2
  * @see FastDateParser
+ * @since 3.2
  */
 public class FastDatePrinter implements DatePrinter, Serializable {
     // A lot of the speed in this class comes from caching, but some comes
@@ -169,7 +169,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         /**
          * Factory method for Iso8601_Rules.
          *
-         * @param tokenLen a token indicating the length of the TimeZone String to be formatted.
+         * @param tokenLen a token indicating the length of the TimeZone String to be formatted
          * @return an Iso8601_Rule that can format TimeZone String of length {@code tokenLen}. If no such
          *          rule exists, an IllegalArgumentException will be thrown.
          */
@@ -191,7 +191,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         /**
          * Constructs an instance of {@code Iso8601_Rule} with the specified properties.
          *
-         * @param length The number of characters in output (unless Z is output)
+         * @param length the number of characters in output (unless Z is output)
          */
         Iso8601_Rule(final int length) {
             this.length = length;
@@ -247,7 +247,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
          *
          * @param buffer the output buffer
          * @param value the value to be appended
-         * @throws IOException if an I/O error occurs.
+         * @throws IOException if an I/O error occurs
          */
         void appendTo(Appendable buffer, int value) throws IOException;
     }
@@ -309,7 +309,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
          *
          * @param buf the output buffer
          * @param calendar calendar to be appended
-         * @throws IOException if an I/O error occurs.
+         * @throws IOException if an I/O error occurs
          */
         void appendTo(Appendable buf, Calendar calendar) throws IOException;
 
@@ -908,9 +908,9 @@ public class FastDatePrinter implements DatePrinter, Serializable {
     /**
      * Appends two digits to the given buffer.
      *
-     * @param buffer the buffer to append to.
-     * @param value the value to append digits from.
-     * @throws IOException If an I/O error occurs
+     * @param buffer the buffer to append to
+     * @param value the value to append digits from
+     * @throws IOException if an I/O error occurs
      */
     private static void appendDigits(final Appendable buffer, final int value) throws IOException {
         buffer.append((char) (value / 10 + '0'));
@@ -920,10 +920,10 @@ public class FastDatePrinter implements DatePrinter, Serializable {
     /**
      * Appends all digits to the given buffer.
      *
-     * @param buffer the buffer to append to.
-     * @param value the value to append digits from.
-     * @param minFieldWidth Minimum field width.
-     * @throws IOException If an I/O error occurs
+     * @param buffer the buffer to append to
+     * @param value the value to append digits from
+     * @param minFieldWidth minimum field width
+     * @throws IOException if an I/O error occurs
      */
     private static void appendFullDigits(final Appendable buffer, int value, int minFieldWidth) throws IOException {
         // specialized paths for 1 to 4 digits -> avoid the memory allocation from the temporary work array
@@ -1040,7 +1040,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
      * @param pattern  {@link java.text.SimpleDateFormat} compatible pattern
      * @param timeZone  non-null time zone to use
      * @param locale  non-null locale to use
-     * @throws NullPointerException if pattern, timeZone, or locale is null.
+     * @throws NullPointerException if pattern, timeZone, or locale is null
      */
     protected FastDatePrinter(final String pattern, final TimeZone timeZone, final Locale locale) {
         this.pattern = pattern;
@@ -1055,7 +1055,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
      *
      * @param calendar  the calendar to format
      * @param buf  the buffer to format into
-     * @param <B> the Appendable class type, usually StringBuilder or StringBuffer.
+     * @param <B> the Appendable class type, usually StringBuilder or StringBuffer
      * @return the specified string buffer
      */
     private <B extends Appendable> B applyRules(final Calendar calendar, final B buf) {
@@ -1076,7 +1076,6 @@ public class FastDatePrinter implements DatePrinter, Serializable {
      * @param calendar the calendar to format
      * @param buf the buffer to format into
      * @return the specified string buffer
-     *
      * @deprecated use {@link #format(Calendar)} or {@link #format(Calendar, Appendable)}
      */
     @Deprecated
@@ -1086,8 +1085,9 @@ public class FastDatePrinter implements DatePrinter, Serializable {
 
     /**
      * Creates a String representation of the given Calendar by applying the rules of this printer to it.
-     * @param c the Calendar to apply the rules to.
-     * @return a String representation of the given Calendar.
+     *
+     * @param c the Calendar to apply the rules to
+     * @return a String representation of the given Calendar
      */
     private String applyRulesToString(final Calendar c) {
         return applyRules(c, new StringBuilder(maxLengthEstimate)).toString();
@@ -1204,9 +1204,10 @@ public class FastDatePrinter implements DatePrinter, Serializable {
     /**
      * Formats a {@link Date}, {@link Calendar} or
      * {@link Long} (milliseconds) object.
-     * @since 3.5
+     *
      * @param obj  the object to format
-     * @return The formatted value.
+     * @return the formatted value
+     * @since 3.5
      */
     String format(final Object obj) {
         if (obj instanceof Date) {
@@ -1225,11 +1226,12 @@ public class FastDatePrinter implements DatePrinter, Serializable {
     /**
      * Formats a {@link Date}, {@link Calendar} or
      * {@link Long} (milliseconds) object.
-     * @deprecated Use {{@link #format(Date)}, {{@link #format(Calendar)}, {{@link #format(long)}.
+     *
      * @param obj  the object to format
      * @param toAppendTo  the buffer to append to
      * @param pos  the position - ignored
      * @return the buffer passed in
+     * @deprecated Use {{@link #format(Date)}, {{@link #format(Calendar)}, {{@link #format(long)}.
      */
     @Deprecated
     @Override
@@ -1311,7 +1313,8 @@ public class FastDatePrinter implements DatePrinter, Serializable {
 
     /**
      * Creates a new Calendar instance.
-     * @return a new Calendar instance.
+     *
+     * @return a new Calendar instance
      */
     private Calendar newCalendar() {
         return Calendar.getInstance(timeZone, locale);
@@ -1533,9 +1536,9 @@ public class FastDatePrinter implements DatePrinter, Serializable {
      * Create the object after serialization. This implementation reinitializes the
      * transient properties.
      *
-     * @param in ObjectInputStream from which the object is being deserialized.
-     * @throws IOException if there is an IO issue.
-     * @throws ClassNotFoundException if a class cannot be found.
+     * @param in ObjectInputStream from which the object is being deserialized
+     * @throws ClassNotFoundException if a class cannot be found
+     * @throws IOException if there is an IO issue
      */
     private void readObject(final ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();

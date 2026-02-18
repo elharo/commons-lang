@@ -377,7 +377,7 @@ public class FastDateFormat extends Format implements DateParser, DatePrinter {
      * @param pattern  {@link java.text.SimpleDateFormat} compatible pattern
      * @param timeZone  non-null time zone to use
      * @param locale  non-null locale to use
-     * @throws NullPointerException if pattern, timeZone, or locale is null.
+     * @throws NullPointerException if pattern, timeZone, or locale is null
      */
     protected FastDateFormat(final String pattern, final TimeZone timeZone, final Locale locale) {
         this(pattern, timeZone, locale, null);
@@ -390,8 +390,8 @@ public class FastDateFormat extends Format implements DateParser, DatePrinter {
      * @param pattern  {@link java.text.SimpleDateFormat} compatible pattern
      * @param timeZone  non-null time zone to use
      * @param locale  non-null locale to use
-     * @param centuryStart The start of the 100-year period to use as the "default century" for 2 digit year parsing.  If centuryStart is null, defaults to now - 80 years
-     * @throws NullPointerException if pattern, timeZone, or locale is null.
+     * @param centuryStart the start of the 100-year period to use as the "default century" for 2 digit year parsing.  If centuryStart is null, defaults to now - 80 years
+     * @throws NullPointerException if pattern, timeZone, or locale is null
      */
     protected FastDateFormat(final String pattern, final TimeZone timeZone, final Locale locale, final Date centuryStart) {
         printer = new FastDatePrinter(pattern, timeZone, locale);
@@ -448,7 +448,7 @@ public class FastDateFormat extends Format implements DateParser, DatePrinter {
      * @param buf  the buffer to format into
      * @return the specified string buffer
      * @since 3.5
-    */
+     */
     @Override
     public <B extends Appendable> B format(final Calendar calendar, final B buf) {
         return printer.format(calendar, buf);

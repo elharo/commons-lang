@@ -104,7 +104,7 @@ public class ContextedException extends Exception implements ExceptionContext {
      * <p>
      * The context information is stored using a default implementation.
      *
-     * @param message  the exception message, may be null
+     * @param message the exception message, may be null
      */
     public ContextedException(final String message) {
         super(message);
@@ -144,7 +144,7 @@ public class ContextedException extends Exception implements ExceptionContext {
      * <p>
      * The context information is stored using a default implementation.
      *
-     * @param cause  the underlying cause of the exception, may be null
+     * @param cause the underlying cause of the exception, may be null
      */
     public ContextedException(final Throwable cause) {
         super(cause);
@@ -213,8 +213,8 @@ public class ContextedException extends Exception implements ExceptionContext {
     /**
      * Provides the message explaining the exception, including the contextual data.
      *
-     * @see Throwable#getMessage()
      * @return the message, never null
+     * @see Throwable#getMessage()
      */
     @Override
     public String getMessage() {
@@ -224,8 +224,8 @@ public class ContextedException extends Exception implements ExceptionContext {
     /**
      * Provides the message explaining the exception without the contextual data.
      *
-     * @see Throwable#getMessage()
      * @return the message
+     * @see Throwable#getMessage()
      * @since 3.0.1
      */
     public String getRawMessage() {

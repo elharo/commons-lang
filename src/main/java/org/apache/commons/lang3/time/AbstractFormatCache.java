@@ -31,8 +31,7 @@ import org.apache.commons.lang3.LocaleUtils;
 /**
  * FormatCache is a cache and factory for {@link Format}s.
  *
- * @param <F> The Format type.
- *
+ * @param <F> the Format type
  * @since 3.0
  */
 // TODO: Before making public move from getDateTimeInstance(Integer, ...) to int; or some other approach.
@@ -86,7 +85,7 @@ abstract class AbstractFormatCache<F extends Format> {
     }
 
     /**
-     * No date or no time.  Used in same parameters as DateFormat.SHORT or DateFormat.LONG
+     * No date or no time.  Used in same parameters as DateFormat.SHORT or DateFormat.LONG.
      */
     static final int NONE = -1;
 
@@ -97,7 +96,7 @@ abstract class AbstractFormatCache<F extends Format> {
      *
      * @param dateStyle  date style: FULL, LONG, MEDIUM, or SHORT, null indicates no date in format
      * @param timeStyle  time style: FULL, LONG, MEDIUM, or SHORT, null indicates no time in format
-     * @param locale  The non-null locale of the desired format
+     * @param locale  the non-null locale of the desired format
      * @return a localized standard date/time format
      * @throws IllegalArgumentException if the Locale has no date/time pattern defined
      */
@@ -128,9 +127,9 @@ abstract class AbstractFormatCache<F extends Format> {
      * Create a format instance using the specified pattern, time zone
      * and locale.
      *
-     * @param pattern  {@link java.text.SimpleDateFormat} compatible pattern, this will not be null.
-     * @param timeZone  time zone, this will not be null.
-     * @param locale  locale, this will not be null.
+     * @param pattern  {@link java.text.SimpleDateFormat} compatible pattern, this will not be null
+     * @param timeZone  time zone, this will not be null
+     * @param locale  locale, this will not be null
      * @return a pattern based date/time formatter
      * @throws IllegalArgumentException if pattern is invalid
      *  or {@code null}
@@ -211,8 +210,8 @@ abstract class AbstractFormatCache<F extends Format> {
      * @param timeZone  the time zone, null means use the default TimeZone
      * @param locale  the locale, null means use the default Locale
      * @return a pattern based date/time formatter
-     * @throws NullPointerException if pattern is {@code null}
      * @throws IllegalArgumentException if pattern is invalid
+     * @throws NullPointerException if pattern is {@code null}
      */
     public F getInstance(final String pattern, final TimeZone timeZone, final Locale locale) {
         Objects.requireNonNull(pattern, "pattern");

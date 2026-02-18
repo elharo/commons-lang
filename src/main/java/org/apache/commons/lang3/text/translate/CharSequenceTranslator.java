@@ -42,8 +42,8 @@ public abstract class CharSequenceTranslator {
      * Returns an upper case hexadecimal {@link String} for the given
      * character.
      *
-     * @param codePoint The code point to convert.
-     * @return An upper case hexadecimal {@link String}
+     * @param codePoint the code point to convert
+     * @return an upper case hexadecimal {@link String}
      */
     public static String hex(final int codePoint) {
         return Integer.toHexString(codePoint).toUpperCase(Locale.ENGLISH);
@@ -51,8 +51,9 @@ public abstract class CharSequenceTranslator {
 
     /**
      * Helper for non-Writer usage.
+     *
      * @param input CharSequence to be translated
-     * @return String output of translation
+     * @return string output of translation
      */
     public final String translate(final CharSequence input) {
         if (input == null) {
@@ -76,7 +77,7 @@ public abstract class CharSequenceTranslator {
      *
      * @param input CharSequence that is being translated
      * @param index int representing the current point of translation
-     * @param out Writer to translate the text to
+     * @param out writer to translate the text to
      * @return int count of code points consumed
      * @throws IOException if and only if the Writer produces an IOException
      */
@@ -87,7 +88,7 @@ public abstract class CharSequenceTranslator {
      * tightly coupled with the abstract method of this class.
      *
      * @param input CharSequence that is being translated
-     * @param writer Writer to translate the text to
+     * @param writer writer to translate the text to
      * @throws IOException if and only if the Writer produces an IOException
      */
     public final void translate(final CharSequence input, final Writer writer) throws IOException {

@@ -50,6 +50,7 @@ import org.apache.commons.lang3.time.DurationUtils;
  * Each method documents its behavior in more detail.</p>
  *
  * <p>#ThreadSafe#</p>
+ *
  * @since 1.0
  */
 //@Immutable
@@ -72,7 +73,7 @@ public class ObjectUtils {
      */
     public static class Null implements Serializable {
         /**
-         * Required for serialization support. Declare serialization compatibility with Commons Lang 1.0
+         * Required for serialization support. Declare serialization compatibility with Commons Lang 1.0.
          *
          * @see java.io.Serializable
          */
@@ -135,7 +136,7 @@ public class ObjectUtils {
      *
      * @param values  the values to test, may be {@code null} or empty
      * @return {@code false} if there is at least one {@code null} value in the array or the array is {@code null},
-     * {@code true} if all values in the array are not {@code null}s or array contains no elements.
+     * {@code true} if all values in the array are not {@code null}s or array contains no elements
      * @since 3.5
      */
     public static boolean allNotNull(final Object... values) {
@@ -161,7 +162,7 @@ public class ObjectUtils {
      *
      * @param values  the values to test, may be {@code null} or empty
      * @return {@code true} if all values in the array are {@code null}s,
-     * {@code false} if there is at least one non-null value in the array.
+     * {@code false} if there is at least one non-null value in the array
      * @since 3.11
      */
     public static boolean allNull(final Object... values) {
@@ -515,8 +516,8 @@ public class ObjectUtils {
      * changes at some future date.
      *
      * @param <T> the Object type
-     * @param v the genericized Object value to return (typically a String).
-     * @return the genericized Object v, unchanged (typically a String).
+     * @param v the genericized Object value to return (typically a String)
+     * @return the genericized Object v, unchanged (typically a String)
      * @since 3.2
      */
     public static <T> T CONST(final T v) {
@@ -537,10 +538,10 @@ public class ObjectUtils {
      * changes at some future date.
      *
      * @param v the byte literal (as an int) value to return
+     * @return the byte v, unchanged
      * @throws IllegalArgumentException if the value passed to v
      *         is larger than a byte, that is, smaller than -128 or
-     *         larger than 127.
-     * @return the byte v, unchanged
+     *         larger than 127
      * @since 3.2
      */
     public static byte CONST_BYTE(final int v) {
@@ -564,10 +565,10 @@ public class ObjectUtils {
      * changes at some future date.
      *
      * @param v the short literal (as an int) value to return
+     * @return the byte v, unchanged
      * @throws IllegalArgumentException if the value passed to v
      *         is larger than a short, that is, smaller than -32768 or
-     *         larger than 32767.
-     * @return the byte v, unchanged
+     *         larger than 32767
      * @since 3.2
      */
     public static short CONST_SHORT(final int v) {
@@ -655,9 +656,9 @@ public class ObjectUtils {
     /**
      * Delegates to {@link Object#getClass()} using generics.
      *
-     * @param <T> The argument type or null.
-     * @param object The argument.
-     * @return The argument's Class or null.
+     * @param <T> the argument type or null
+     * @param object the argument
+     * @return the argument's Class or null
      * @since 3.13.0
      */
     @SuppressWarnings("unchecked")
@@ -749,7 +750,7 @@ public class ObjectUtils {
      * </p>
      *
      * @param object object for which the hashCode is to be calculated
-     * @return Hash code in hexadecimal format.
+     * @return hash code in hexadecimal format
      * @since 3.13.0
      */
     public static String hashCodeHex(final Object object) {
@@ -797,7 +798,7 @@ public class ObjectUtils {
      * </p>
      *
      * @param object object for which the hashCode is to be calculated
-     * @return Hash code in hexadecimal format.
+     * @return hash code in hexadecimal format
      * @since 3.13.0
      */
     public static String identityHashCodeHex(final Object object) {
@@ -817,7 +818,7 @@ public class ObjectUtils {
      *
      * @param appendable  the appendable to append to
      * @param object  the object to create a toString for
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException if an I/O error occurs
      * @since 3.2
      */
     public static void identityToString(final Appendable appendable, final Object object) throws IOException {
@@ -1071,7 +1072,7 @@ public class ObjectUtils {
      * @param <T> type of the values processed by this method
      * @param values the set of comparable values, may be null
      * @return
-     *  <ul>
+    *  <ul>
      *   <li>If any objects are non-null and unequal, the greater object.
      *   <li>If all objects are non-null and equal, the first.
      *   <li>If any of the comparables are null, the greater of the non-null objects.
@@ -1094,12 +1095,13 @@ public class ObjectUtils {
     /**
      * Find the "best guess" middle value among comparables. If there is an even
      * number of total values, the lower of the two middle values will be returned.
+     *
      * @param <T> type of values processed by this method
      * @param comparator to use for comparisons
      * @param items to compare
-     * @return T at middle position
-     * @throws NullPointerException if items or comparator is {@code null}
+     * @return t at middle position
      * @throws IllegalArgumentException if items is empty or contains {@code null} values
+     * @throws NullPointerException if items or comparator is {@code null}
      * @since 3.0.1
      */
     @SafeVarargs
@@ -1117,11 +1119,12 @@ public class ObjectUtils {
     /**
      * Find the "best guess" middle value among comparables. If there is an even
      * number of total values, the lower of the two middle values will be returned.
+     *
      * @param <T> type of values processed by this method
      * @param items to compare
-     * @return T at middle position
-     * @throws NullPointerException if items is {@code null}
+     * @return t at middle position
      * @throws IllegalArgumentException if items is empty or contains {@code null} values
+     * @throws NullPointerException if items is {@code null}
      * @since 3.0.1
      */
     @SafeVarargs
@@ -1142,7 +1145,7 @@ public class ObjectUtils {
      * @param <T> type of the values processed by this method
      * @param values the set of comparable values, may be null
      * @return
-     *  <ul>
+    *  <ul>
      *   <li>If any objects are non-null and unequal, the lesser object.
      *   <li>If all objects are non-null and equal, the first.
      *   <li>If any of the comparables are null, the lesser of the non-null objects.
@@ -1235,11 +1238,11 @@ public class ObjectUtils {
      *
      * </blockquote>
      *
-     * @param <T> the type of the reference.
-     * @param obj the object reference to check for nullity.
-     * @return {@code obj} if not {@code null}.
-     * @throws NullPointerException     if {@code obj} is {@code null}.
-     * @throws IllegalArgumentException if {@code obj} is empty per {@link #isEmpty(Object)}.
+     * @param <T> the type of the reference
+     * @param obj the object reference to check for nullity
+     * @return {@code obj} if not {@code null}
+     * @throws IllegalArgumentException if {@code obj} is empty per {@link #isEmpty(Object)}
+     * @throws NullPointerException     if {@code obj} is {@code null}
      * @see #isEmpty(Object)
      * @since 3.12.0
      */
@@ -1261,12 +1264,12 @@ public class ObjectUtils {
      *
      * </blockquote>
      *
-     * @param <T> the type of the reference.
-     * @param obj the object reference to check for nullity.
-     * @param message the exception message.
-     * @return {@code obj} if not {@code null}.
-     * @throws NullPointerException     if {@code obj} is {@code null}.
-     * @throws IllegalArgumentException if {@code obj} is empty per {@link #isEmpty(Object)}.
+     * @param <T> the type of the reference
+     * @param obj the object reference to check for nullity
+     * @param message the exception message
+     * @return {@code obj} if not {@code null}
+     * @throws IllegalArgumentException if {@code obj} is empty per {@link #isEmpty(Object)}
+     * @throws NullPointerException     if {@code obj} is {@code null}
      * @see #isEmpty(Object)
      * @since 3.12.0
      */
@@ -1290,10 +1293,10 @@ public class ObjectUtils {
      * ObjectUtils.toString(Boolean.TRUE) = "true"
      * </pre>
      *
-     * @see StringUtils#defaultString(String)
-     * @see String#valueOf(Object)
      * @param obj  the Object to {@code toString}, may be null
      * @return the passed in Object's toString, or {@code ""} if {@code null} input
+     * @see StringUtils#defaultString(String)
+     * @see String#valueOf(Object)
      * @since 2.0
      * @deprecated this method has been replaced by {@code java.util.Objects.toString(Object)} in Java 7 and will be
      * removed in future releases. Note however that said method will return "null" for null references, while this
@@ -1316,11 +1319,11 @@ public class ObjectUtils {
      * ObjectUtils.toString(Boolean.TRUE, "null") = "true"
      * </pre>
      *
-     * @see StringUtils#defaultString(String,String)
-     * @see String#valueOf(Object)
      * @param obj  the Object to {@code toString}, may be null
      * @param nullStr  the String to return if {@code null} input, may be null
      * @return the passed in Object's toString, or {@code nullStr} if {@code null} input
+     * @see StringUtils#defaultString(String,String)
+     * @see String#valueOf(Object)
      * @since 2.0
      * @deprecated this method has been replaced by {@code java.util.Objects.toString(Object, String)} in Java 7 and
      * will be removed in future releases.
@@ -1369,7 +1372,7 @@ public class ObjectUtils {
      * ObjectUtils.toString(Boolean.TRUE, () -&gt; expensive()) = "true"
      * </pre>
      *
-     * @param <T> the obj type (used to provide better source compatibility in 3.14.0).
+     * @param <T> the obj type (used to provide better source compatibility in 3.14.0)
      * @param obj  the Object to {@code toString}, may be null
      * @param supplier  the Supplier of String used on {@code null} input, may be null
      * @return the passed in Object's toString, or {@code nullStr} if {@code null} input
@@ -1382,10 +1385,10 @@ public class ObjectUtils {
     /**
      * Calls {@link Object#wait(long, int)} for the given Duration.
      *
-     * @param obj The receiver of the wait call.
-     * @param duration How long to wait.
-     * @throws IllegalArgumentException if the timeout duration is negative.
-     * @throws IllegalMonitorStateException if the current thread is not the owner of the {@code obj}'s monitor.
+     * @param obj the receiver of the wait call
+     * @param duration how long to wait
+     * @throws IllegalArgumentException if the timeout duration is negative
+     * @throws IllegalMonitorStateException if the current thread is not the owner of the {@code obj}'s monitor
      * @throws InterruptedException if any thread interrupted the current thread before or while the current thread was
      *         waiting for a notification. The <em>interrupted status</em> of the current thread is cleared when this
      *         exception is thrown.

@@ -117,7 +117,6 @@ public class EqualsBuilder implements Builder<Boolean> {
      *
      * @param lhs {@code this} object
      * @param rhs the other object
-     *
      * @return the pair
      */
     static Pair<IDKey, IDKey> getRegisterPair(final Object lhs, final Object rhs) {
@@ -130,7 +129,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * Returns the registry of object pairs being traversed by the reflection
      * methods in the current thread.
      *
-     * @return Set the registry of objects being traversed
+     * @return set the registry of objects being traversed
      * @since 3.0
      */
     static Set<Pair<IDKey, IDKey>> getRegistry() {
@@ -145,7 +144,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      *
      * @param lhs {@code this} object to lookup in registry
      * @param rhs the other object to lookup on registry
-     * @return boolean {@code true} if the registry contains the given object.
+     * @return boolean {@code true} if the registry contains the given object
      * @since 3.0
      */
     static boolean isRegistered(final Object lhs, final Object rhs) {
@@ -176,8 +175,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * @param lhs  {@code this} object
      * @param rhs  the other object
      * @param testTransients  whether to include transient fields
-     * @return {@code true} if the two Objects have tested equals.
-     *
+     * @return {@code true} if the two Objects have tested equals
      * @see EqualsExclude
      */
     public static boolean reflectionEquals(final Object lhs, final Object rhs, final boolean testTransients) {
@@ -213,10 +211,9 @@ public class EqualsBuilder implements Builder<Boolean> {
      * @param reflectUpToClass  the superclass to reflect up to (inclusive),
      *  may be {@code null}
      * @param testRecursive  whether to call reflection equals on non-primitive
-     *  fields recursively.
+     *  fields recursively
      * @param excludeFields  array of field names to exclude from testing
-     * @return {@code true} if the two Objects have tested equals.
-     *
+     * @return {@code true} if the two Objects have tested equals
      * @see EqualsExclude
      * @since 3.6
      */
@@ -261,8 +258,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * @param reflectUpToClass  the superclass to reflect up to (inclusive),
      *  may be {@code null}
      * @param excludeFields  array of field names to exclude from testing
-     * @return {@code true} if the two Objects have tested equals.
-     *
+     * @return {@code true} if the two Objects have tested equals
      * @see EqualsExclude
      * @since 2.0
      */
@@ -288,9 +284,8 @@ public class EqualsBuilder implements Builder<Boolean> {
      *
      * @param lhs  {@code this} object
      * @param rhs  the other object
-     * @param excludeFields  Collection of String field names to exclude from testing
-     * @return {@code true} if the two Objects have tested equals.
-     *
+     * @param excludeFields  collection of String field names to exclude from testing
+     * @return {@code true} if the two Objects have tested equals
      * @see EqualsExclude
      */
     public static boolean reflectionEquals(final Object lhs, final Object rhs, final Collection<String> excludeFields) {
@@ -314,8 +309,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * @param lhs  {@code this} object
      * @param rhs  the other object
      * @param excludeFields  array of field names to exclude from testing
-     * @return {@code true} if the two Objects have tested equals.
-     *
+     * @return {@code true} if the two Objects have tested equals
      * @see EqualsExclude
      */
     public static boolean reflectionEquals(final Object lhs, final Object rhs, final String... excludeFields) {
@@ -376,6 +370,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * Constructor for EqualsBuilder.
      *
      * <p>Starts off assuming that equals is {@code true}.</p>
+     *
      * @see Object#equals(Object)
      */
     public EqualsBuilder() {
@@ -390,7 +385,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * @param lhs  the left-hand side {@code boolean}
      * @param rhs  the right-hand side {@code boolean}
      * @return this
-      */
+     */
     public EqualsBuilder append(final boolean lhs, final boolean rhs) {
         if (!isEquals) {
             return this;
@@ -888,8 +883,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * are all equal.
      *
      * @return {@code true} if all of the fields that have been checked
-     *         are equal, {@code false} otherwise.
-     *
+     *         are equal, {@code false} otherwise
      * @since 3.0
      */
     @Override
@@ -1033,7 +1027,8 @@ public class EqualsBuilder implements Builder<Boolean> {
     }
 
     /**
-     * Reset the EqualsBuilder so you can use the same object again
+     * Reset the EqualsBuilder so you can use the same object again.
+     *
      * @since 2.5
      */
     public void reset() {
@@ -1048,6 +1043,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * Prominent example being {@link String} class with its hash code cache field. Due to the importance
      * of the {@link String} class, it is included in the default bypasses classes. Usually, if you use
      * your own set of classes here, remember to include {@link String} class, too.</p>
+     *
      * @param bypassReflectionClasses  classes to bypass reflection test
      * @return this
      * @see #setTestRecursive(boolean)
@@ -1061,7 +1057,7 @@ public class EqualsBuilder implements Builder<Boolean> {
     /**
      * Sets the {@code isEquals} value.
      *
-     * @param isEquals The value to set.
+     * @param isEquals the value to set
      * @since 2.1
      */
     protected void setEquals(final boolean isEquals) {
@@ -1070,6 +1066,7 @@ public class EqualsBuilder implements Builder<Boolean> {
 
     /**
      * Sets field names to be excluded by reflection tests.
+     *
      * @param excludeFields the fields to exclude
      * @return this
      * @since 3.6
@@ -1081,6 +1078,7 @@ public class EqualsBuilder implements Builder<Boolean> {
 
     /**
      * Sets the superclass to reflect up to at reflective tests.
+     *
      * @param reflectUpToClass the super class to reflect up to
      * @return this
      * @since 3.6
@@ -1094,6 +1092,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * Sets whether to test fields recursively, instead of using their equals method, when reflectively comparing objects.
      * String objects, which cache a hash value, are automatically excluded from recursive testing.
      * You may specify other exceptions by calling {@link #setBypassReflectionClasses(List)}.
+     *
      * @param testRecursive whether to do a recursive test
      * @return this
      * @see #setBypassReflectionClasses(List)
@@ -1106,6 +1105,7 @@ public class EqualsBuilder implements Builder<Boolean> {
 
     /**
      * Sets whether to include transient fields when reflectively comparing objects.
+     *
      * @param testTransients whether to test transient fields
      * @return this
      * @since 3.6

@@ -86,11 +86,11 @@ public class EventUtils {
     /**
      * Adds an event listener to the specified source.  This looks for an "add" method corresponding to the event
      * type (addActionListener, for example).
+     *
      * @param eventSource   the event source
      * @param listenerType  the event listener type
      * @param listener      the listener
      * @param <L>           the event listener type
-     *
      * @throws IllegalArgumentException if the object doesn't support the listener type
      */
     public static <L> void addEventListener(final Object eventSource, final Class<L> listenerType, final L listener) {

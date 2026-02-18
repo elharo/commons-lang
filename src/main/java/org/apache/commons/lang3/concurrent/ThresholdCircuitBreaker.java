@@ -47,6 +47,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * </pre>
  *
  * <p>#Thread safe#</p>
+ *
  * @since 3.5
  */
 public class ThresholdCircuitBreaker extends AbstractCircuitBreaker<Long> {
@@ -68,7 +69,7 @@ public class ThresholdCircuitBreaker extends AbstractCircuitBreaker<Long> {
     /**
      * Creates a new instance of {@link ThresholdCircuitBreaker} and initializes the threshold.
      *
-     * @param threshold the threshold.
+     * @param threshold the threshold
      */
     public ThresholdCircuitBreaker(final long threshold) {
         this.used = new AtomicLong(INITIAL_COUNT);

@@ -30,7 +30,6 @@ import java.util.Objects;
  * @param <L> the left element type
  * @param <M> the middle element type
  * @param <R> the right element type
- *
  * @since 3.2
  */
 public class ImmutableTriple<L, M, R> extends Triple<L, M, R> {
@@ -41,7 +40,7 @@ public class ImmutableTriple<L, M, R> extends Triple<L, M, R> {
      * Consider using {@link #emptyArray()} to avoid generics warnings.
      * </p>
      *
-     * @since 3.10.
+     * @since 3.10
      */
     public static final ImmutableTriple<?, ?, ?>[] EMPTY_ARRAY = {};
 
@@ -52,7 +51,7 @@ public class ImmutableTriple<L, M, R> extends Triple<L, M, R> {
     @SuppressWarnings("rawtypes")
     private static final ImmutableTriple NULL = new ImmutableTriple<>(null, null, null);
 
-    /** Serialization version */
+    /** Serialization version. */
     private static final long serialVersionUID = 1L;
 
     /**
@@ -61,9 +60,8 @@ public class ImmutableTriple<L, M, R> extends Triple<L, M, R> {
      * @param <L> the left element type
      * @param <M> the middle element type
      * @param <R> the right element type
-     * @return the empty array singleton that can be assigned without compiler warning.
-     *
-     * @since 3.10.
+     * @return the empty array singleton that can be assigned without compiler warning
+     * @since 3.10
      */
     @SuppressWarnings("unchecked")
     public static <L, M, R> ImmutableTriple<L, M, R>[] emptyArray() {
@@ -76,7 +74,7 @@ public class ImmutableTriple<L, M, R> extends Triple<L, M, R> {
      * @param <L> the left element of this triple. Value is {@code null}.
      * @param <M> the middle element of this triple. Value is {@code null}.
      * @param <R> the right element of this triple. Value is {@code null}.
-     * @return an immutable triple of nulls.
+     * @return an immutable triple of nulls
      * @since 3.6
      */
     @SuppressWarnings("unchecked")
@@ -122,12 +120,12 @@ public class ImmutableTriple<L, M, R> extends Triple<L, M, R> {
         return of(Objects.requireNonNull(left, "left"), Objects.requireNonNull(middle, "middle"), Objects.requireNonNull(right, "right"));
     }
 
-    /** Left object */
+    /** Left object. */
     public final L left;
-    /** Middle object */
+    /** Middle object. */
     public final M middle;
 
-    /** Right object */
+    /** Right object. */
     public final R right;
 
     /**
@@ -167,4 +165,3 @@ public class ImmutableTriple<L, M, R> extends Triple<L, M, R> {
         return right;
     }
 }
-

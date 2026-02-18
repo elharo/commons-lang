@@ -58,7 +58,7 @@ public class DateFormatUtils {
             = FastDateFormat.getInstance("yyyy-MM-dd'T'HH:mm:ss");
 
     /**
-     * @deprecated - as of 4.0, ISO_DATETIME_FORMAT will be replaced by ISO_8601_EXTENDED_DATETIME_FORMAT.
+     * @deprecated as of 4.0, ISO_DATETIME_FORMAT will be replaced by ISO_8601_EXTENDED_DATETIME_FORMAT.
      */
     @Deprecated
     public static final FastDateFormat ISO_DATETIME_FORMAT = ISO_8601_EXTENDED_DATETIME_FORMAT;
@@ -77,7 +77,7 @@ public class DateFormatUtils {
             = FastDateFormat.getInstance("yyyy-MM-dd'T'HH:mm:ssZZ");
 
     /**
-     * @deprecated - as of 4.0, ISO_DATETIME_TIME_ZONE_FORMAT will be replaced by ISO_8601_EXTENDED_DATETIME_TIME_ZONE_FORMAT.
+     * @deprecated as of 4.0, ISO_DATETIME_TIME_ZONE_FORMAT will be replaced by ISO_8601_EXTENDED_DATETIME_TIME_ZONE_FORMAT.
      */
     @Deprecated
     public static final FastDateFormat ISO_DATETIME_TIME_ZONE_FORMAT = ISO_8601_EXTENDED_DATETIME_TIME_ZONE_FORMAT;
@@ -96,7 +96,7 @@ public class DateFormatUtils {
             = FastDateFormat.getInstance("yyyy-MM-dd");
 
     /**
-     * @deprecated - as of 4.0, ISO_DATE_FORMAT will be replaced by ISO_8601_EXTENDED_DATE_FORMAT.
+     * @deprecated as of 4.0, ISO_DATE_FORMAT will be replaced by ISO_8601_EXTENDED_DATE_FORMAT.
      */
     @Deprecated
     public static final FastDateFormat ISO_DATE_FORMAT = ISO_8601_EXTENDED_DATE_FORMAT;
@@ -111,7 +111,7 @@ public class DateFormatUtils {
      * effect at the time of loading DateFormatUtils class.
      * </p>
      *
-     * @deprecated - as of 4.0, ISO_DATE_TIME_ZONE_FORMAT will be removed.
+     * @deprecated as of 4.0, ISO_DATE_TIME_ZONE_FORMAT will be removed.
      */
     @Deprecated
     public static final FastDateFormat ISO_DATE_TIME_ZONE_FORMAT
@@ -126,7 +126,7 @@ public class DateFormatUtils {
      * TimeZone in effect at the time of loading DateFormatUtils class.
      * </p>
      *
-     * @deprecated - as of 4.0, ISO_TIME_FORMAT will be removed.
+     * @deprecated as of 4.0, ISO_TIME_FORMAT will be removed.
      */
     @Deprecated
     public static final FastDateFormat ISO_TIME_FORMAT
@@ -141,7 +141,7 @@ public class DateFormatUtils {
      * TimeZone in effect at the time of loading DateFormatUtils class.
      * </p>
      *
-     * @deprecated - as of 4.0, ISO_TIME_TIME_ZONE_FORMAT will be removed.
+     * @deprecated as of 4.0, ISO_TIME_TIME_ZONE_FORMAT will be removed.
      */
     @Deprecated
     public static final FastDateFormat ISO_TIME_TIME_ZONE_FORMAT
@@ -161,7 +161,7 @@ public class DateFormatUtils {
             = FastDateFormat.getInstance("HH:mm:ss");
 
     /**
-     * @deprecated - as of 4.0, ISO_TIME_NO_T_FORMAT will be replaced by ISO_8601_EXTENDED_TIME_FORMAT.
+     * @deprecated as of 4.0, ISO_TIME_NO_T_FORMAT will be replaced by ISO_8601_EXTENDED_TIME_FORMAT.
      */
     @Deprecated
     public static final FastDateFormat ISO_TIME_NO_T_FORMAT = ISO_8601_EXTENDED_TIME_FORMAT;
@@ -180,7 +180,7 @@ public class DateFormatUtils {
             = FastDateFormat.getInstance("HH:mm:ssZZ");
 
     /**
-     * @deprecated - as of 4.0, ISO_TIME_NO_T_TIME_ZONE_FORMAT will be replaced by ISO_8601_EXTENDED_TIME_TIME_ZONE_FORMAT.
+     * @deprecated as of 4.0, ISO_TIME_NO_T_TIME_ZONE_FORMAT will be replaced by ISO_8601_EXTENDED_TIME_TIME_ZONE_FORMAT.
      */
     @Deprecated
     public static final FastDateFormat ISO_TIME_NO_T_TIME_ZONE_FORMAT = ISO_8601_EXTENDED_TIME_TIME_ZONE_FORMAT;

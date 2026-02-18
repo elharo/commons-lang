@@ -41,7 +41,7 @@ public interface DatePrinter {
      * The TimeZone specified during the construction of the Parser will determine the TimeZone
      * used in the formatted string.
      *
-     * @param calendar  the calendar to format.
+     * @param calendar  the calendar to format
      * @return the formatted string
      */
     String format(Calendar calendar);
@@ -54,7 +54,7 @@ public interface DatePrinter {
      *
      * @param calendar  the calendar to format
      * @param buf  the buffer to format into
-     * @param <B> the Appendable class type, usually StringBuilder or StringBuffer.
+     * @param <B> the Appendable class type, usually StringBuilder or StringBuffer
      * @return the specified string buffer
      * @since 3.5
      */
@@ -88,7 +88,7 @@ public interface DatePrinter {
      *
      * @param date  the date to format
      * @param buf  the buffer to format into
-     * @param <B> the Appendable class type, usually StringBuilder or StringBuffer.
+     * @param <B> the Appendable class type, usually StringBuilder or StringBuffer
      * @return the specified string buffer
      * @since 3.5
      */
@@ -121,7 +121,7 @@ public interface DatePrinter {
      *
      * @param millis  the millisecond value to format
      * @param buf  the buffer to format into
-     * @param <B> the Appendable class type, usually StringBuilder or StringBuffer.
+     * @param <B> the Appendable class type, usually StringBuilder or StringBuffer
      * @return the specified string buffer
      * @since 3.5
      */

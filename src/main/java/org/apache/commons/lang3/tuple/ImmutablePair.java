@@ -30,7 +30,6 @@ import java.util.Objects;
  *
  * @param <L> the left element type
  * @param <R> the right element type
- *
  * @since 3.0
  */
 public class ImmutablePair<L, R> extends Pair<L, R> {
@@ -41,7 +40,7 @@ public class ImmutablePair<L, R> extends Pair<L, R> {
      * Consider using {@link #emptyArray()} to avoid generics warnings.
      * </p>
      *
-     * @since 3.10.
+     * @since 3.10
      */
     public static final ImmutablePair<?, ?>[] EMPTY_ARRAY = {};
 
@@ -52,7 +51,7 @@ public class ImmutablePair<L, R> extends Pair<L, R> {
     @SuppressWarnings("rawtypes")
     private static final ImmutablePair NULL = new ImmutablePair<>(null, null);
 
-    /** Serialization version */
+    /** Serialization version. */
     private static final long serialVersionUID = 4954918890077093841L;
 
     /**
@@ -60,9 +59,8 @@ public class ImmutablePair<L, R> extends Pair<L, R> {
      *
      * @param <L> the left element type
      * @param <R> the right element type
-     * @return the empty array singleton that can be assigned without compiler warning.
-     *
-     * @since 3.10.
+     * @return the empty array singleton that can be assigned without compiler warning
+     * @since 3.10
      */
     @SuppressWarnings("unchecked")
     public static <L, R> ImmutablePair<L, R>[] emptyArray() {
@@ -90,7 +88,7 @@ public class ImmutablePair<L, R> extends Pair<L, R> {
      *
      * @param <L> the left element of this pair. Value is {@code null}.
      * @param <R> the right element of this pair. Value is {@code null}.
-     * @return an immutable pair of nulls.
+     * @return an immutable pair of nulls
      * @since 3.6
      */
     @SuppressWarnings("unchecked")
@@ -122,7 +120,7 @@ public class ImmutablePair<L, R> extends Pair<L, R> {
      *
      * @param <L> the left element type
      * @param <R> the right element type
-     * @param pair the existing map entry.
+     * @param pair the existing map entry
      * @return a pair formed from the map entry
      * @since 3.10
      */
@@ -164,10 +162,10 @@ public class ImmutablePair<L, R> extends Pair<L, R> {
         return ImmutablePair.of(null, right);
     }
 
-    /** Left object */
+    /** Left object. */
     public final L left;
 
-    /** Right object */
+    /** Right object. */
     public final R right;
 
     /**

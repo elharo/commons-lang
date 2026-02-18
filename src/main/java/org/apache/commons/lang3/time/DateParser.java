@@ -66,9 +66,10 @@ public interface DateParser {
      * Equivalent to DateFormat.parse(String).
      *
      * See {@link java.text.DateFormat#parse(String)} for more information.
-     * @param source A {@link String} whose beginning should be parsed.
-     * @return A {@link Date} parsed from the string
-     * @throws ParseException if the beginning of the specified string cannot be parsed.
+     *
+     * @param source a {@link String} whose beginning should be parsed
+     * @return a {@link Date} parsed from the string
+     * @throws ParseException if the beginning of the specified string cannot be parsed
      */
     Date parse(String source) throws ParseException;
 
@@ -77,11 +78,11 @@ public interface DateParser {
      *
      * See {@link java.text.DateFormat#parse(String, ParsePosition)} for more information.
      *
-     * @param source A {@link String}, part of which should be parsed.
-     * @param pos A {@link ParsePosition} object with index and error index information
-     * as described above.
-     * @return A {@link Date} parsed from the string. In case of error, returns null.
-     * @throws NullPointerException if text or pos is null.
+     * @param source a {@link String}, part of which should be parsed
+     * @param pos a {@link ParsePosition} object with index and error index information
+     * as described above
+     * @return a {@link Date} parsed from the string. In case of error, returns null.
+     * @throws NullPointerException if text or pos is null
      */
     Date parse(String source, ParsePosition pos);
 
@@ -91,13 +92,12 @@ public interface DateParser {
      * Not all source text needs to be consumed.  Upon parse failure, ParsePosition error index is updated to
      * the offset of the source text which does not match the supplied format.
      *
-     * @param source The text to parse.
-     * @param pos On input, the position in the source to start parsing, on output, updated position.
-     * @param calendar The calendar into which to set parsed fields.
+     * @param source the text to parse
+     * @param pos on input, the position in the source to start parsing, on output, updated position
+     * @param calendar the calendar into which to set parsed fields
      * @return true, if source has been parsed (pos parsePosition is updated); otherwise false (and pos errorIndex is updated)
      * @throws IllegalArgumentException when Calendar has been set to be not lenient, and a parsed field is
-     * out of range.
-     *
+     * out of range
      * @since 3.5
      */
     boolean parse(String source, ParsePosition pos, Calendar calendar);
@@ -105,9 +105,9 @@ public interface DateParser {
     /**
      * Parses text from a string to produce a Date.
      *
-     * @param source A {@link String} whose beginning should be parsed.
+     * @param source a {@link String} whose beginning should be parsed
      * @return a {@link java.util.Date} object
-     * @throws ParseException if the beginning of the specified string cannot be parsed.
+     * @throws ParseException if the beginning of the specified string cannot be parsed
      * @see java.text.DateFormat#parseObject(String)
      */
     Object parseObject(String source) throws ParseException;
@@ -115,7 +115,7 @@ public interface DateParser {
     /**
      * Parses a date/time string according to the given parse position.
      *
-     * @param source A {@link String} whose beginning should be parsed.
+     * @param source a {@link String} whose beginning should be parsed
      * @param pos the parse position
      * @return a {@link java.util.Date} object
      * @see java.text.DateFormat#parseObject(String, ParsePosition)

@@ -48,7 +48,7 @@ public abstract class StrMatcher {
         /**
          * Constructor that creates a matcher that matches a single character.
          *
-         * @param ch  the character to match
+         * @param ch the character to match
          */
         CharMatcher(final char ch) {
             this.ch = ch;
@@ -78,7 +78,7 @@ public abstract class StrMatcher {
         /**
          * Constructor that creates a matcher from a character array.
          *
-         * @param chars  the characters to match, must not be null
+         * @param chars the characters to match, must not be null
          */
         CharSetMatcher(final char[] chars) {
             this.chars = ArraySorter.sort(chars.clone());
@@ -133,7 +133,7 @@ public abstract class StrMatcher {
         /**
          * Constructor that creates a matcher from a String.
          *
-         * @param str  the string to match, must not be null
+         * @param str the string to match, must not be null
          */
         StringMatcher(final String str) {
             chars = str.toCharArray();

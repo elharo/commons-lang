@@ -46,10 +46,10 @@ public class DurationUtils {
     /**
      * Accepts the function with the duration as a long milliseconds and int nanoseconds.
      *
-     * @param <T> The function exception.
-     * @param consumer Accepting function.
-     * @param duration The duration to pick apart.
-     * @throws T See the function signature.
+     * @param <T> the function exception
+     * @param consumer accepting function
+     * @param duration the duration to pick apart
+     * @throws T see the function signature
      */
     @SuppressWarnings("boxing") // boxing unavoidable
     public static <T extends Throwable> void accept(final FailableBiConsumer<Long, Integer, T> consumer, final Duration duration)
@@ -69,8 +69,8 @@ public class DurationUtils {
      * Note that is this different from {@link Duration#getNano()} because a duration are seconds and nanoseconds.
      * </p>
      *
-     * @param duration The duration to query.
-     * @return nanoseconds between 0 and 999,999.
+     * @param duration the duration to query
+     * @return nanoseconds between 0 and 999,999
      * @deprecated Use {@link #getNanosOfMilli(Duration)}.
      */
     @Deprecated
@@ -88,8 +88,8 @@ public class DurationUtils {
      * Note that is this different from {@link Duration#getNano()} because a duration are seconds and nanoseconds.
      * </p>
      *
-     * @param duration The duration to query.
-     * @return nanoseconds between 0 and 999,999.
+     * @param duration the duration to query
+     * @return nanoseconds between 0 and 999,999
      * @since 3.13.0
      */
     public static int getNanosOfMilli(final Duration duration) {
@@ -100,7 +100,7 @@ public class DurationUtils {
      * Tests whether the given Duration is positive (&gt;0).
      *
      * @param duration the value to test
-     * @return whether the given Duration is positive (&gt;0).
+     * @return whether the given Duration is positive (&gt;0)
      */
     public static boolean isPositive(final Duration duration) {
         return !duration.isNegative() && !duration.isZero();
@@ -115,10 +115,10 @@ public class DurationUtils {
     /**
      * Runs the lambda and returns the duration of its execution.
      *
-     * @param <E> The type of exception throw by the lambda.
-     * @param consumer What to execute.
-     * @return The Duration of execution.
-     * @throws E thrown by the lambda.
+     * @param <E> the type of exception throw by the lambda
+     * @param consumer what to execute
+     * @return the Duration of execution
+     * @throws E thrown by the lambda
      * @since 3.13.0
      */
     public static <E extends Throwable> Duration of(final FailableConsumer<Instant, E> consumer) throws E {
@@ -128,10 +128,10 @@ public class DurationUtils {
     /**
      * Runs the lambda and returns the duration of its execution.
      *
-     * @param <E> The type of exception throw by the lambda.
-     * @param runnable What to execute.
-     * @return The Duration of execution.
-     * @throws E thrown by the lambda.
+     * @param <E> the type of exception throw by the lambda
+     * @param runnable what to execute
+     * @return the Duration of execution
+     * @throws E thrown by the lambda
      * @since 3.13.0
      */
     public static <E extends Throwable> Duration of(final FailableRunnable<E> runnable) throws E {
@@ -141,8 +141,8 @@ public class DurationUtils {
     /**
      * Computes the Duration between a start instant and now.
      *
-     * @param startInclusive the start instant, inclusive, not null.
-     * @return a {@link Duration}, not null.
+     * @param startInclusive the start instant, inclusive, not null
+     * @return a {@link Duration}, not null
      * @since 3.13.0
      */
     public static Duration since(final Temporal startInclusive) {
@@ -152,8 +152,8 @@ public class DurationUtils {
     /**
      * Converts a {@link TimeUnit} to a {@link ChronoUnit}.
      *
-     * @param timeUnit A non-null TimeUnit.
-     * @return The corresponding ChronoUnit.
+     * @param timeUnit a non-null TimeUnit
+     * @return the corresponding ChronoUnit
      */
     static ChronoUnit toChronoUnit(final TimeUnit timeUnit) {
         // TODO when using Java >= 9: Use TimeUnit.toChronoUnit().
@@ -182,7 +182,7 @@ public class DurationUtils {
      *
      * @param amount   the amount of the duration, measured in terms of the unit, positive or negative
      * @param timeUnit the unit that the duration is measured in, must have an exact duration, not null
-     * @return a Duration.
+     * @return a Duration
      */
     public static Duration toDuration(final long amount, final TimeUnit timeUnit) {
         return Duration.of(amount, toChronoUnit(timeUnit));
@@ -200,8 +200,8 @@ public class DurationUtils {
      * {@link Integer#MIN_VALUE}.</li>
      * </ul>
      *
-     * @param duration The duration to convert, not null.
-     * @return int milliseconds.
+     * @param duration the duration to convert, not null
+     * @return int milliseconds
      */
     public static int toMillisInt(final Duration duration) {
         Objects.requireNonNull(duration, "duration");
@@ -212,8 +212,8 @@ public class DurationUtils {
     /**
      * Returns the given non-null value or {@link Duration#ZERO} if null.
      *
-     * @param duration The duration to test.
-     * @return The given duration or {@link Duration#ZERO}.
+     * @param duration the duration to test
+     * @return the given duration or {@link Duration#ZERO}
      */
     public static Duration zeroIfNull(final Duration duration) {
         return ObjectUtils.defaultIfNull(duration, Duration.ZERO);

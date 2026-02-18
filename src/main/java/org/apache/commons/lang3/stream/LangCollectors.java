@@ -98,8 +98,8 @@ public final class LangCollectors {
      * This is a variation of {@link Collectors#joining()} that works with any element class, not just {@code CharSequence}.
      * </p>
      *
-     * @return A {@code Collector} which concatenates Object elements, separated by the specified delimiter, in encounter
-     *         order.
+     * @return a {@code Collector} which concatenates Object elements, separated by the specified delimiter, in encounter
+     *         order
      */
     public static Collector<Object, ?, String> joining() {
         return new SimpleCollector<>(StringBuilder::new, StringBuilder::append, StringBuilder::append, StringBuilder::toString, CH_NOID);
@@ -113,9 +113,9 @@ public final class LangCollectors {
      * {@code CharSequence}.
      * </p>
      *
-     * @param delimiter the delimiter to be used between each element.
-     * @return A {@code Collector} which concatenates Object elements, separated by the specified delimiter, in encounter
-     *         order.
+     * @param delimiter the delimiter to be used between each element
+     * @return a {@code Collector} which concatenates Object elements, separated by the specified delimiter, in encounter
+     *         order
      */
     public static Collector<Object, ?, String> joining(final CharSequence delimiter) {
         return joining(delimiter, StringUtils.EMPTY, StringUtils.EMPTY);
@@ -132,7 +132,7 @@ public final class LangCollectors {
      * @param delimiter the delimiter to be used between each element
      * @param prefix the sequence of characters to be used at the beginning of the joined result
      * @param suffix the sequence of characters to be used at the end of the joined result
-     * @return A {@code Collector} which concatenates CharSequence elements, separated by the specified delimiter, in
+     * @return a {@code Collector} which concatenates CharSequence elements, separated by the specified delimiter, in
      *         encounter order
      */
     public static Collector<Object, ?, String> joining(final CharSequence delimiter, final CharSequence prefix, final CharSequence suffix) {
@@ -150,8 +150,8 @@ public final class LangCollectors {
      * @param delimiter the delimiter to be used between each element
      * @param prefix the sequence of characters to be used at the beginning of the joined result
      * @param suffix the sequence of characters to be used at the end of the joined result
-     * @param toString A function that takes an Object and returns a non-null String.
-     * @return A {@code Collector} which concatenates CharSequence elements, separated by the specified delimiter, in
+     * @param toString a function that takes an Object and returns a non-null String
+     * @return a {@code Collector} which concatenates CharSequence elements, separated by the specified delimiter, in
      *         encounter order
      */
     public static Collector<Object, ?, String> joining(final CharSequence delimiter, final CharSequence prefix, final CharSequence suffix,

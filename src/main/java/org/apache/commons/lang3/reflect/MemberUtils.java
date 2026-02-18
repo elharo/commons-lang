@@ -34,7 +34,7 @@ final class MemberUtils {
     // TODO extract an interface to implement compareParameterSets(...)?
 
     /**
-     *  A class providing a subset of the API of java.lang.reflect.Executable in Java 1.8,
+     * A class providing a subset of the API of java.lang.reflect.Executable in Java 1.8,
      * providing a common representation for function signatures for Constructors and Methods.
      */
     private static final class Executable {
@@ -70,7 +70,7 @@ final class MemberUtils {
 
     private static final int ACCESS_TEST = Modifier.PUBLIC | Modifier.PROTECTED | Modifier.PRIVATE;
 
-    /** Array of primitive number types ordered by "promotability" */
+    /** Array of primitive number types ordered by "promotability". */
     private static final Class<?>[] ORDERED_PRIMITIVE_TYPES = { Byte.TYPE, Short.TYPE,
             Character.TYPE, Integer.TYPE, Long.TYPE, Float.TYPE, Double.TYPE };
 
@@ -130,9 +130,10 @@ final class MemberUtils {
      * Gets the number of steps needed to turn the source class into
      * the destination class. This represents the number of steps in the object
      * hierarchy graph.
-     * @param srcClass The source class
-     * @param destClass The destination class
-     * @return The cost of transforming an object
+     *
+     * @param srcClass the source class
+     * @param destClass the destination class
+     * @return the cost of transforming an object
      */
     private static float getObjectTransformationCost(Class<?> srcClass, final Class<?> destClass) {
         if (destClass.isPrimitive()) {
@@ -165,9 +166,10 @@ final class MemberUtils {
     /**
      * Gets the number of steps required to promote a primitive number to another
      * type.
+     *
      * @param srcClass the (primitive) source class
      * @param destClass the (primitive) destination class
-     * @return The cost of promoting the primitive
+     * @return the cost of promoting the primitive
      */
     private static float getPrimitivePromotionCost(final Class<?> srcClass, final Class<?> destClass) {
         if (srcClass == null) {
@@ -194,9 +196,10 @@ final class MemberUtils {
     /**
      * Returns the sum of the object transformation cost for each class in the
      * source argument list.
-     * @param srcArgs The source arguments
-     * @param executable The executable to calculate transformation costs for
-     * @return The total transformation cost
+     *
+     * @param srcArgs the source arguments
+     * @param executable the executable to calculate transformation costs for
+     * @return the total transformation cost
      */
     private static float getTotalTransformationCost(final Class<?>[] srcArgs, final Executable executable) {
         final Class<?>[] destArgs = executable.getParameterTypes();
@@ -239,7 +242,8 @@ final class MemberUtils {
 
     /**
      * Tests whether a {@link Member} is accessible.
-     * @param member Member to test
+     *
+     * @param member member to test
      * @return {@code true} if {@code m} is accessible
      */
     static boolean isAccessible(final Member member) {
@@ -281,6 +285,7 @@ final class MemberUtils {
 
     /**
      * Tests whether a given set of modifiers implies package access.
+     *
      * @param modifiers to test
      * @return {@code true} unless {@code package}/{@code protected}/{@code private} modifier detected
      */
@@ -290,7 +295,8 @@ final class MemberUtils {
 
     /**
      * Tests whether a {@link Member} is public.
-     * @param member Member to test
+     *
+     * @param member member to test
      * @return {@code true} if {@code m} is public
      */
     static boolean isPublic(final Member member) {
@@ -299,7 +305,8 @@ final class MemberUtils {
 
     /**
      * Tests whether a {@link Member} is static.
-     * @param member Member to test
+     *
+     * @param member member to test
      * @return {@code true} if {@code m} is static
      */
     static boolean isStatic(final Member member) {
@@ -316,8 +323,9 @@ final class MemberUtils {
      * Calling {@code setAccessible(true)} solves the problem but will only work from
      * sufficiently privileged code. Better workarounds would be gratefully
      * accepted.
+     *
      * @param obj the AccessibleObject to set as accessible
-     * @return a boolean indicating whether the accessibility of the object was set to true.
+     * @return a boolean indicating whether the accessibility of the object was set to true
      */
     static <T extends AccessibleObject> T setAccessibleWorkaround(final T obj) {
         if (obj == null || obj.isAccessible()) {

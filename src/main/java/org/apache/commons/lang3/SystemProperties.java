@@ -257,7 +257,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getAwtToolkit() {
         return getProperty(AWT_TOOLKIT);
@@ -286,7 +286,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getFileEncoding() {
         return getProperty(FILE_ENCODING);
@@ -298,7 +298,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getFileSeparator() {
         return getProperty(FILE_SEPARATOR);
@@ -324,7 +324,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaAwtFonts() {
         return getProperty(JAVA_AWT_FONTS);
@@ -336,7 +336,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaAwtGraphicsenv() {
         return getProperty(JAVA_AWT_GRAPHICSENV);
@@ -348,7 +348,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaAwtHeadless() {
         return getProperty(JAVA_AWT_HEADLESS);
@@ -360,7 +360,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaAwtPrinterjob() {
         return getProperty(JAVA_AWT_PRINTERJOB);
@@ -372,7 +372,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaClassPath() {
         return getProperty(JAVA_CLASS_PATH);
@@ -384,7 +384,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaClassVersion() {
         return getProperty(JAVA_CLASS_VERSION);
@@ -396,7 +396,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaCompiler() {
         return getProperty(JAVA_COMPILER);
@@ -408,7 +408,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaEndorsedDirs() {
         return getProperty(JAVA_ENDORSED_DIRS);
@@ -420,7 +420,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaExtDirs() {
         return getProperty(JAVA_EXT_DIRS);
@@ -432,7 +432,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaHome() {
         return getProperty(JAVA_HOME);
@@ -444,7 +444,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaIoTmpdir() {
         return getProperty(JAVA_IO_TMPDIR);
@@ -456,7 +456,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaLibraryPath() {
         return getProperty(JAVA_LIBRARY_PATH);
@@ -470,7 +470,8 @@ public final class SystemProperties {
      * <p>
      * Java 9 and above.
      * </p>
-     * @return the current value from the system properties map.
+     *
+     * @return the current value from the system properties map
      */
     public static String getJavaLocaleProviders() {
         return getProperty(JAVA_LOCALE_PROVIDERS);
@@ -482,7 +483,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaRuntimeName() {
         return getProperty(JAVA_RUNTIME_NAME);
@@ -494,7 +495,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaRuntimeVersion() {
         return getProperty(JAVA_RUNTIME_VERSION);
@@ -506,7 +507,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaSpecificationName() {
         return getProperty(JAVA_SPECIFICATION_NAME);
@@ -518,7 +519,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaSpecificationVendor() {
         return getProperty(JAVA_SPECIFICATION_VENDOR);
@@ -530,7 +531,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaSpecificationVersion() {
         return getProperty(JAVA_SPECIFICATION_VERSION);
@@ -542,7 +543,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaUtilPrefsPreferencesFactory() {
         return getProperty(JAVA_UTIL_PREFS_PREFERENCES_FACTORY);
@@ -554,7 +555,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaVendor() {
         return getProperty(JAVA_VENDOR);
@@ -566,7 +567,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaVendorUrl() {
         return getProperty(JAVA_VENDOR_URL);
@@ -578,7 +579,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaVersion() {
         return getProperty(JAVA_VERSION);
@@ -590,7 +591,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaVmInfo() {
         return getProperty(JAVA_VM_INFO);
@@ -602,7 +603,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaVmName() {
         return getProperty(JAVA_VM_NAME);
@@ -614,7 +615,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaVmSpecificationName() {
         return getProperty(JAVA_VM_SPECIFICATION_NAME);
@@ -626,7 +627,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaVmSpecificationVendor() {
         return getProperty(JAVA_VM_SPECIFICATION_VENDOR);
@@ -638,7 +639,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaVmSpecificationVersion() {
         return getProperty(JAVA_VM_SPECIFICATION_VERSION);
@@ -650,7 +651,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaVmVendor() {
         return getProperty(JAVA_VM_VENDOR);
@@ -662,7 +663,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getJavaVmVersion() {
         return getProperty(JAVA_VM_VERSION);
@@ -674,7 +675,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getLineSeparator() {
         return getProperty(LINE_SEPARATOR);
@@ -700,7 +701,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getOsArch() {
         return getProperty(OS_ARCH);
@@ -712,7 +713,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getOsName() {
         return getProperty(OS_NAME);
@@ -724,7 +725,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getOsVersion() {
         return getProperty(OS_VERSION);
@@ -736,7 +737,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getPathSeparator() {
         return getProperty(PATH_SEPARATOR);
@@ -761,8 +762,8 @@ public final class SystemProperties {
      * If a {@link SecurityException} is caught, the return value is {@code null}.
      * </p>
      *
-     * @param property        the system property name.
-     * @param defaultValue get this Supplier when the property is empty or throws SecurityException.
+     * @param property        the system property name
+     * @param defaultValue get this Supplier when the property is empty or throws SecurityException
      * @return the system property value or {@code null} if a security problem occurs
      */
     static String getProperty(final String property, final Supplier<String> defaultValue) {
@@ -787,7 +788,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getUserCountry() {
         return getProperty(USER_COUNTRY);
@@ -799,7 +800,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getUserDir() {
         return getProperty(USER_DIR);
@@ -811,7 +812,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getUserHome() {
         return getProperty(USER_HOME);
@@ -823,7 +824,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getUserLanguage() {
         return getProperty(USER_LANGUAGE);
@@ -835,7 +836,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getUserName() {
         return getProperty(USER_NAME);
@@ -847,7 +848,7 @@ public final class SystemProperties {
      * Returns {@code null} if the property cannot be read due to a {@link SecurityException}.
      * </p>
      *
-     * @return the current value from the system properties map.
+     * @return the current value from the system properties map
      */
     public static String getUserTimezone() {
         return getProperty(USER_TIMEZONE);

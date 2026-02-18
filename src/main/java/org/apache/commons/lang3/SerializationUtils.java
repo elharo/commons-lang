@@ -43,6 +43,7 @@ import java.util.Objects;
  * Each method documents its behavior in more detail.</p>
  *
  * <p>#ThreadSafe#</p>
+ *
  * @since 1.0
  */
 public class SerializationUtils {
@@ -81,9 +82,10 @@ public class SerializationUtils {
 
         /**
          * Constructs a new instance.
-         * @param in The {@link InputStream}.
+         *
+         * @param in the {@link InputStream}
          * @param classLoader classloader to use
-         * @throws IOException if an I/O error occurs while reading stream header.
+         * @throws IOException if an I/O error occurs while reading stream header
          * @see java.io.ObjectInputStream
          */
         ClassLoaderAwareObjectInputStream(final InputStream in, final ClassLoader classLoader) throws IOException {
@@ -94,10 +96,11 @@ public class SerializationUtils {
         /**
          * Overridden version that uses the parameterized {@link ClassLoader} or the {@link ClassLoader}
          * of the current {@link Thread} to resolve the class.
-         * @param desc An instance of class {@link ObjectStreamClass}.
-         * @return A {@link Class} object corresponding to {@code desc}.
-         * @throws IOException Any of the usual Input/Output exceptions.
-         * @throws ClassNotFoundException If class of a serialized object cannot be found.
+         *
+         * @param desc an instance of class {@link ObjectStreamClass}
+         * @return a {@link Class} object corresponding to {@code desc}
+         * @throws ClassNotFoundException if class of a serialized object cannot be found
+         * @throws IOException any of the usual Input/Output exceptions
          */
         @Override
         protected Class<?> resolveClass(final ObjectStreamClass desc) throws IOException, ClassNotFoundException {
@@ -274,8 +277,8 @@ public class SerializationUtils {
      *
      * <p>This constructor is public to permit tools that require a JavaBean instance
      * to operate.</p>
-     * @since 2.0
      *
+     * @since 2.0
      * @deprecated TODO Make private in 4.0.
      */
     @Deprecated

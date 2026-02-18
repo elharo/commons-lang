@@ -406,13 +406,13 @@ public final class Fraction extends Number implements Comparable<Fraction> {
     }
 
     /**
-     *  Multiply two non-negative integers, checking for overflow.
+     * Multiply two non-negative integers, checking for overflow.
      *
-     * @param x a non-negative factor
-     * @param y a non-negative factor
-     * @return the product {@code x*y}
-     * @throws ArithmeticException if the result can not be represented as
-     * an int
+     * param x a non-negative factor
+     * param y a non-negative factor
+     * return the product {@code x*y}
+     * throws ArithmeticException if the result can not be represented as
+     * n int.
      */
     private static int mulPosAndCheck(final int x, final int y) {
         /* assert x>=0 && y>=0; */
@@ -499,9 +499,9 @@ public final class Fraction extends Number implements Comparable<Fraction> {
      *
      * @param fraction  the fraction to add, must not be {@code null}
      * @return a {@link Fraction} instance with the resulting values
-     * @throws NullPointerException if the fraction is {@code null}
      * @throws ArithmeticException if the resulting numerator or denominator exceeds
      *  {@code Integer.MAX_VALUE}
+     * @throws NullPointerException if the fraction is {@code null}
      */
     public Fraction add(final Fraction fraction) {
         return addSub(fraction, true /* add */);
@@ -513,9 +513,9 @@ public final class Fraction extends Number implements Comparable<Fraction> {
      * @param fraction the fraction to subtract, must not be {@code null}
      * @param isAdd true to add, false to subtract
      * @return a {@link Fraction} instance with the resulting values
-     * @throws IllegalArgumentException if the fraction is {@code null}
      * @throws ArithmeticException if the resulting numerator or denominator
-     *   cannot be represented in an {@code int}.
+     *   cannot be represented in an {@code int}
+     * @throws IllegalArgumentException if the fraction is {@code null}
      */
     private Fraction addSub(final Fraction fraction, final boolean isAdd) {
         Objects.requireNonNull(fraction, "fraction");
@@ -587,10 +587,10 @@ public final class Fraction extends Number implements Comparable<Fraction> {
      *
      * @param fraction  the fraction to divide by, must not be {@code null}
      * @return a {@link Fraction} instance with the resulting values
-     * @throws NullPointerException if the fraction is {@code null}
      * @throws ArithmeticException if the fraction to divide by is zero
      * @throws ArithmeticException if the resulting numerator or denominator exceeds
      *  {@code Integer.MAX_VALUE}
+     * @throws NullPointerException if the fraction is {@code null}
      */
     public Fraction divideBy(final Fraction fraction) {
         Objects.requireNonNull(fraction, "fraction");
@@ -724,8 +724,8 @@ public final class Fraction extends Number implements Comparable<Fraction> {
      * <p>The returned fraction is not reduced.</p>
      *
      * @return a new fraction instance with the numerator and denominator
-     *         inverted.
-     * @throws ArithmeticException if the fraction represents zero.
+     *         inverted
+     * @throws ArithmeticException if the fraction represents zero
      */
     public Fraction invert() {
         if (numerator == 0) {
@@ -757,9 +757,9 @@ public final class Fraction extends Number implements Comparable<Fraction> {
      *
      * @param fraction  the fraction to multiply by, must not be {@code null}
      * @return a {@link Fraction} instance with the resulting values
-     * @throws NullPointerException if the fraction is {@code null}
      * @throws ArithmeticException if the resulting numerator or denominator exceeds
      *  {@code Integer.MAX_VALUE}
+     * @throws NullPointerException if the fraction is {@code null}
      */
     public Fraction multiplyBy(final Fraction fraction) {
         Objects.requireNonNull(fraction, "fraction");
@@ -847,9 +847,9 @@ public final class Fraction extends Number implements Comparable<Fraction> {
      *
      * @param fraction  the fraction to subtract, must not be {@code null}
      * @return a {@link Fraction} instance with the resulting values
-     * @throws NullPointerException if the fraction is {@code null}
      * @throws ArithmeticException if the resulting numerator or denominator
-     *   cannot be represented in an {@code int}.
+     *   cannot be represented in an {@code int}
+     * @throws NullPointerException if the fraction is {@code null}
      */
     public Fraction subtract(final Fraction fraction) {
         return addSub(fraction, false /* subtract */);

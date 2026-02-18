@@ -26,6 +26,7 @@ import java.util.Objects;
  * Each method documents its behavior in more detail.</p>
  *
  * <p>#ThreadSafe#</p>
+ *
  * @since 2.1
  */
 public class CharUtils {
@@ -276,8 +277,8 @@ public class CharUtils {
      *
      * @param str  the character to convert
      * @return the char value of the first letter of the String
-     * @throws NullPointerException if the string is null
      * @throws IllegalArgumentException if the String is empty
+     * @throws NullPointerException if the string is null
      */
     public static char toChar(final String str) {
         Validate.notEmpty(str, "The String must not be empty");
@@ -314,9 +315,9 @@ public class CharUtils {
      *   CharUtils.toCharacterObject('A')  = 'A'
      * </pre>
      *
-     * @deprecated Java 5 introduced {@link Character#valueOf(char)} which caches chars 0 through 127.
      * @param ch  the character to convert
      * @return a Character of the specified character
+     * @deprecated Java 5 introduced {@link Character#valueOf(char)} which caches chars 0 through 127.
      */
     @Deprecated
     public static Character toCharacterObject(final char ch) {
@@ -399,8 +400,8 @@ public class CharUtils {
      *
      * @param ch  the character to convert, not null
      * @return the int value of the character
-     * @throws NullPointerException if the Character is null
      * @throws IllegalArgumentException if the Character is not ASCII numeric
+     * @throws NullPointerException if the Character is null
      */
     public static int toIntValue(final Character ch) {
         return toIntValue(toChar(ch));

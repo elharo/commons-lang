@@ -30,8 +30,8 @@ import java.util.concurrent.ThreadLocalRandom;
  * a better choice for applications with more stringent requirements
  * (performance and/or correctness).</p>
  *
- * @deprecated Use Apache Commons RNG's optimized <a href="https://commons.apache.org/proper/commons-rng/commons-rng-client-api/apidocs/org/apache/commons/rng/UniformRandomProvider.html">UniformRandomProvider</a>
  * @since 3.3
+ * @deprecated Use Apache Commons RNG's optimized <a href="https://commons.apache.org/proper/commons-rng/commons-rng-client-api/apidocs/org/apache/commons/rng/UniformRandomProvider.html">UniformRandomProvider</a>
  */
 @Deprecated
 public class RandomUtils {
@@ -80,10 +80,10 @@ public class RandomUtils {
      *            the smallest value that can be returned, must be non-negative
      * @param endExclusive
      *            the upper bound (not included)
+     * @return the random double
      * @throws IllegalArgumentException
      *             if {@code startInclusive > endExclusive} or if
      *             {@code startInclusive} is negative
-     * @return the random double
      */
     public static double nextDouble(final double startInclusive, final double endExclusive) {
         Validate.isTrue(endExclusive >= startInclusive,
@@ -115,10 +115,10 @@ public class RandomUtils {
      *            the smallest value that can be returned, must be non-negative
      * @param endExclusive
      *            the upper bound (not included)
+     * @return the random float
      * @throws IllegalArgumentException
      *             if {@code startInclusive > endExclusive} or if
      *             {@code startInclusive} is negative
-     * @return the random float
      */
     public static float nextFloat(final float startInclusive, final float endExclusive) {
         Validate.isTrue(endExclusive >= startInclusive,
@@ -150,10 +150,10 @@ public class RandomUtils {
      *            the smallest value that can be returned, must be non-negative
      * @param endExclusive
      *            the upper bound (not included)
+     * @return the random integer
      * @throws IllegalArgumentException
      *             if {@code startInclusive > endExclusive} or if
      *             {@code startInclusive} is negative
-     * @return the random integer
      */
     public static int nextInt(final int startInclusive, final int endExclusive) {
         Validate.isTrue(endExclusive >= startInclusive,
@@ -182,9 +182,9 @@ public class RandomUtils {
      * Generates a {@code long} value between 0 (inclusive) and the specified
      * value (exclusive).
      *
-     * @param n Bound on the random number to be returned.  Must be positive.
+     * @param n bound on the random number to be returned.  Must be positive.
      * @return a random {@code long} value between 0 (inclusive) and {@code n}
-     * (exclusive).
+     * (exclusive)
      */
     private static long nextLong(final long n) {
         // Extracted from o.a.c.rng.core.BaseProvider.nextLong(long)
@@ -205,10 +205,10 @@ public class RandomUtils {
      *            the smallest value that can be returned, must be non-negative
      * @param endExclusive
      *            the upper bound (not included)
+     * @return the random long
      * @throws IllegalArgumentException
      *             if {@code startInclusive > endExclusive} or if
      *             {@code startInclusive} is negative
-     * @return the random long
      */
     public static long nextLong(final long startInclusive, final long endExclusive) {
         Validate.isTrue(endExclusive >= startInclusive,

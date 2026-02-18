@@ -41,9 +41,9 @@ public final class IntegerRange extends NumberRange<Integer> {
      * The arguments may be passed in the order (min,max) or (max,min). The getMinimum and getMaximum methods will return the correct values.
      * </p>
      *
-     * @param fromInclusive the first value that defines the edge of the range, inclusive.
-     * @param toInclusive the second value that defines the edge of the range, inclusive.
-     * @return the range object, not null.
+     * @param fromInclusive the first value that defines the edge of the range, inclusive
+     * @param toInclusive the second value that defines the edge of the range, inclusive
+     * @return the range object, not null
      */
     public static IntegerRange of(final int fromInclusive, final int toInclusive) {
         return of(Integer.valueOf(fromInclusive), Integer.valueOf(toInclusive));
@@ -60,10 +60,10 @@ public final class IntegerRange extends NumberRange<Integer> {
      * The arguments may be passed in the order (min,max) or (max,min). The getMinimum and getMaximum methods will return the correct values.
      * </p>
      *
-     * @param fromInclusive the first value that defines the edge of the range, inclusive.
-     * @param toInclusive the second value that defines the edge of the range, inclusive.
-     * @return the range object, not null.
-     * @throws IllegalArgumentException if either element is null.
+     * @param fromInclusive the first value that defines the edge of the range, inclusive
+     * @param toInclusive the second value that defines the edge of the range, inclusive
+     * @return the range object, not null
+     * @throws IllegalArgumentException if either element is null
      */
     public static IntegerRange of(final Integer fromInclusive, final Integer toInclusive) {
         return new IntegerRange(fromInclusive, toInclusive);
@@ -74,8 +74,8 @@ public final class IntegerRange extends NumberRange<Integer> {
      *
      * @param number1 the first element, not null
      * @param number2 the second element, not null
-     * @throws NullPointerException when element1 is null.
-     * @throws NullPointerException when element2 is null.
+     * @throws NullPointerException when element1 is null
+     * @throws NullPointerException when element2 is null
      */
     private IntegerRange(final Integer number1, final Integer number2) {
         super(number1, number2, null);

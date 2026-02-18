@@ -162,6 +162,7 @@ public class StrSubstitutor {
     public static final StrMatcher DEFAULT_SUFFIX = StrMatcher.stringMatcher("}");
     /**
      * Constant for the default value delimiter of a variable.
+     *
      * @since 3.2
      */
     public static final StrMatcher DEFAULT_VALUE_DELIMITER = StrMatcher.stringMatcher(":-");
@@ -181,7 +182,7 @@ public class StrSubstitutor {
     /**
      * Replaces all the occurrences of variables in the given source object with
      * their matching values from the map. This method allows to specify a
-     * custom variable prefix and suffix
+     * custom variable prefix and suffix.
      *
      * @param <V> the type of the values in the map
      * @param source  the source text containing the variables to substitute, null returns null
@@ -239,7 +240,7 @@ public class StrSubstitutor {
     private StrMatcher suffixMatcher;
 
     /**
-     * Stores the default variable value delimiter
+     * Stores the default variable value delimiter.
      */
     private StrMatcher valueDelimiterMatcher;
 
@@ -325,7 +326,7 @@ public class StrSubstitutor {
     /**
      * Creates a new instance and initializes it.
      *
-     * @param variableResolver  the variable resolver, may be null
+     * @param variableResolver the variable resolver, may be null
      */
     public StrSubstitutor(final StrLookup<?> variableResolver) {
         this(variableResolver, DEFAULT_PREFIX, DEFAULT_SUFFIX, DEFAULT_ESCAPE);
@@ -891,7 +892,7 @@ public class StrSubstitutor {
      * If this character is placed before a variable reference in the source
      * text, this variable will be ignored.
      *
-     * @param escapeCharacter  the escape character (0 for disabling escaping)
+     * @param escapeCharacter the escape character (0 for disabling escaping)
      */
     public void setEscapeChar(final char escapeCharacter) {
         this.escapeChar = escapeCharacter;
@@ -1024,7 +1025,7 @@ public class StrSubstitutor {
     /**
      * Sets the VariableResolver that is used to lookup variables.
      *
-     * @param variableResolver  the VariableResolver
+     * @param variableResolver the VariableResolver
      */
     public void setVariableResolver(final StrLookup<?> variableResolver) {
         this.variableResolver = variableResolver;
@@ -1107,7 +1108,7 @@ public class StrSubstitutor {
      * @param length  the length within the builder to be processed, must be valid
      * @param priorVariables  the stack keeping track of the replaced variables, may be null
      * @return the length change that occurs, unless priorVariables is null when the int
-     *  represents a boolean flag as to whether any change occurred.
+     *  represents a boolean flag as to whether any change occurred
      */
     private int substitute(final StrBuilder buf, final int offset, final int length, List<String> priorVariables) {
         final StrMatcher pfxMatcher = getVariablePrefixMatcher();

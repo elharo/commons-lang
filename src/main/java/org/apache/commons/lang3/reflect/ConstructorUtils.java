@@ -24,7 +24,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ClassUtils;
 
 /**
- *  Utility reflection methods focused on constructors, modeled after
+ * Utility reflection methods focused on constructors, modeled after
  * {@link MethodUtils}.
  *
  * <h2>Known Limitations</h2>
@@ -55,9 +55,9 @@ public class ConstructorUtils {
      * @param cls the class to find a constructor for, not {@code null}
      * @param parameterTypes the array of parameter types, {@code null} treated as empty
      * @return the constructor, {@code null} if no matching accessible constructor found
+     * @throws NullPointerException if {@code cls} is {@code null}
      * @see Class#getConstructor
      * @see #getAccessibleConstructor(java.lang.reflect.Constructor)
-     * @throws NullPointerException if {@code cls} is {@code null}
      */
     public static <T> Constructor<T> getAccessibleConstructor(final Class<T> cls,
             final Class<?>... parameterTypes) {
@@ -77,8 +77,8 @@ public class ConstructorUtils {
      * @param <T> the constructor type
      * @param ctor  the prototype constructor object, not {@code null}
      * @return the constructor, {@code null} if no matching accessible constructor found
-     * @see SecurityManager
      * @throws NullPointerException if {@code ctor} is {@code null}
+     * @see SecurityManager
      */
     public static <T> Constructor<T> getAccessibleConstructor(final Constructor<T> ctor) {
         Objects.requireNonNull(ctor, "ctor");
@@ -152,12 +152,11 @@ public class ConstructorUtils {
      * @param cls  the class to be constructed, not {@code null}
      * @param args  the array of arguments, {@code null} treated as empty
      * @return new instance of {@code cls}, not {@code null}
-     *
-     * @throws NullPointerException if {@code cls} is {@code null}
-     * @throws NoSuchMethodException if a matching constructor cannot be found
      * @throws IllegalAccessException if invocation is not permitted by security
-     * @throws InvocationTargetException if an error occurs on invocation
      * @throws InstantiationException if an error occurs on instantiation
+     * @throws InvocationTargetException if an error occurs on invocation
+     * @throws NoSuchMethodException if a matching constructor cannot be found
+     * @throws NullPointerException if {@code cls} is {@code null}
      * @see #invokeConstructor(Class, Object[], Class[])
      */
     public static <T> T invokeConstructor(final Class<T> cls, Object... args)
@@ -179,12 +178,11 @@ public class ConstructorUtils {
      * @param args  the array of arguments, {@code null} treated as empty
      * @param parameterTypes  the array of parameter types, {@code null} treated as empty
      * @return new instance of {@code cls}, not {@code null}
-     *
-     * @throws NullPointerException if {@code cls} is {@code null}
-     * @throws NoSuchMethodException if a matching constructor cannot be found
      * @throws IllegalAccessException if invocation is not permitted by security
-     * @throws InvocationTargetException if an error occurs on invocation
      * @throws InstantiationException if an error occurs on instantiation
+     * @throws InvocationTargetException if an error occurs on invocation
+     * @throws NoSuchMethodException if a matching constructor cannot be found
+     * @throws NullPointerException if {@code cls} is {@code null}
      * @see Constructor#newInstance
      */
     public static <T> T invokeConstructor(final Class<T> cls, Object[] args, Class<?>[] parameterTypes)
@@ -215,12 +213,11 @@ public class ConstructorUtils {
      * @param cls the class to be constructed, not {@code null}
      * @param args the array of arguments, {@code null} treated as empty
      * @return new instance of {@code cls}, not {@code null}
-     *
-     * @throws NullPointerException if {@code cls} is {@code null}
-     * @throws NoSuchMethodException if a matching constructor cannot be found
      * @throws IllegalAccessException if invocation is not permitted by security
-     * @throws InvocationTargetException if an error occurs on invocation
      * @throws InstantiationException if an error occurs on instantiation
+     * @throws InvocationTargetException if an error occurs on invocation
+     * @throws NoSuchMethodException if a matching constructor cannot be found
+     * @throws NullPointerException if {@code cls} is {@code null}
      * @see #invokeExactConstructor(Class, Object[], Class[])
      */
     public static <T> T invokeExactConstructor(final Class<T> cls, Object... args)
@@ -242,12 +239,11 @@ public class ConstructorUtils {
      * @param args the array of arguments, {@code null} treated as empty
      * @param parameterTypes  the array of parameter types, {@code null} treated as empty
      * @return new instance of {@code cls}, not {@code null}
-     *
-     * @throws NullPointerException if {@code cls} is {@code null}
-     * @throws NoSuchMethodException if a matching constructor cannot be found
      * @throws IllegalAccessException if invocation is not permitted by security
-     * @throws InvocationTargetException if an error occurs on invocation
      * @throws InstantiationException if an error occurs on instantiation
+     * @throws InvocationTargetException if an error occurs on invocation
+     * @throws NoSuchMethodException if a matching constructor cannot be found
+     * @throws NullPointerException if {@code cls} is {@code null}
      * @see Constructor#newInstance
      */
     public static <T> T invokeExactConstructor(final Class<T> cls, Object[] args,
@@ -266,9 +262,10 @@ public class ConstructorUtils {
     /**
      * Tests whether the specified class is generally accessible, i.e. is
      * declared in an entirely {@code public} manner.
+     *
      * @param type to check
      * @return {@code true} if {@code type} and any enclosing classes are
-     *         {@code public}.
+     *         {@code public}
      */
     private static boolean isAccessible(final Class<?> type) {
         Class<?> cls = type;

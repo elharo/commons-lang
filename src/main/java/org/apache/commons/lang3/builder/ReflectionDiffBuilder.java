@@ -65,7 +65,7 @@ import org.apache.commons.lang3.reflect.FieldUtils;
  * See {@link DiffBuilder} for a non-reflection based version of this class.
  * </p>
  *
- * @param <T> type of the left and right object to diff.
+ * @param <T> type of the left and right object to diff
  * @see Diffable
  * @see Diff
  * @see DiffResult
@@ -78,7 +78,7 @@ public class ReflectionDiffBuilder<T> implements Builder<DiffResult<T>> {
     /**
      * Constructs a new instance.
      *
-     * @param <T> type of the left and right object.
+     * @param <T> type of the left and right object
      * @since 3.15.0
      */
     public static final class Builder<T> {
@@ -89,7 +89,7 @@ public class ReflectionDiffBuilder<T> implements Builder<DiffResult<T>> {
         /**
          * Builds a new configured {@link ReflectionDiffBuilder}.
          *
-         * @return a new configured {@link ReflectionDiffBuilder}.
+         * @return a new configured {@link ReflectionDiffBuilder}
          */
         public ReflectionDiffBuilder<T> build() {
             return new ReflectionDiffBuilder<>(diffBuilder, excludeFieldNames);
@@ -98,8 +98,8 @@ public class ReflectionDiffBuilder<T> implements Builder<DiffResult<T>> {
         /**
          * Sets the DiffBuilder.
          *
-         * @param diffBuilder the DiffBuilder.
-         * @return this.
+         * @param diffBuilder the DiffBuilder
+         * @return this
          */
         public Builder<T> setDiffBuilder(final DiffBuilder<T> diffBuilder) {
             this.diffBuilder = diffBuilder;
@@ -109,8 +109,8 @@ public class ReflectionDiffBuilder<T> implements Builder<DiffResult<T>> {
         /**
          * Sets field names to exclude from output. Intended for fields like {@code "password"} or {@code "lastModificationDate"}.
          *
-         * @param excludeFieldNames field names to exclude.
-         * @return this.
+         * @param excludeFieldNames field names to exclude
+         * @return this
          */
         public Builder<T> setExcludeFieldNames(final String... excludeFieldNames) {
             this.excludeFieldNames = toExcludeFieldNames(excludeFieldNames);
@@ -122,8 +122,8 @@ public class ReflectionDiffBuilder<T> implements Builder<DiffResult<T>> {
     /**
      * Constructs a new {@link Builder}.
      *
-     * @param <T> type of the left and right object.
-     * @return a new {@link Builder}.
+     * @param <T> type of the left and right object
+     * @return a new {@link Builder}
      * @since 3.15.0
      */
     public static <T> Builder<T> builder() {
@@ -158,10 +158,10 @@ public class ReflectionDiffBuilder<T> implements Builder<DiffResult<T>> {
      * {@link DiffResult} when {@link #build()} is executed.
      * </p>
      *
-     * @param left  {@code this} object.
-     * @param right the object to diff against.
+     * @param left  {@code this} object
+     * @param right the object to diff against
      * @param style the style will use when outputting the objects, {@code null} uses the default
-     * @throws IllegalArgumentException if {@code left} or {@code right} is {@code null}.
+     * @throws IllegalArgumentException if {@code left} or {@code right} is {@code null}
      * @deprecated Use {@link Builder}.
      */
     @Deprecated
@@ -213,7 +213,7 @@ public class ReflectionDiffBuilder<T> implements Builder<DiffResult<T>> {
     /**
      * Gets the field names that should be excluded from the diff.
      *
-     * @return Returns the excludeFieldNames.
+     * @return the excludeFieldNames
      * @since 3.13.0
      */
     public String[] getExcludeFieldNames() {
@@ -235,7 +235,7 @@ public class ReflectionDiffBuilder<T> implements Builder<DiffResult<T>> {
     /**
      * Sets the field names to exclude.
      *
-     * @param excludeFieldNames The field names to exclude from the diff or {@code null}.
+     * @param excludeFieldNames the field names to exclude from the diff or {@code null}
      * @return {@code this}
      * @since 3.13.0
      * @deprecated Use {@link Builder#setExcludeFieldNames(String[])}.

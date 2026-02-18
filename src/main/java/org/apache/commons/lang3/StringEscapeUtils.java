@@ -35,6 +35,7 @@ import org.apache.commons.lang3.text.translate.UnicodeUnpairedSurrogateRemover;
  * Java, Java Script, HTML and XML.
  *
  * <p>#ThreadSafe#</p>
+ *
  * @since 2.0
  * @deprecated As of 3.6, use Apache Commons Text
  * <a href="https://commons.apache.org/proper/commons-text/javadocs/api-release/org/apache/commons/text/StringEscapeUtils.html">
@@ -460,9 +461,8 @@ public class StringEscapeUtils {
      * output string: He didn\'t say, \"Stop!\"
      * </pre>
      *
-     * @param input  String to escape values in, may be null
-     * @return String with escaped values, {@code null} if null string input
-     *
+     * @param input  string to escape values in, may be null
+     * @return string with escaped values, {@code null} if null string input
      * @since 3.0
      */
     public static final String escapeEcmaScript(final String input) {
@@ -475,7 +475,6 @@ public class StringEscapeUtils {
      *
      * @param input  the {@link String} to escape, may be null
      * @return a new escaped {@link String}, {@code null} if null string input
-     *
      * @since 3.0
      */
     public static final String escapeHtml3(final String input) {
@@ -500,13 +499,11 @@ public class StringEscapeUtils {
      *
      * @param input  the {@link String} to escape, may be null
      * @return a new escaped {@link String}, {@code null} if null string input
-     *
      * @see <a href="https://web.archive.org/web/20060225074150/https://hotwired.lycos.com/webmonkey/reference/special_characters/">ISO Entities</a>
      * @see <a href="https://www.w3.org/TR/REC-html32#latin1">HTML 3.2 Character Entities for ISO Latin-1</a>
      * @see <a href="https://www.w3.org/TR/REC-html40/sgml/entities.html">HTML 4.0 Character entity references</a>
      * @see <a href="https://www.w3.org/TR/html401/charset.html#h-5.3">HTML 4.01 Character References</a>
      * @see <a href="https://www.w3.org/TR/html401/charset.html#code-position">HTML 4.01 Code positions</a>
-     *
      * @since 3.0
      */
     public static final String escapeHtml4(final String input) {
@@ -530,8 +527,8 @@ public class StringEscapeUtils {
      * output string: He didn't say, \"Stop!\"
      * </pre>
      *
-     * @param input  String to escape values in, may be null
-     * @return String with escaped values, {@code null} if null string input
+     * @param input  string to escape values in, may be null
+     * @return string with escaped values, {@code null} if null string input
      */
     public static final String escapeJava(final String input) {
         return ESCAPE_JAVA.translate(input);
@@ -556,9 +553,8 @@ public class StringEscapeUtils {
      * output string: He didn't say, \"Stop!\"
      * </pre>
      *
-     * @param input  String to escape values in, may be null
-     * @return String with escaped values, {@code null} if null string input
-     *
+     * @param input  string to escape values in, may be null
+     * @return string with escaped values, {@code null} if null string input
      * @since 3.2
      */
     public static final String escapeJson(final String input) {
@@ -684,10 +680,9 @@ public class StringEscapeUtils {
      * into a newline character, unless the {@code '\'} is preceded by another
      * {@code '\'}.</p>
      *
-     * @see #unescapeJava(String)
      * @param input  the {@link String} to unescape, may be null
-     * @return A new unescaped {@link String}, {@code null} if null string input
-     *
+     * @return a new unescaped {@link String}, {@code null} if null string input
+     * @see #unescapeJava(String)
      * @since 3.0
      */
     public static final String unescapeEcmaScript(final String input) {
@@ -701,7 +696,6 @@ public class StringEscapeUtils {
      *
      * @param input  the {@link String} to unescape, may be null
      * @return a new unescaped {@link String}, {@code null} if null string input
-     *
      * @since 3.0
      */
     public static final String unescapeHtml3(final String input) {
@@ -722,7 +716,6 @@ public class StringEscapeUtils {
      *
      * @param input  the {@link String} to unescape, may be null
      * @return a new unescaped {@link String}, {@code null} if null string input
-     *
      * @since 3.0
      */
     public static final String unescapeHtml4(final String input) {
@@ -749,10 +742,9 @@ public class StringEscapeUtils {
      * into a newline character, unless the {@code '\'} is preceded by another
      * {@code '\'}.</p>
      *
-     * @see #unescapeJava(String)
      * @param input  the {@link String} to unescape, may be null
-     * @return A new unescaped {@link String}, {@code null} if null string input
-     *
+     * @return a new unescaped {@link String}, {@code null} if null string input
+     * @see #unescapeJava(String)
      * @since 3.2
      */
     public static final String unescapeJson(final String input) {

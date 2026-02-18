@@ -31,8 +31,9 @@ final class IDKey {
         private final int id;
 
         /**
-         * Constructor for IDKey
-         * @param value The value
+         * Constructor for IDKey.
+         *
+         * @param value the value
          */
         IDKey(final Object value) {
             // This is the Object hash code
@@ -44,8 +45,9 @@ final class IDKey {
         }
 
         /**
-         * checks if instances are equal
-         * @param other The other object to compare to
+         * Checks if instances are equal.
+         *
+         * @param other the other object to compare to
          * @return if the instances are for the same object
          */
         @Override
@@ -62,7 +64,8 @@ final class IDKey {
          }
 
         /**
-         * returns hash code - i.e. the system identity hash code.
+         * Returns hash code - i.e. the system identity hash code.
+         *
          * @return the hash code
          */
         @Override

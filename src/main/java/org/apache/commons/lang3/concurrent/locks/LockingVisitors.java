@@ -83,8 +83,8 @@ public class LockingVisitors {
     /**
      * Wraps a domain object and a lock for access by lambdas.
      *
-     * @param <O> the wrapped object type.
-     * @param <L> the wrapped lock type.
+     * @param <O> the wrapped object type
+     * @param <L> the wrapped lock type
      */
     public static class LockVisitor<O, L> {
 
@@ -112,10 +112,10 @@ public class LockingVisitors {
         /**
          * Constructs an instance.
          *
-         * @param object The object to guard.
-         * @param lock The locking object.
-         * @param readLockSupplier Supplies the read lock, usually from the lock object.
-         * @param writeLockSupplier Supplies the write lock, usually from the lock object.
+         * @param object the object to guard
+         * @param lock the locking object
+         * @param readLockSupplier supplies the read lock, usually from the lock object
+         * @param writeLockSupplier supplies the write lock, usually from the lock object
          */
         protected LockVisitor(final O object, final L lock, final Supplier<Lock> readLockSupplier, final Supplier<Lock> writeLockSupplier) {
             this.object = Objects.requireNonNull(object, "object");
@@ -136,8 +136,8 @@ public class LockingVisitors {
          * lock will be released anyways.</li>
          * </ol>
          *
-         * @param consumer The consumer, which is being invoked to use the hidden object, which will be passed as the
-         *        consumers parameter.
+         * @param consumer the consumer, which is being invoked to use the hidden object, which will be passed as the
+         *        consumers parameter
          * @see #acceptWriteLocked(FailableConsumer)
          * @see #applyReadLocked(FailableFunction)
          */
@@ -157,8 +157,8 @@ public class LockingVisitors {
          * lock will be released anyways.</li>
          * </ol>
          *
-         * @param consumer The consumer, which is being invoked to use the hidden object, which will be passed as the
-         *        consumers parameter.
+         * @param consumer the consumer, which is being invoked to use the hidden object, which will be passed as the
+         *        consumers parameter
          * @see #acceptReadLocked(FailableConsumer)
          * @see #applyWriteLocked(FailableFunction)
          */
@@ -192,11 +192,11 @@ public class LockingVisitors {
          * }
          * </pre>
          *
-         * @param <T> The result type (both the functions, and this method's.)
-         * @param function The function, which is being invoked to compute the result. The function will receive the
+         * @param <T> the result type (both the functions, and this method's.)
+         * @param function the function, which is being invoked to compute the result. The function will receive the
          *        hidden object.
-         * @return The result object, which has been returned by the functions invocation.
-         * @throws IllegalStateException The result object would be, in fact, the hidden object. This would extend
+         * @return the result object, which has been returned by the functions invocation
+         * @throws IllegalStateException the result object would be, in fact, the hidden object. This would extend
          *         access to the hidden object beyond this methods lifetime and will therefore be prevented.
          * @see #acceptReadLocked(FailableConsumer)
          * @see #applyWriteLocked(FailableFunction)
@@ -219,11 +219,11 @@ public class LockingVisitors {
          * <li>Return the result object, that has been received from the functions invocation.</li>
          * </ol>
          *
-         * @param <T> The result type (both the functions, and this method's.)
-         * @param function The function, which is being invoked to compute the result. The function will receive the
+         * @param <T> the result type (both the functions, and this method's.)
+         * @param function the function, which is being invoked to compute the result. The function will receive the
          *        hidden object.
-         * @return The result object, which has been returned by the functions invocation.
-         * @throws IllegalStateException The result object would be, in fact, the hidden object. This would extend
+         * @return the result object, which has been returned by the functions invocation
+         * @throws IllegalStateException the result object would be, in fact, the hidden object. This would extend
          *         access to the hidden object beyond this methods lifetime and will therefore be prevented.
          * @see #acceptReadLocked(FailableConsumer)
          * @see #applyWriteLocked(FailableFunction)
@@ -235,7 +235,7 @@ public class LockingVisitors {
         /**
          * Gets the lock.
          *
-         * @return the lock.
+         * @return the lock
          */
         public L getLock() {
             return lock;
@@ -244,7 +244,7 @@ public class LockingVisitors {
         /**
          * Gets the guarded object.
          *
-         * @return the object.
+         * @return the object
          */
         public O getObject() {
             return object;
@@ -254,10 +254,10 @@ public class LockingVisitors {
          * This method provides the default implementation for {@link #acceptReadLocked(FailableConsumer)}, and
          * {@link #acceptWriteLocked(FailableConsumer)}.
          *
-         * @param lockSupplier A supplier for the lock. (This provides, in fact, a long, because a {@link StampedLock} is used
+         * @param lockSupplier a supplier for the lock. (This provides, in fact, a long, because a {@link StampedLock} is used
          *        internally.)
-         * @param consumer The consumer, which is to be given access to the locked (hidden) object, which will be passed
-         *        as a parameter.
+         * @param consumer the consumer, which is to be given access to the locked (hidden) object, which will be passed
+         *        as a parameter
          * @see #acceptReadLocked(FailableConsumer)
          * @see #acceptWriteLocked(FailableConsumer)
          */
@@ -277,13 +277,13 @@ public class LockingVisitors {
          * This method provides the actual implementation for {@link #applyReadLocked(FailableFunction)}, and
          * {@link #applyWriteLocked(FailableFunction)}.
          *
-         * @param <T> The result type (both the functions, and this method's.)
-         * @param lockSupplier A supplier for the lock. (This provides, in fact, a long, because a {@link StampedLock} is used
+         * @param <T> the result type (both the functions, and this method's.)
+         * @param lockSupplier a supplier for the lock. (This provides, in fact, a long, because a {@link StampedLock} is used
          *        internally.)
-         * @param function The function, which is being invoked to compute the result object. This function will receive
+         * @param function the function, which is being invoked to compute the result object. This function will receive
          *        the locked (hidden) object as a parameter.
-         * @return The result object, which has been returned by the functions invocation.
-         * @throws IllegalStateException The result object would be, in fact, the hidden object. This would extend
+         * @return the result object, which has been returned by the functions invocation
+         * @throws IllegalStateException the result object would be, in fact, the hidden object. This would extend
          *         access to the hidden object beyond this methods lifetime and will therefore be prevented.
          * @see #applyReadLocked(FailableFunction)
          * @see #applyWriteLocked(FailableFunction)
@@ -309,7 +309,7 @@ public class LockingVisitors {
      * {@link #applyReadLocked(FailableFunction)}, and {@link #applyWriteLocked(FailableFunction)}. By doing so, the
      * necessary protections are guaranteed.
      *
-     * @param <O> The locked (hidden) objects type.
+     * @param <O> the locked (hidden) objects type
      */
     public static class ReadWriteLockVisitor<O> extends LockVisitor<O, ReadWriteLock> {
 
@@ -317,8 +317,8 @@ public class LockingVisitors {
          * Creates a new instance with the given locked object. This constructor is supposed to be used for subclassing
          * only. In general, it is suggested to use {@link LockingVisitors#stampedLockVisitor(Object)} instead.
          *
-         * @param object The locked (hidden) object. The caller is supposed to drop all references to the locked object.
-         * @param readWriteLock the lock to use.
+         * @param object the locked (hidden) object. The caller is supposed to drop all references to the locked object.
+         * @param readWriteLock the lock to use
          */
         protected ReadWriteLockVisitor(final O object, final ReadWriteLock readWriteLock) {
             super(object, readWriteLock, readWriteLock::readLock, readWriteLock::writeLock);
@@ -332,7 +332,7 @@ public class LockingVisitors {
      * {@link #applyReadLocked(FailableFunction)}, and {@link #applyWriteLocked(FailableFunction)}. By doing so, the
      * necessary protections are guaranteed.
      *
-     * @param <O> The locked (hidden) objects type.
+     * @param <O> the locked (hidden) objects type
      */
     public static class StampedLockVisitor<O> extends LockVisitor<O, StampedLock> {
 
@@ -340,8 +340,8 @@ public class LockingVisitors {
          * Creates a new instance with the given locked object. This constructor is supposed to be used for subclassing
          * only. In general, it is suggested to use {@link LockingVisitors#stampedLockVisitor(Object)} instead.
          *
-         * @param object The locked (hidden) object. The caller is supposed to drop all references to the locked object.
-         * @param stampedLock the lock to use.
+         * @param object the locked (hidden) object. The caller is supposed to drop all references to the locked object.
+         * @param stampedLock the lock to use
          */
         protected StampedLockVisitor(final O object, final StampedLock stampedLock) {
             super(object, stampedLock, stampedLock::asReadLock, stampedLock::asWriteLock);
@@ -351,10 +351,10 @@ public class LockingVisitors {
     /**
      * Creates a new instance of {@link ReadWriteLockVisitor} with the given (hidden) object and lock.
      *
-     * @param <O> The locked objects type.
-     * @param object The locked (hidden) object.
-     * @param readWriteLock The lock to use.
-     * @return The created instance, a {@link StampedLockVisitor lock} for the given object.
+     * @param <O> the locked objects type
+     * @param object the locked (hidden) object
+     * @param readWriteLock the lock to use
+     * @return the created instance, a {@link StampedLockVisitor lock} for the given object
      * @since 3.13.0
      */
     public static <O> ReadWriteLockVisitor<O> create(final O object, final ReadWriteLock readWriteLock) {
@@ -364,9 +364,9 @@ public class LockingVisitors {
     /**
      * Creates a new instance of {@link ReadWriteLockVisitor} with the given (hidden) object.
      *
-     * @param <O> The locked objects type.
-     * @param object The locked (hidden) object.
-     * @return The created instance, a {@link StampedLockVisitor lock} for the given object.
+     * @param <O> the locked objects type
+     * @param object the locked (hidden) object
+     * @return the created instance, a {@link StampedLockVisitor lock} for the given object
      */
     public static <O> ReadWriteLockVisitor<O> reentrantReadWriteLockVisitor(final O object) {
         return create(object, new ReentrantReadWriteLock());
@@ -375,9 +375,9 @@ public class LockingVisitors {
     /**
      * Creates a new instance of {@link StampedLockVisitor} with the given (hidden) object.
      *
-     * @param <O> The locked objects type.
-     * @param object The locked (hidden) object.
-     * @return The created instance, a {@link StampedLockVisitor lock} for the given object.
+     * @param <O> the locked objects type
+     * @param object the locked (hidden) object
+     * @return the created instance, a {@link StampedLockVisitor lock} for the given object
      */
     public static <O> StampedLockVisitor<O> stampedLockVisitor(final O object) {
         return new LockingVisitors.StampedLockVisitor<>(object, new StampedLock());

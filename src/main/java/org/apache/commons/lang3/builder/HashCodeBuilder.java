@@ -140,7 +140,7 @@ public class HashCodeBuilder implements Builder<Integer> {
     /**
      * Returns the registry of objects being traversed by the reflection methods in the current thread.
      *
-     * @return Set the registry of objects being traversed
+     * @return set the registry of objects being traversed
      * @since 2.3
      */
     static Set<IDKey> getRegistry() {
@@ -152,8 +152,8 @@ public class HashCodeBuilder implements Builder<Integer> {
      * infinite loops.
      *
      * @param value
-     *            The object to lookup in the registry.
-     * @return boolean {@code true} if the registry contains the given object.
+     *            The object to lookup in the registry
+     * @return boolean {@code true} if the registry contains the given object
      * @since 2.3
      */
     static boolean isRegistered(final Object value) {
@@ -230,11 +230,10 @@ public class HashCodeBuilder implements Builder<Integer> {
      * @param object
      *            the Object to create a {@code hashCode} for
      * @return int hash code
-     * @throws NullPointerException
-     *             if the Object is {@code null}
      * @throws IllegalArgumentException
      *             if the number is zero or even
-     *
+     * @throws NullPointerException
+     *             if the Object is {@code null}
      * @see HashCodeExclude
      */
     public static int reflectionHashCode(final int initialNonZeroOddNumber, final int multiplierNonZeroOddNumber, final Object object) {
@@ -274,11 +273,10 @@ public class HashCodeBuilder implements Builder<Integer> {
      * @param testTransients
      *            whether to include transient fields
      * @return int hash code
-     * @throws NullPointerException
-     *             if the Object is {@code null}
      * @throws IllegalArgumentException
      *             if the number is zero or even
-     *
+     * @throws NullPointerException
+     *             if the Object is {@code null}
      * @see HashCodeExclude
      */
     public static int reflectionHashCode(final int initialNonZeroOddNumber, final int multiplierNonZeroOddNumber, final Object object,
@@ -326,11 +324,10 @@ public class HashCodeBuilder implements Builder<Integer> {
      * @param excludeFields
      *            array of field names to exclude from use in calculation of hash code
      * @return int hash code
-     * @throws NullPointerException
-     *             if the Object is {@code null}
      * @throws IllegalArgumentException
      *             if the number is zero or even
-     *
+     * @throws NullPointerException
+     *             if the Object is {@code null}
      * @see HashCodeExclude
      * @since 2.0
      */
@@ -377,7 +374,6 @@ public class HashCodeBuilder implements Builder<Integer> {
      * @return int hash code
      * @throws NullPointerException
      *             if the object is {@code null}
-     *
      * @see HashCodeExclude
      */
     public static int reflectionHashCode(final Object object, final boolean testTransients) {
@@ -415,7 +411,6 @@ public class HashCodeBuilder implements Builder<Integer> {
      * @return int hash code
      * @throws NullPointerException
      *             if the object is {@code null}
-     *
      * @see HashCodeExclude
      */
     public static int reflectionHashCode(final Object object, final Collection<String> excludeFields) {
@@ -452,7 +447,6 @@ public class HashCodeBuilder implements Builder<Integer> {
      * @return int hash code
      * @throws NullPointerException
      *             if the object is {@code null}
-     *
      * @see HashCodeExclude
      */
     public static int reflectionHashCode(final Object object, final String... excludeFields) {
@@ -464,7 +458,7 @@ public class HashCodeBuilder implements Builder<Integer> {
      * Registers the given object. Used by the reflection methods to avoid infinite loops.
      *
      * @param value
-     *            The object to register.
+ *            The object to register
      */
     private static void register(final Object value) {
         Set<IDKey> registry = getRegistry();
@@ -482,7 +476,7 @@ public class HashCodeBuilder implements Builder<Integer> {
      * Used by the reflection methods to avoid infinite loops.
      *
      * @param value
-     *            The object to unregister.
+     *            The object to unregister
      * @since 2.3
      */
     private static void unregister(final Object value) {
@@ -834,7 +828,7 @@ public class HashCodeBuilder implements Builder<Integer> {
      * Append a {@code hashCode} for an array.
      *
      * @param object
-     *            the array to add to the {@code hashCode}
+ *            the array to add to the {@code hashCode}
      */
     private void appendArray(final Object object) {
         // 'Switch' on type of array, to dispatch to the correct handler

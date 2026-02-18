@@ -98,25 +98,33 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
         StrBuilderReader() {
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void close() {
             // do nothing
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void mark(final int readAheadLimit) {
             mark = pos;
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public boolean markSupported() {
             return true;
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public int read() {
             if (!ready()) {
@@ -125,7 +133,9 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
             return StrBuilder.this.charAt(pos++);
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public int read(final char[] b, final int off, int len) {
             if (off < 0 || len < 0 || off > b.length ||
@@ -146,19 +156,25 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
             return len;
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public boolean ready() {
             return pos < StrBuilder.this.size();
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void reset() {
             pos = mark;
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public long skip(long n) {
             if (pos + n > StrBuilder.this.size()) {
@@ -183,7 +199,9 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
         StrBuilderTokenizer() {
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public String getContent() {
             final String str = super.getContent();
@@ -193,7 +211,9 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
             return str;
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         protected List<String> tokenize(final char[] chars, final int offset, final int count) {
             if (chars == null) {
@@ -214,43 +234,57 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
         StrBuilderWriter() {
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void close() {
             // do nothing
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void flush() {
             // do nothing
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void write(final char[] cbuf) {
             StrBuilder.this.append(cbuf);
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void write(final char[] cbuf, final int off, final int len) {
             StrBuilder.this.append(cbuf, off, len);
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void write(final int c) {
             StrBuilder.this.append((char) c);
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void write(final String str) {
             StrBuilder.this.append(str);
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void write(final String str, final int off, final int len) {
             StrBuilder.this.append(str, off, len);
@@ -288,7 +322,7 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
     /**
      * Constructor that creates an empty builder the specified initial capacity.
      *
-     * @param initialCapacity  the initial capacity, zero or less will be converted to 32
+     * @param initialCapacity the initial capacity, zero or less will be converted to 32
      */
     public StrBuilder(int initialCapacity) {
         if (initialCapacity <= 0) {
@@ -301,7 +335,7 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
      * Constructor that creates a builder from the string, allocating
      * 32 extra characters for growth.
      *
-     * @param str  the string to copy, null treated as blank string
+     * @param str the string to copy, null treated as blank string
      */
     public StrBuilder(final String str) {
         if (str == null) {
@@ -1221,6 +1255,7 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
      * Otherwise it will append the standard-separator
      *
      * The separator is appended using {@link #append(char)}.
+     *
      * @param standard the separator if builder is not empty
      * @param defaultIfEmpty the separator if builder is empty
      * @return this, to enable chaining
@@ -1364,9 +1399,8 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
      *
      * @param appendable  the appendable to append data to
      * @throws IOException  if an I/O error occurs
-     *
-     * @since 3.4
      * @see #readFrom(Readable)
+     * @since 3.4
      */
     public void appendTo(final Appendable appendable) throws IOException {
         if (appendable instanceof Writer) {
@@ -1549,9 +1583,10 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
 
     /**
      * Implement the {@link Builder} interface.
+     *
      * @return the builder as a String
-     * @since 3.2
      * @see #toString()
+     * @since 3.2
      */
     @Override
     public String build() {
@@ -1570,11 +1605,11 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
     /**
      * Gets the character at the specified index.
      *
-     * @see #setCharAt(int, char)
-     * @see #deleteCharAt(int)
      * @param index  the index to retrieve, must be valid
      * @return the character at the index
      * @throws IndexOutOfBoundsException if the index is invalid
+     * @see #setCharAt(int, char)
+     * @see #deleteCharAt(int)
      */
     @Override
     public char charAt(final int index) {
@@ -1720,11 +1755,11 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
     /**
      * Deletes the character at the specified index.
      *
-     * @see #charAt(int)
-     * @see #setCharAt(int, char)
      * @param index  the index to delete
      * @return this, to enable chaining
      * @throws IndexOutOfBoundsException if the index is invalid
+     * @see #charAt(int)
+     * @see #setCharAt(int, char)
      */
     public StrBuilder deleteCharAt(final int index) {
         if (index < 0 || index >= size) {
@@ -1926,8 +1961,8 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
      * @param endIndex  last index, exclusive, must be valid
      * @param destination  the destination array, must not be null or too small
      * @param destinationIndex  the index to start copying in destination
-     * @throws NullPointerException if the array is null
      * @throws IndexOutOfBoundsException if any index is invalid
+     * @throws NullPointerException if the array is null
      */
     public void getChars(final int startIndex, final int endIndex, final char[] destination, final int destinationIndex) {
         if (startIndex < 0) {
@@ -2278,7 +2313,7 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
      * API of Collections.
      * </p>
      *
-     * @return {@code true} if the size is {@code 0}.
+     * @return {@code true} if the size is {@code 0}
      */
     public boolean isEmpty() {
         return size == 0;
@@ -2291,7 +2326,7 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
      * API of Collections.
      * </p>
      *
-     * @return {@code true} if the size is greater than {@code 0}.
+     * @return {@code true} if the size is greater than {@code 0}
      * @since 3.12.0
      */
     public boolean isNotEmpty() {
@@ -2482,10 +2517,9 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
      *
      * @param readable  object to read from
      * @return the number of characters read
-     * @throws IOException if an I/O error occurs.
-     *
-     * @since 3.4
+     * @throws IOException if an I/O error occurs
      * @see #appendTo(Appendable)
+     * @since 3.4
      */
     public int readFrom(final Readable readable) throws IOException {
         final int oldSize = size;
@@ -2775,12 +2809,12 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
     /**
      * Sets the character at the specified index.
      *
-     * @see #charAt(int)
-     * @see #deleteCharAt(int)
      * @param index  the index to set
      * @param ch  the new character
      * @return this, to enable chaining
      * @throws IndexOutOfBoundsException if the index is invalid
+     * @see #charAt(int)
+     * @see #deleteCharAt(int)
      */
     public StrBuilder setCharAt(final int index, final char ch) {
         if (index < 0 || index >= length()) {
@@ -2883,6 +2917,7 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
 
     /**
      * {@inheritDoc}
+     *
      * @since 3.0
      */
     @Override

@@ -71,8 +71,8 @@ public class RecursiveToStringStyle extends ToStringStyle {
      * subclasses to filter specific classes.
      *
      * @param clazz
-     *            The class to test.
-     * @return Whether or not to recursively format the given {@link Class}.
+     *            The class to test
+     * @return whether or not to recursively format the given {@link Class}
      */
     protected boolean accept(final Class<?> clazz) {
         return true;

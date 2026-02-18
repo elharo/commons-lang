@@ -48,7 +48,7 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
     /**
      * Constructs a new MutableByte with the specified value.
      *
-     * @param value  the initial value to store
+     * @param value the initial value to store
      */
     public MutableByte(final byte value) {
         this.value = value;
@@ -114,8 +114,8 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
      * immediately after the addition operation. This method is not thread safe.
      *
      * @param operand the quantity to add, not null
-     * @throws NullPointerException if {@code operand} is null
      * @return the value associated with this instance after adding the operand
+     * @throws NullPointerException if {@code operand} is null
      * @since 3.5
      */
     public byte addAndGet(final Number operand) {
@@ -127,7 +127,7 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
     /**
      * Returns the value of this MutableByte as a byte.
      *
-     * @return the numeric value represented by this object after conversion to type byte.
+     * @return the numeric value represented by this object after conversion to type byte
      */
     @Override
     public byte byteValue() {
@@ -169,7 +169,7 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
     /**
      * Returns the value of this MutableByte as a double.
      *
-     * @return the numeric value represented by this object after conversion to type double.
+     * @return the numeric value represented by this object after conversion to type double
      */
     @Override
     public double doubleValue() {
@@ -182,7 +182,7 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
      * as this object.
      *
      * @param obj  the object to compare with, null returns false
-     * @return {@code true} if the objects are the same; {@code false} otherwise.
+     * @return {@code true} if the objects are the same; {@code false} otherwise
      */
     @Override
     public boolean equals(final Object obj) {
@@ -195,7 +195,7 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
     /**
      * Returns the value of this MutableByte as a float.
      *
-     * @return the numeric value represented by this object after conversion to type float.
+     * @return the numeric value represented by this object after conversion to type float
      */
     @Override
     public float floatValue() {
@@ -221,8 +221,8 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
      * immediately prior to the addition operation. This method is not thread safe.
      *
      * @param operand the quantity to add, not null
-     * @throws NullPointerException if {@code operand} is null
      * @return the value associated with this instance immediately before the operand was added
+     * @throws NullPointerException if {@code operand} is null
      * @since 3.5
      */
     public byte getAndAdd(final Number operand) {
@@ -301,7 +301,7 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
     /**
      * Returns the value of this MutableByte as an int.
      *
-     * @return the numeric value represented by this object after conversion to type int.
+     * @return the numeric value represented by this object after conversion to type int
      */
     @Override
     public int intValue() {
@@ -311,7 +311,7 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
     /**
      * Returns the value of this MutableByte as a long.
      *
-     * @return the numeric value represented by this object after conversion to type long.
+     * @return the numeric value represented by this object after conversion to type long
      */
     @Override
     public long longValue() {
@@ -321,7 +321,7 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
     /**
      * Sets the value.
      *
-     * @param value  the value to set
+     * @param value the value to set
      */
     public void setValue(final byte value) {
         this.value = value;

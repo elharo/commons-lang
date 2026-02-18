@@ -34,12 +34,11 @@ import org.apache.commons.lang3.builder.CompareToBuilder;
  * @param <L> the left element type
  * @param <M> the middle element type
  * @param <R> the right element type
- *
  * @since 3.2
  */
 public abstract class Triple<L, M, R> implements Comparable<Triple<L, M, R>>, Serializable {
 
-    /** Serialization version */
+    /** Serialization version. */
     private static final long serialVersionUID = 1L;
 
     /**
@@ -48,7 +47,7 @@ public abstract class Triple<L, M, R> implements Comparable<Triple<L, M, R>>, Se
      * Consider using {@link #emptyArray()} to avoid generics warnings.
      * </p>
      *
-     * @since 3.10.
+     * @since 3.10
      */
     public static final Triple<?, ?, ?>[] EMPTY_ARRAY = {};
 
@@ -58,9 +57,8 @@ public abstract class Triple<L, M, R> implements Comparable<Triple<L, M, R>>, Se
      * @param <L> the left element type
      * @param <M> the middle element type
      * @param <R> the right element type
-     * @return the empty array singleton that can be assigned without compiler warning.
-     *
-     * @since 3.10.
+     * @return the empty array singleton that can be assigned without compiler warning
+     * @since 3.10
      */
     @SuppressWarnings("unchecked")
     public static <L, M, R> Triple<L, M, R>[] emptyArray() {
@@ -197,4 +195,3 @@ public abstract class Triple<L, M, R> implements Comparable<Triple<L, M, R>>, Se
     }
 
 }
-

@@ -47,7 +47,7 @@ public class MutableObject<T> implements Mutable<T>, Serializable {
     /**
      * Constructs a new MutableObject with the specified value.
      *
-     * @param value  the initial value to store
+     * @param value the initial value to store
      */
     public MutableObject(final T value) {
         this.value = value;
@@ -59,9 +59,9 @@ public class MutableObject<T> implements Mutable<T>, Serializable {
      * value as this object.
      *
      * @param obj  the object to compare with, {@code null} returns {@code false}
-     * @return  {@code true} if the objects are the same;
+     * @return {@code true} if the objects are the same;
      *          {@code true} if the objects have equivalent {@code value} fields;
-     *          {@code false} otherwise.
+     *          {@code false} otherwise
      */
     @Override
     public boolean equals(final Object obj) {
@@ -91,7 +91,7 @@ public class MutableObject<T> implements Mutable<T>, Serializable {
     /**
      * Returns the value's hash code or {@code 0} if the value is {@code null}.
      *
-     * @return the value's hash code or {@code 0} if the value is {@code null}.
+     * @return the value's hash code or {@code 0} if the value is {@code null}
      */
     @Override
     public int hashCode() {
@@ -101,7 +101,7 @@ public class MutableObject<T> implements Mutable<T>, Serializable {
     /**
      * Sets the value.
      *
-     * @param value  the value to set
+     * @param value the value to set
      */
     @Override
     public void setValue(final T value) {

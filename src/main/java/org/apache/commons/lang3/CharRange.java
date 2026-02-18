@@ -27,6 +27,7 @@ import java.util.Objects;
  * <p>Instances are immutable.</p>
  *
  * <p>#ThreadSafe#</p>
+ *
  * @since 1.0
  */
 // TODO: This is no longer public and will be removed later as CharSet is moved
@@ -38,7 +39,7 @@ final class CharRange implements Iterable<Character>, Serializable {
      * <p>#NotThreadSafe#</p>
      */
     private static final class CharacterIterator implements Iterator<Character> {
-        /** The current character */
+        /** The current character. */
         private char current;
 
         private final CharRange range;
@@ -47,7 +48,7 @@ final class CharRange implements Iterable<Character>, Serializable {
         /**
          * Constructs a new iterator for the character range.
          *
-         * @param r The character range
+         * @param r the character range
          */
         private CharacterIterator(final CharRange r) {
             range = r;
@@ -80,7 +81,7 @@ final class CharRange implements Iterable<Character>, Serializable {
         }
 
         /**
-         * Returns the next character in the iteration
+         * Returns the next character in the iteration.
          *
          * @return {@link Character} for the next character
          */
@@ -120,7 +121,7 @@ final class CharRange implements Iterable<Character>, Serializable {
         /**
          * Always throws UnsupportedOperationException.
          *
-         * @throws UnsupportedOperationException Always thrown.
+         * @throws UnsupportedOperationException always thrown
          * @see java.util.Iterator#remove()
          */
         @Override
@@ -333,6 +334,7 @@ final class CharRange implements Iterable<Character>, Serializable {
      * Returns an iterator which can be used to walk through the characters described by this range.
      *
      * <p>#NotThreadSafe# the iterator is not thread-safe</p>
+     *
      * @return an iterator to the chars represented by this range
      * @since 2.5
      */
